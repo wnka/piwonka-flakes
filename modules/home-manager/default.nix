@@ -94,7 +94,7 @@
       '';
     };
     shellAliases = {
-      l = "exa --group-directories-first --color-scale --icons";
+      ls = "exa --group-directories-first --color-scale --icons";
       cat = "bat";
       less = "bat";
       doomup = "~/.emacs.d/bin/doom -! upgrade";
