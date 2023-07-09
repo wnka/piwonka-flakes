@@ -62,5 +62,26 @@
           })
         ];
       };
+
+    # standalone home-manager installation
+    homeConfigurations.ec2 =
+      let
+        user = "ec2-user";
+        system = "x86_64-linux";
+      in home-manager.lib.homeManagerConfiguration {
+        # modifies pkgs to allow unfree packages
+        pkgs = import nixpkgs { inherit system; };
+        # makes all inputs available in imported files
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./modules/home-manager
+          ({ ... }: {
+            home = {
+              username = user;
+              homeDirectory = "/home/${user}";
+            };
+          })
+        ];
+      };
   };
 }
