@@ -42,6 +42,29 @@
         ];
       };
 
+    darwinConfigurations.f4d48867eab8 =
+      let
+        user = "piwonka";
+        system = "aarch64-darwin";
+      in darwin.lib.darwinSystem {
+        pkgs = import nixpkgs { inherit system; };
+        modules = [
+          ({ pkgs, ... }: {
+            users.users.${user}.home = "/Users/${user}";
+          })
+          ./modules/darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              # Setting this to false fixed problems with ~/.nix-profile
+              useUserPackages = false;
+              users.${user}.imports = [ ./modules/home-manager ];
+            };
+          }
+        ];
+      };
+
     # standalone home-manager installation
     homeConfigurations.raspberrypi =
       let

@@ -14,7 +14,6 @@
     entr
     exa
     fd
-    fishPlugins.fzf-fish
     git-crypt
     gnupg
     hugo
@@ -62,6 +61,7 @@
       fzf_configure_bindings
     '';
     plugins = [
+      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       # Need this when using Fish as a default macOS shell in order to pick
       # up ~/.nix-profile/bin
       {
