@@ -20,29 +20,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations.airtwo =
-      let
-        user = "piwonka";
-        system = "aarch64-darwin";
-      in darwin.lib.darwinSystem {
-        pkgs = import nixpkgs { inherit system; };
-        modules = [
-          ({ pkgs, ... }: {
-            users.users.${user}.home = "/Users/${user}";
-          })
-          ./modules/darwin
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${user}.imports = [ ./modules/home-manager ];
-            };
-          }
-        ];
-      };
-
-    darwinConfigurations.f4d48867eab8 =
+    darwinConfigurations.mac =
       let
         user = "piwonka";
         system = "aarch64-darwin";

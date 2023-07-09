@@ -113,7 +113,7 @@
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       hms = "home-manager switch -b backup";
-      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes";
+      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
       tma = "tmux new-session -A -s main";
     };
   };
