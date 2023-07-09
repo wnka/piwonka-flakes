@@ -24,6 +24,16 @@
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [
+        ({ pkgs, ... }: {
+          users = {
+            users = {
+              piwonka = {
+                description = "Phil Piwonka";
+                home = "/Users/piwonka";
+              };
+            };
+          };
+        })
         ./modules/darwin
         home-manager.darwinModules.home-manager
         {

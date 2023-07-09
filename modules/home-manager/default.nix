@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
+
   # specify my home-manager configs
   home.packages = with pkgs; [
     awscli2
@@ -33,10 +34,10 @@
   };
 
   home.file.".inputrc".source = ./files/inputrc;
+  home.file.".gitconfig".source = ./files/gitconfig;
 
-    programs.git = {
+  programs.git = {
     enable = true;
-    includes = [{ path = "./files/gitconfig"; }];
   };
 
   programs.fish = {

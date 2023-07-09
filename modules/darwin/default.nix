@@ -38,7 +38,7 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      "raycast"
+  #    "raycast"
       "amethyst"
       "iina"
       "font-blex-mono-nerd-font"
