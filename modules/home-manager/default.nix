@@ -55,6 +55,8 @@
       fish_add_path /opt/homebrew/bin
       fish_add_path /Users/piwonka/bin
       fish_add_path /run/current-system/sw/bin
+      # Work stuff
+      fish_add_path /Users/piwonka/.toolbox/bin
 
       export LS_COLORS="$(vivid generate nord)"
 
