@@ -24,6 +24,7 @@
     mosh
     oha
     ripgrep
+    rustup
     vegeta
     vivid
     zstd
