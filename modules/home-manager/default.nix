@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
+  programs.home-manager.enable = true;
 
   # specify my home-manager configs
   home.packages = with pkgs; [
@@ -23,7 +24,6 @@
     mosh
     oha
     ripgrep
-    terminal-notifier
     vegeta
     vivid
     zstd
@@ -110,6 +110,7 @@
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       hms = "home-manager switch -b backup";
+      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes";
       tma = "tmux new-session -A -s main";
     };
   };

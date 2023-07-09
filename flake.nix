@@ -20,30 +20,47 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations.airtwo = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs { system = "aarch64-darwin"; };
-      modules = [
-        ({ pkgs, ... }: {
-          users = {
-            users = {
-              piwonka = {
-                description = "Phil Piwonka";
-                home = "/Users/piwonka";
-              };
+    darwinConfigurations.airtwo =
+      let
+        user = "piwonka";
+        system = "aarch64-darwin";
+      in darwin.lib.darwinSystem {
+        pkgs = import nixpkgs { inherit system; };
+        modules = [
+          ({ pkgs, ... }: {
+            users.users.${user}.home = "/Users/${user}";
+          })
+          ./modules/darwin
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.${user}.imports = [ ./modules/home-manager ];
             };
-          };
-        })
-        ./modules/darwin
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.piwonka.imports = [ ./modules/home-manager ];
-          };
-        }
-      ];
-    };
+          }
+        ];
+      };
+
+    # standalone home-manager installation
+    homeConfigurations.raspberrypi =
+      let
+        user = "piwonka";
+        system = "aarch64-linux";
+      in home-manager.lib.homeManagerConfiguration {
+        # modifies pkgs to allow unfree packages
+        pkgs = import nixpkgs { inherit system; };
+        # makes all inputs available in imported files
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./modules/home-manager
+          ({ ... }: {
+            home = {
+              username = user;
+              homeDirectory = "/home/${user}";
+            };
+          })
+        ];
+      };
   };
 }

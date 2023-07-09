@@ -51,6 +51,9 @@
       "kitty"
     ];
     # taps = [  ];
-    brews = [ "emacs-plus@28" ];
+    brews = [
+      "emacs-plus@28"
+      "terminal-notifier"
+    ];
   };
 }
