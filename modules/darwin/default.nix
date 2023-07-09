@@ -38,7 +38,17 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-  #    "raycast"
+      "1password"
+      "bartender"
+      "handbrake"
+      "keyboardcleantool"
+      "rectangle"
+      "tailscale"
+      "transmit"
+      "discord"
+      "vscodium"
+      "mailmate"
+      "raycast"
       "amethyst"
       "iina"
       "font-blex-mono-nerd-font"
