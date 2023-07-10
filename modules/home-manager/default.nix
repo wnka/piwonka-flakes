@@ -108,8 +108,8 @@
       gd = "git diff";
       glg = "git log";
       ll = "exa --group-directories-first --color-scale --icons -lbG --git";
-      vgm = "pushd ~/Dropbox/vgm; ./go.sh; popd";
-      pick = "pushd ~/Dropbox/vgm; ./pick.sh; popd";
+      vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
+      pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       hms = "home-manager switch -b backup";
@@ -120,6 +120,12 @@
   programs.bat = {
     enable = true;
     config = { theme = "Nord"; };
+    extraPackages = with pkgs.bat-extras; [
+      batgrep
+      batdiff
+      batman
+      batpipe
+    ];
   };
   programs.oh-my-posh = {
     enable = true;
