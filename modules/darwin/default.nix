@@ -38,12 +38,10 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      "1password"
       "amethyst"
       "authy"
       "bartender"
       "discord"
-      "firefox"
       "font-blex-mono-nerd-font"
       "font-hack-nerd-font"
       "font-ibm-plex"
@@ -57,13 +55,10 @@
       "keyboardcleantool"
       "kindle"
       "kitty"
-      "mailmate"
       "raycast"
       "rectangle"
       "sonos"
       "steam"
-      "tailscale"
-      "the-unarchiver"
       "transmit"
       "vscodium"
     ];

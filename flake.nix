@@ -37,7 +37,11 @@
               useGlobalPkgs = true;
               # Setting this to false fixed problems with ~/.nix-profile
               useUserPackages = false;
-              users.${user}.imports = [ ./modules/home-manager ];
+              users.${user}.imports =
+                [
+                  ./modules/home-manager
+                  ./modules/home-manager/mac-home
+                ];
             };
           }
         ];
@@ -55,6 +59,7 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./modules/home-manager
+          ./modules/home-manager/linux-home
           ({ ... }: {
             home = {
               username = user;
@@ -76,6 +81,29 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./modules/home-manager
+          ./modules/home-manager/linux-home
+          ({ ... }: {
+            home = {
+              username = user;
+              homeDirectory = "/home/${user}";
+            };
+          })
+        ];
+      };
+
+    # standalone home-manager installation
+    homeConfigurations.clouddesktop =
+      let
+        user = "piwonka";
+        system = "x86_64-linux";
+      in home-manager.lib.homeManagerConfiguration {
+        # modifies pkgs to allow unfree packages
+        pkgs = import nixpkgs { inherit system; };
+        # makes all inputs available in imported files
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./modules/home-manager
+          ./modules/home-manager/linux-work
           ({ ... }: {
             home = {
               username = user;

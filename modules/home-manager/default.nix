@@ -43,20 +43,9 @@
   programs.fish = {
     enable = true;
     shellInit = ''
-      # Nix
-      if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
-        source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
-      end
       # End Nix
       # Clear the greeting
       set -g fish_greeting
-
-      fish_add_path /Applications/Emacs.app/Contents/MacOS/
-      fish_add_path /opt/homebrew/bin
-      fish_add_path /Users/piwonka/bin
-      fish_add_path /run/current-system/sw/bin
-      # Work stuff
-      fish_add_path /Users/piwonka/.toolbox/bin
 
       export LS_COLORS="$(vivid generate nord)"
 
@@ -101,19 +90,12 @@
       less = "bat";
       doomup = "~/.emacs.d/bin/doom -! upgrade";
       du = "dust";
-      e = "open -a /Applications/Emacs.app";
       gst = "git status";
       gco = "git checkout";
       gb = "git branch";
       gd = "git diff";
       glg = "git log";
       ll = "exa --group-directories-first --color-scale --icons -lbG --git";
-      vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
-      pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
-      funtime = "bash ~/bin/funtime.sh";
-      worktime = "bash ~/bin/worktime.sh";
-      hms = "home-manager switch -b backup";
-      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
       tma = "tmux new-session -A -s main";
     };
   };
