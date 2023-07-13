@@ -1,11 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    emacs
+    util-linux # for chsh
+  ];
+
   programs.fish = {
     shellInit = ''
       # Nix
-      if test -e '/home/piwonka/.nix-profile/etc/profile.d/nix.fish'
-        source '/home/piwonka/.nix-profile/etc/profile.d/nix.fish'
+      if test -e ~/.nix-profile/etc/profile.d/nix.fish
+        source ~/.nix-profile/etc/profile.d/nix.fish
       end
       # End Nix
     '';

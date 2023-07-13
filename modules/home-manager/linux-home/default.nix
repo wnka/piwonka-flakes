@@ -1,12 +1,19 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    emacs
+    gcc13
+    util-linux # for chsh
+  ];
+
   programs.fish = {
     shellInit = ''
       # Nix
-      if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
-        source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+      if test -e ~/.nix-profile/etc/profile.d/nix.fish
+        source ~/.nix-profile/etc/profile.d/nix.fish
       end
+      # End Nix
       fish_add_path /run/current-system/sw/bin
     '';
     shellAliases = {
