@@ -17,6 +17,7 @@
     git-crypt
     gnupg
     hugo
+    hyperfine
     imagemagick
     jq
     nixfmt
