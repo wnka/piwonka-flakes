@@ -21,8 +21,10 @@
     imagemagick
     jq
     nixfmt
+    nodePackages.mermaid-cli
     mosh
     oha
+    pandoc
     ripgrep
     rustup
     vegeta

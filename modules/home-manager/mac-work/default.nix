@@ -11,12 +11,17 @@
       fish_add_path /Applications/Emacs.app/Contents/MacOS/
       fish_add_path /opt/homebrew/bin
       fish_add_path /Users/piwonka/bin
+      fish_add_path /Users/piwonka/.toolbox/bin
     '';
     shellAliases = {
       e = "open -a /Applications/Emacs.app";
       vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
       pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
-      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
+      funtime = "bash ~/bin/funtime.sh";
+      worktime = "bash ~/bin/worktime.sh";
+      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
+      towiki = "pandoc --wrap=none -f org -t xwiki (fzf) | pbcopy";
+      tomarkdown = "pandoc --wrap=none -f org -t markdown-smart";
     };
   };
 }
