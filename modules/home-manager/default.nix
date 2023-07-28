@@ -21,7 +21,6 @@
     imagemagick
     jq
     nixfmt
-    nodePackages.mermaid-cli
     mosh
     oha
     pandoc
