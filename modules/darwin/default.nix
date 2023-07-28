@@ -62,7 +62,9 @@
       "transmit"
       "vscodium"
     ];
-    # taps = [  ];
+    taps = [
+      "d12frosted/emacs-plus"
+    ];
     brews = [
       "emacs-plus@28"
       "terminal-notifier"
