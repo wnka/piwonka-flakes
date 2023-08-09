@@ -66,7 +66,15 @@
       "d12frosted/emacs-plus"
     ];
     brews = [
-      "emacs-plus@28"
+      {
+        name = "emacs-plus@28";
+        args = [
+          "with-native-comp"
+          "with-nobu417-big-sur-icon"
+          "with-xwidgets"
+        ];
+        link = true;
+      }
       "terminal-notifier"
     ];
   };
