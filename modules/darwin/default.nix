@@ -38,7 +38,6 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     casks = [
-      "amethyst"
       "authy"
       "bartender"
       "discord"
