@@ -9,8 +9,8 @@
   programs.fish = {
     shellInit = ''
       # Nix
-      if test -e ~/.nix-profile/etc/profile.d/nix.fish
-        source ~/.nix-profile/etc/profile.d/nix.fish
+      if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+        source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
       end
       # End Nix
       fish_add_path /home/piwonka/.toolbox/bin
