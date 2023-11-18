@@ -87,7 +87,7 @@
       '';
     };
     shellAliases = {
-      ls = "eza --group-directories-first --color-scale --icons";
+      ls = "eza --group-directories-first --color-scale all --icons";
       cat = "bat";
       less = "bat";
       doomup = "~/.emacs.d/bin/doom -! upgrade";
@@ -97,7 +97,7 @@
       gb = "git branch";
       gd = "git diff";
       glg = "git log";
-      ll = "eza --group-directories-first --color-scale --icons -lbG --git";
+      ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       tma = "tmux new-session -A -s main";
     };
   };
