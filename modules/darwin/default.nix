@@ -66,7 +66,7 @@
     ];
     brews = [
       {
-        name = "emacs-plus@28";
+        name = "emacs-plus@29";
         args = [
           "with-native-comp"
           "with-nobu417-big-sur-icon"
