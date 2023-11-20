@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     awscli2
     btop
-    curl
+    # curl # this was messing up internal websites on my work laptop
     delta
     difftastic
     du-dust

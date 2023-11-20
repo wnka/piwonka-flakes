@@ -21,7 +21,9 @@
       worktime = "bash ~/bin/worktime.sh";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
       towiki = "pandoc --wrap=none -f org -t xwiki (fzf) | pbcopy";
-      tomarkdown = "pandoc --wrap=none -f org -t markdown-smart";
+      tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf) | pbcopy";
+      bb = "brazil-build";
+      bbr = "brazil-build release";
     };
   };
 }

@@ -47,6 +47,7 @@
       "font-iosevka"
       "font-iosevka-slab"
       "font-jetbrains-mono-nerd-font"
+      "font-monaspace"
       "font-roboto-mono-nerd-font"
       "handbrake"
       "iina"
@@ -63,6 +64,7 @@
     ];
     taps = [
       "d12frosted/emacs-plus"
+      "homebrew/cask-fonts"
     ];
     brews = [
       {
