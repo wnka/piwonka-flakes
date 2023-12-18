@@ -26,6 +26,7 @@
     pandoc
     ripgrep
     rustup
+    trippy
     vegeta
     vivid
     zstd
