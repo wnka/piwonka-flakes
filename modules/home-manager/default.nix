@@ -92,6 +92,7 @@
       cat = "bat";
       less = "bat";
       doomup = "~/.emacs.d/bin/doom -! upgrade";
+      doomsync = "~/.emacs.d/bin/doom sync";
       du = "dust";
       gst = "git status";
       gco = "git checkout";
