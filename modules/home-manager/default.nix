@@ -68,25 +68,6 @@
         };
       }
     ];
-    functions = {
-      bimg = ''
-      set output_links
-      for i in $argv
-          set filename (basename $i)
-          set rootname (echo $filename | sed 's/\.[^.]*$//')
-          set output_filename "$rootname.jpg"
-          set link_path "/images/$output_filename"
-          set -a output_links $link_path
-          set output_filepath "/Users/piwonka/code/pdp80-blog/static/images/$output_filename"
-          echo "Processing: $filename" 1>&2
-          convert $i -auto-orient -resize 1024x1024 -density 72 -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace sRGB $output_filepath
-      end
-
-      for link in $output_links
-          echo "{{< figure src=\"$link\" alt=\"ALT\" caption=\"CAPTION\" >}}"
-      end
-      '';
-    };
     shellAliases = {
       ls = "eza --group-directories-first --color-scale all --icons";
       cat = "bat";
