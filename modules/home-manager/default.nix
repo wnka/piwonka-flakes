@@ -153,29 +153,14 @@
     sensibleOnTop = false;
     prefix = "`";
     keyMode = "emacs";
-    plugins = with pkgs; [
-      tmuxPlugins.tmux-fzf
-      tmuxPlugins.prefix-highlight
-      tmuxPlugins.copycat
-      tmuxPlugins.fzf-tmux-url
-      tmuxPlugins.extrakto
-      tmuxPlugins.yank
-      {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_host "on"
-          set -g @catppuccin_left_separator "█"
-          set -g @catppuccin_right_separator "█"
-          #set -g @catppuccin_window_tabs_enabled on
-        '';
-      }
-    ];
     extraConfig = ''
       # Split panes with \ and -
       bind \\ split-window -h
       bind - split-window -v
       unbind '"'
       unbind %
+
+      bind r source ~/.config/tmux/tmux.conf
 
       set -g default-terminal "xterm-256color"
       set -ga terminal-overrides ",*256col*:Tc"
@@ -184,5 +169,32 @@
 
       set-option -g mouse on
     '';
+
+    plugins = with pkgs; [
+      tmuxPlugins.tmux-fzf
+      tmuxPlugins.prefix-highlight
+      tmuxPlugins.fzf-tmux-url
+      tmuxPlugins.extrakto
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+        set -g @catppuccin_flavour 'macchiato'
+        set -g @catppuccin_host "on"
+        set -g @catppuccin_left_separator "█"
+        set -g @catppuccin_right_separator "█"
+        '';
+      }
+#      {
+#        plugin = tmuxPlugins.dracula;
+#        extraConfig = ''
+#        set -g @dracula-show-battery false
+#        set -g @dracula-show-powerline false
+#        set -g @dracula-refresh-rate 10
+#        set -g @dracula-show-weather false
+#        set -g @dracula-plugins "time"
+#        set -g @dracula-show-left-icon session
+#      '';
+#      }
+    ];
   };
 }
