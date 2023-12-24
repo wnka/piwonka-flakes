@@ -28,7 +28,6 @@
     rustup
     trippy
     vegeta
-    vivid
     zstd
   ];
   home.sessionVariables = {
@@ -49,9 +48,6 @@
       # End Nix
       # Clear the greeting
       set -g fish_greeting
-
-      export LS_COLORS="$(vivid generate nord)"
-
       fzf_configure_bindings
     '';
     plugins = [
@@ -86,7 +82,7 @@
   };
   programs.bat = {
     enable = true;
-    config = { theme = "Nord"; };
+    config = { theme = "ansi"; };
     extraPackages = with pkgs.bat-extras; [
       batgrep
       batdiff

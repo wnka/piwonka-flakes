@@ -4,7 +4,7 @@
 [color]
 	ui = auto
 [core]
-	pager = delta --dark
+	pager = delta --syntax-theme ansi
 	editor = emacs
 [push]
 	default = simple
