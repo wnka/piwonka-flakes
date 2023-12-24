@@ -115,15 +115,16 @@
     settings = {
       disable_ligatures = "always";
       cursor_shape = "block";
-      font_family = "Hack Nerd Font";
-      font_size = "14.0";
-      adjust_line_height = "8";
+      font_family = "JetBrainsMono Nerd Font Light";
+      font_size = "16.0";
+      modify_font = "cell_width 90%";
       cursor_blink_interval = "0";
       map = "kitty_mod+minus no_op";
       macos_option_as_alt = "yes";
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       tab_powerline_type = "slanted";
+      window_margin_width = "2";
     };
     theme = "Tokyo Night Storm";
   };
