@@ -122,7 +122,7 @@
       tab_powerline_type = "slanted";
       window_margin_width = "2";
     };
-    theme = "Tokyo Night Storm";
+    theme = "Tokyo Night";
   };
 
   programs.tmux = {
