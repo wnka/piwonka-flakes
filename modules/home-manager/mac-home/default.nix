@@ -13,7 +13,8 @@
       fish_add_path /Users/piwonka/bin
     '';
     shellAliases = {
-      e = "open -a /Applications/Emacs.app";
+      e = "emacsclient -nc";
+      et = "TERM=xterm-emacs emacsclient -nw";
       vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
       pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";

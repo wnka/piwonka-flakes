@@ -14,7 +14,8 @@
       fish_add_path /Users/piwonka/.toolbox/bin
     '';
     shellAliases = {
-      e = "open -a /Applications/Emacs.app";
+      e = "emacsclient -nc";
+      et = "TERM=xterm-emacs emacsclient -nw";
       vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
       pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
       funtime = "bash ~/bin/funtime.sh";

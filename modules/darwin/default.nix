@@ -75,6 +75,7 @@
           "with-xwidgets"
         ];
         link = true;
+        start_service = true;
       }
       "terminal-notifier"
     ];
