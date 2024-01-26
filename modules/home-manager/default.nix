@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
@@ -37,6 +37,10 @@
 
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
+
+  home.activation.installTerminfo = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    tic -x -o ~/.terminfo ${./files/terminfo}
+  '';
 
   programs.git = {
     enable = true;
