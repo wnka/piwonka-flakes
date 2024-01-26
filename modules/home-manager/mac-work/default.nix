@@ -16,8 +16,6 @@
     shellAliases = {
       e = "emacsclient -nc";
       et = "TERM=xterm-emacs emacsclient -nw";
-      vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
-      pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
