@@ -23,6 +23,7 @@
     nixfmt
     mosh
     oha
+    pam-reattach
     pandoc
     ripgrep
     rustup
