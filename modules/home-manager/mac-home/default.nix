@@ -13,7 +13,7 @@
       fish_add_path /Users/piwonka/bin
     '';
     shellAliases = {
-      e = "emacsclient -nc";
+      e = "emacsclient -nc $@; osascript -e 'tell application \"Emacs\" to activate'";
       et = "TERM=xterm-emacs emacsclient -nw";
       vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
       pick = "pushd ~/syncme/vgm; ./pick.sh; popd";

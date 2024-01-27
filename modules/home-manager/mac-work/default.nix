@@ -14,7 +14,7 @@
       fish_add_path /Users/piwonka/.toolbox/bin
     '';
     shellAliases = {
-      e = "emacsclient -nc";
+      e = "emacsclient -nc $@; osascript -e 'tell application \"Emacs\" to activate'";
       et = "TERM=xterm-emacs emacsclient -nw";
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
