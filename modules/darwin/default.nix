@@ -59,8 +59,8 @@
       "rectangle"
       "sonos"
       "steam"
+      "syncthing"
       "transmit"
-      "vscodium"
     ];
     taps = [
       "d12frosted/emacs-plus"
