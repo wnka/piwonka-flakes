@@ -54,6 +54,8 @@
       # Clear the greeting
       set -g fish_greeting
       fzf_configure_bindings
+
+      set -U pure_color_current_directory magenta
     '';
     plugins = [
       { name = "pure"; src = pkgs.fishPlugins.pure.src; }
