@@ -15,8 +15,6 @@
     shellAliases = {
       e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";
       et = "TERM=xterm-emacs emacsclient -nw";
-      vgm = "pushd ~/syncme/vgm; ./go.sh; popd";
-      pick = "pushd ~/syncme/vgm; ./pick.sh; popd";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
     };
   };
