@@ -126,7 +126,7 @@
       tab_powerline_type = "slanted";
       window_margin_width = "2";
     };
-    theme = "Tokyo Night";
+    theme = "shadotheme";
   };
 
   programs.tmux = {
