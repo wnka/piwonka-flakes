@@ -56,16 +56,18 @@
       fzf_configure_bindings
     '';
     plugins = [
+      { name = "pure"; src = pkgs.fishPlugins.pure.src; }
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+      { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
       # Need this when using Fish as a default macOS shell in order to pick
       # up ~/.nix-profile/bin
       {
-        name = "nix-env";
+        name = "nix-fish";
         src = pkgs.fetchFromGitHub {
-          owner = "lilyball";
-          repo = "nix-env.fish";
-          rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
-          sha256 = "vi4sYoI366FkIonXDlf/eE2Pyjq7E/kOKBrQS+LtE+M=";
+          owner = "kidonng";
+          repo = "nix.fish";
+          rev = "ad57d970841ae4a24521b5b1a68121cf385ba71e";
+          sha256 = "GMV0GyORJ8Tt2S9wTCo2lkkLtetYv0rc19aA5KJbo48=";
         };
       }
     ];
@@ -94,11 +96,6 @@
       batman
       batpipe
     ];
-  };
-  programs.oh-my-posh = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./files/oh-my-posh-theme.omp.json));
   };
   programs.fzf = {
     enable = true;
