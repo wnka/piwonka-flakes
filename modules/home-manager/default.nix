@@ -157,26 +157,18 @@
       tmuxPlugins.prefix-highlight
       tmuxPlugins.fzf-tmux-url
       tmuxPlugins.extrakto
+      # https://draculatheme.com/tmux
       {
-        plugin = tmuxPlugins.catppuccin;
+        plugin = tmuxPlugins.dracula;
         extraConfig = ''
-        set -g @catppuccin_flavour 'macchiato'
-        set -g @catppuccin_host "on"
-        set -g @catppuccin_left_separator "█"
-        set -g @catppuccin_right_separator "█"
-        '';
+        set -g @dracula-show-battery true
+        set -g @dracula-show-powerline false
+        set -g @dracula-refresh-rate 10
+        set -g @dracula-show-weather false
+        set -g @dracula-plugins "battery time"
+        set -g @dracula-show-left-icon session
+      '';
       }
-#      {
-#        plugin = tmuxPlugins.dracula;
-#        extraConfig = ''
-#        set -g @dracula-show-battery false
-#        set -g @dracula-show-powerline false
-#        set -g @dracula-refresh-rate 10
-#        set -g @dracula-show-weather false
-#        set -g @dracula-plugins "time"
-#        set -g @dracula-show-left-icon session
-#      '';
-#      }
     ];
   };
 }
