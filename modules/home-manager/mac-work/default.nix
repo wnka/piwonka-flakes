@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    pam-reattach
+  ];
   programs.fish = {
     shellInit = ''
       # Nix
