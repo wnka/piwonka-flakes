@@ -22,6 +22,7 @@
       emacs-daemon = "TERM=xterm-emacs-leg command emacs --daemon";
       emacs-kill = "emacsclient -e '(kill-emacs)'";
       e = "TERM=xterm-emacs-leg command emacsclient -c -t";
+      et = "TERM=xterm-emacs-leg command emacsclient -c -t";
       bb = "brazil-build";
       bbr = "brazil-build release";
       nixs = "home-manager switch -b backup";

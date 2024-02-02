@@ -55,6 +55,8 @@
       fzf_configure_bindings
 
       set -U pure_color_current_directory magenta
+      # clear LS_COLORS
+      set -e LS_COLORS
     '';
     plugins = [
       { name = "pure"; src = pkgs.fishPlugins.pure.src; }
