@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     pam-reattach
+    eternal-terminal
   ];
   programs.fish = {
     shellInit = ''
@@ -18,7 +19,7 @@
     '';
     shellAliases = {
       e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";
-      et = "TERM=xterm-emacs emacsclient -nw";
+      ec = "TERM=xterm-emacs emacsclient -nw";
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
