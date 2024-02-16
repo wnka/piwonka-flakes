@@ -26,6 +26,7 @@
     pandoc
     ripgrep
     rustup
+    tmuxinator
     trippy
     vegeta
     zstd
