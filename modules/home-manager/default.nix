@@ -56,6 +56,7 @@
       fzf_configure_bindings
 
       set -U pure_color_current_directory magenta
+      set -U pure_symbol_prompt 🦄
       # clear LS_COLORS
       set -e LS_COLORS
 
