@@ -136,6 +136,7 @@
       tab_bar_style = "powerline";
       tab_powerline_type = "slanted";
       window_margin_width = "2";
+      copy_on_select = "yes";
     };
     theme = "shadotheme";
   };
@@ -168,6 +169,7 @@
       tmuxPlugins.prefix-highlight
       tmuxPlugins.fzf-tmux-url
       tmuxPlugins.extrakto
+      tmuxPlugins.yank
       # https://draculatheme.com/tmux
       {
         plugin = tmuxPlugins.dracula;

@@ -14,6 +14,13 @@
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
+  # Hack to make pam-reattach work
+  environment.etc."pam.d/sudo_local".text = ''
+    # Written by nix-darwin
+    auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
+    auth       sufficient     pam_tid.so
+  '';
+
   services.nix-daemon.enable = true;
   system.defaults = {
     finder.AppleShowAllExtensions = true;
@@ -22,6 +29,7 @@
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
+    NSGlobalDomain."com.apple.sound.beep.feedback" = 1;
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     trackpad = {
       Clicking = true;
@@ -56,12 +64,14 @@
       "keyboardcleantool"
       "kindle"
       "kitty"
+      "moonlight"
       "raycast"
       "rectangle"
       "sonos"
       "steam"
       "syncthing"
       "transmit"
+      "visual-studio-code"
     ];
     taps = [
       "d12frosted/emacs-plus"
@@ -78,7 +88,21 @@
         link = true;
         start_service = true;
       }
+      "mas"
       "terminal-notifier"
     ];
+    masApps = {
+      "Infuse" = 1136220934;
+      "Things 3" = 904280696;
+      "Pixelmator Pro" = 1289583905;
+      "Cog" = 1630499622;
+      "Reeder" = 1529448980;
+      "Ivory for Mastodon" = 6444602274;
+      "PCalc" = 403504866;
+      "1Password for Safari" = 1569813296;
+      "Tailscale" = 1475387142;
+      "Day One" = 1055511498;
+      "Xcode" = 497799835;
+    };
   };
 }
