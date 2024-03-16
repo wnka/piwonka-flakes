@@ -92,16 +92,17 @@
       "terminal-notifier"
     ];
     masApps = {
-      "Infuse" = 1136220934;
-      "Things 3" = 904280696;
-      "Pixelmator Pro" = 1289583905;
+      "1Password for Safari" = 1569813296;
       "Cog" = 1630499622;
-      "Reeder" = 1529448980;
+      "Day One" = 1055511498;
+      "Infuse" = 1136220934;
       "Ivory for Mastodon" = 6444602274;
       "PCalc" = 403504866;
-      "1Password for Safari" = 1569813296;
+      "Pixelmator Pro" = 1289583905;
+      "Reeder" = 1529448980;
+      "Spark Classic" = 1176895641;
       "Tailscale" = 1475387142;
-      "Day One" = 1055511498;
+      "Things 3" = 904280696;
       "Xcode" = 497799835;
     };
   };
