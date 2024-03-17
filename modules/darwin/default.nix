@@ -104,6 +104,7 @@
       "Spark Classic" = 1176895641;
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
+      "TripMode" = 1513400665;
       "Xcode" = 497799835;
     };
   };
