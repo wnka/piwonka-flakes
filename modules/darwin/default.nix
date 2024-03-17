@@ -88,6 +88,7 @@
         link = true;
         start_service = true;
       }
+      "gitwatch"
       "mas"
       "terminal-notifier"
     ];
