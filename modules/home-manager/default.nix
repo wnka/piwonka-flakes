@@ -20,6 +20,7 @@
     hugo
     hyperfine
     imagemagick
+    iperf
     jq
     nixfmt
     mosh
@@ -39,6 +40,8 @@
 
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
+
+  xdg.configFile."tmuxinator".source = ./files/tmuxinator;
 
   home.activation.installTerminfo = lib.hm.dag.entryAfter ["writeBoundary"] ''
     tic -x -o ~/.terminfo ${./files/terminfo}
