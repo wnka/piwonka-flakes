@@ -89,6 +89,7 @@
         start_service = true;
       }
       "gitwatch"
+      "hugo"
       "mas"
       "terminal-notifier"
     ];

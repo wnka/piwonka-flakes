@@ -17,7 +17,6 @@
     fd
     git-crypt
     gnupg
-    hugo
     hyperfine
     imagemagick
     iperf
