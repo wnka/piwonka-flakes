@@ -73,6 +73,7 @@
       "syncthing"
       "transmit"
       "visual-studio-code"
+      "wireshark"
     ];
     taps = [
       "d12frosted/emacs-plus"
