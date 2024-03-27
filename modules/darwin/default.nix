@@ -47,6 +47,7 @@
     onActivation.upgrade = true;
     casks = [
       "1password"
+      "arc"
       "authy"
       "bartender"
       "discord"
