@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     atuin
     awscli2
+    aws-sam-cli
     btop
     # curl # this was messing up internal websites on my work laptop
     delta
@@ -23,6 +24,7 @@
     jq
     nixfmt
     mosh
+    nodePackages.aws-cdk
     oha
     pandoc
     ripgrep
