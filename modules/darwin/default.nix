@@ -64,7 +64,6 @@
       "keybase"
       "keyboardcleantool"
       "kindle"
-      "kitty"
       "moonlight"
       "raycast"
       "rectangle"

@@ -29,6 +29,8 @@
       bbr = "brazil-build release";
       dw = "~/bin/daywon -p -w -l -m";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
+      work = "tmuxinator start work";
+      blog = "tmuxinator start blog";
     };
   };
 }

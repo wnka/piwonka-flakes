@@ -49,4 +49,8 @@ windows:
   - org: cd ~/org
   - flakes: cd ~/code/nix/piwonka-flakes
   - rust-fun: cd ~/ws/me/src/PiwonkaRustFunhouse
+  - metals:
+      panes:
+        - export AWS_PROFILE=work-me; cd ~/ws/metalcdk/src/PiwonkaMetalCDK; clear
+        - export AWS_PROFILE=metals; cd ~/ws/metalcdk/src/PiwonkaMetalCDK/helpers; clear
   - work:

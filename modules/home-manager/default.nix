@@ -131,7 +131,7 @@
       disable_ligatures = "always";
       cursor_shape = "block";
       font_family = "JetBrainsMono Nerd Font Light";
-      font_size = "16.0";
+      font_size = "15.0";
       modify_font = "cell_width 90%";
       cursor_blink_interval = "0";
       map = "kitty_mod+minus no_op";
