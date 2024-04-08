@@ -58,6 +58,7 @@
       "font-iosevka-slab"
       "font-jetbrains-mono-nerd-font"
       "font-monaspace"
+      "font-recursive-mono-nerd-font"
       "font-roboto-mono-nerd-font"
       "handbrake"
       "iina"
