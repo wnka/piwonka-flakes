@@ -17,6 +17,7 @@
     eza
     fd
     git-crypt
+    gnugrep
     gnupg
     hyperfine
     imagemagick
