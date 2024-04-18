@@ -23,7 +23,8 @@
     imagemagick
     iperf
     jq
-    nixfmt
+    nixfmt-rfc-style
+    mermaid-cli
     mosh
     nodePackages.aws-cdk
     oha

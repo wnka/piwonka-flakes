@@ -59,7 +59,7 @@
       "keybase"
       "keyboardcleantool"
       "kindle"
-      "monitorcontrol"
+      "lunar"
       "moonlight"
       "raycast"
       "rectangle"
