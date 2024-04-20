@@ -9,6 +9,7 @@
     awscli2
     aws-sam-cli
     btop
+    cmake
     # curl # this was messing up internal websites on my work laptop
     delta
     difftastic
