@@ -35,6 +35,7 @@
     tmuxinator
     trippy
     vegeta
+    yaml-language-server
     zstd
   ];
   home.sessionVariables = {
