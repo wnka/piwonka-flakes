@@ -99,7 +99,7 @@
       "PCalc" = 403504866;
       "Pixelmator Pro" = 1289583905;
       "Reeder" = 1529448980;
-      "Spark Classic" = 1176895641;
+      "Spark Mail" = 6445813049;
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
       "TripMode" = 1513400665;
