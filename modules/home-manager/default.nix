@@ -10,6 +10,7 @@
     aws-sam-cli
     bandwhich
     btop
+    cargo-lambda
     cmake
     # curl # this was messing up internal websites on my work laptop
     delta
