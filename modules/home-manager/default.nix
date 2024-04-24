@@ -30,6 +30,7 @@
     nodePackages.aws-cdk
     oha
     pandoc
+    pv
     ripgrep
     rustup
     tmuxinator
