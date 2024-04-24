@@ -19,6 +19,7 @@
     entr
     eza
     fd
+    fio
     git-crypt
     gnugrep
     gnupg
