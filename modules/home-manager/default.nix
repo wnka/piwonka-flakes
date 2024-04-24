@@ -8,6 +8,7 @@
     atuin
     awscli2
     aws-sam-cli
+    bandwhich
     btop
     cmake
     # curl # this was messing up internal websites on my work laptop
