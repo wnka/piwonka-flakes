@@ -51,6 +51,7 @@
       "authy"
       "bartender"
       "discord"
+      "domzilla-caffeine"
       "font-blex-mono-nerd-font"
       "font-jetbrains-mono-nerd-font"
       "font-recursive-mono-nerd-font"
