@@ -34,6 +34,7 @@
     oha
     pandoc
     pv
+    rage
     ripgrep
     rustup
     tmuxinator
