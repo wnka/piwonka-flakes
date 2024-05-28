@@ -101,6 +101,7 @@
       "Pixelmator Pro" = 1289583905;
       "Reeder" = 1529448980;
       "Spark Mail" = 6445813049;
+      "Stop The Madness Pro" = 6471380298;
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
       "TripMode" = 1513400665;
