@@ -14,6 +14,7 @@
       fish_add_path /Applications/Emacs.app/Contents/MacOS/
       fish_add_path /opt/homebrew/bin
       fish_add_path /Users/piwonka/bin
+      fish_add_path /opt/homebrew/opt/llvm/bin
     '';
     shellAliases = {
       e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";

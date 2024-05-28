@@ -88,6 +88,7 @@
       }
       "gitwatch"
       "hugo"
+      "llvm"
       "mas"
       "terminal-notifier"
     ];

@@ -16,6 +16,7 @@
       fish_add_path /opt/homebrew/bin
       fish_add_path /Users/piwonka/bin
       fish_add_path /Users/piwonka/.toolbox/bin
+      fish_add_path /opt/homebrew/opt/llvm/bin
     '';
     shellAliases = {
       e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";
