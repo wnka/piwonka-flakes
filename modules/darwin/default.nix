@@ -62,6 +62,7 @@
       "kindle"
       "lunar"
       "moonlight"
+      "nova"
       "raycast"
       "rectangle"
       "sonos"
