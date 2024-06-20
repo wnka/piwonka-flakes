@@ -55,6 +55,7 @@
       "font-blex-mono-nerd-font"
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
+      "font-zed-mono-nerd-font"
       "handbrake"
       "iina"
       "keybase"
@@ -71,6 +72,7 @@
       "transmit"
       "visual-studio-code"
       "wireshark"
+      "zed"
     ];
     taps = [
       "d12frosted/emacs-plus"
