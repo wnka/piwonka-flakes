@@ -14,6 +14,7 @@
     cmake
     # curl # this was messing up internal websites on my work laptop
     delta
+    devenv
     difftastic
     du-dust
     entr
