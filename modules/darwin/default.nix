@@ -11,6 +11,7 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  nix.settings.trusted-users = [ "root" "piwonka" ];
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
