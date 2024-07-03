@@ -70,8 +70,6 @@
       set -g fish_greeting
       fzf_configure_bindings
 
-      set -U pure_color_current_directory magenta
-      set -U pure_symbol_prompt 🦄
       # clear LS_COLORS
       set -e LS_COLORS
 
@@ -82,7 +80,6 @@
       atuin init fish | source
     '';
     plugins = [
-      { name = "pure"; src = pkgs.fishPlugins.pure.src; }
       { name = "done"; src = pkgs.fishPlugins.done.src; }
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
@@ -113,6 +110,11 @@
       ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       tma = "tmux new-session -A -s main";
     };
+  };
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = builtins.fromTOML (builtins.unsafeDiscardStringContext(builtins.readFile ./files/starship.toml));
   };
   programs.bat = {
     enable = true;
