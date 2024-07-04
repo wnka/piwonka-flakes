@@ -151,6 +151,12 @@
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       tab_powerline_type = "slanted";
+      active_tab_foreground = "#fff";
+      active_tab_background = "#1a659e";
+      active_tab_font_style = "bold-italic";
+      inactive_tab_foreground = "#efefd0";
+      inactive_tab_background = "#011627";
+      inactive_tab_font_style = "normal";
       window_margin_width = "2";
       copy_on_select = "yes";
     };
