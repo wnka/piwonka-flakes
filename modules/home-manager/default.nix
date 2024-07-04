@@ -160,7 +160,7 @@
       window_margin_width = "2";
       copy_on_select = "yes";
     };
-    theme = "shadotheme";
+    theme = "Catppuccin-Mocha";
   };
 
   programs.tmux = {

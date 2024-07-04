@@ -1,4 +1,5 @@
 format = """
+🦄 \
 $username\
 $hostname\
 $directory\
