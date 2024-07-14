@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     atuin
     awscli2
-    aws-sam-cli
+    # aws-sam-cli # busted
     bandwhich
     btop
     cargo-lambda
