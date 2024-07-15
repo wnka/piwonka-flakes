@@ -42,6 +42,7 @@
     trippy
     vegeta
     yaml-language-server
+    yazi
     zstd
   ];
   home.sessionVariables = {
