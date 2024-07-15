@@ -67,7 +67,6 @@
       "nova"
       "raycast"
       "rectangle"
-      "sonos"
       "steam"
       "syncthing"
       "transmit"
