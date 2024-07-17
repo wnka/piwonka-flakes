@@ -47,7 +47,7 @@
   ];
   home.sessionVariables = {
     PAGER = "bat";
-    EDITOR = "emacsclient";
+    EDITOR = "emacsclient -nw";
   };
 
   home.file.".inputrc".source = ./files/inputrc;
