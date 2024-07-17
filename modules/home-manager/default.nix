@@ -41,6 +41,7 @@
     tmuxinator
     trippy
     vegeta
+    xh
     yaml-language-server
     yazi
     zstd
