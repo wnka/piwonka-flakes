@@ -61,7 +61,6 @@
       "iina"
       "keybase"
       "keyboardcleantool"
-      "kindle"
       "lunar"
       "moonlight"
       "nova"
@@ -101,6 +100,7 @@
       "Day One" = 1055511498;
       "Infuse" = 1136220934;
       "Ivory for Mastodon" = 6444602274;
+      "Kindle" = 302584613;
       "PCalc" = 403504866;
       "Pixelmator Pro" = 1289583905;
       "Reeder" = 1529448980;
