@@ -57,6 +57,7 @@
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
       "font-zed-mono-nerd-font"
+      "font-cascadia-code-nf"
       "handbrake"
       "iina"
       "keybase"
@@ -75,7 +76,6 @@
     ];
     taps = [
       "d12frosted/emacs-plus"
-      "homebrew/cask-fonts"
     ];
     brews = [
       {
