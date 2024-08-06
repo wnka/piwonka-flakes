@@ -48,7 +48,6 @@
     onActivation.upgrade = true;
     casks = [
       "1password"
-      "arc"
       "authy"
       "bartender"
       "discord"
@@ -64,7 +63,6 @@
       "keyboardcleantool"
       "lunar"
       "moonlight"
-      "nova"
       "raycast"
       "rectangle"
       "steam"
@@ -108,7 +106,6 @@
       "Stop The Madness Pro" = 6471380298;
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
-      "TripMode" = 1513400665;
       "Xcode" = 497799835;
     };
   };
