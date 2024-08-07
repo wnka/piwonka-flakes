@@ -21,20 +21,25 @@
 
     zjstatus.url = "github:dj95/zjstatus";
   };
-  outputs = inputs@{ nixpkgs, zjstatus, home-manager, darwin, ... }: {
 
+  outputs = { self, nixpkgs, zjstatus, home-manager, darwin, ... }@inputs: 
+    let
+    pkgsForSystem = system: import nixpkgs {
+      overlays = [
+          (final: prev: {
+            zjstatus = zjstatus.packages.${prev.system}.default;
+          })
+      ];
+      inherit system;
+    };
+    in {
     darwinConfigurations.mac =
       let
         user = "piwonka";
         system = "aarch64-darwin";
-        overlays = [
-          (final: prev: {
-            zjstatus = zjstatus.packages.${prev.system}.default;
-          })
-        ];
 
       in darwin.lib.darwinSystem {
-        pkgs = import nixpkgs { inherit system overlays; };
+        pkgs = pkgsForSystem system;
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";
