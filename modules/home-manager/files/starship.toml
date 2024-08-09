@@ -6,6 +6,7 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$aws\
 $cmd_duration\
 $line_break\
 $character"""
@@ -44,3 +45,8 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[aws]
+format = "[$symbol$profile]($style) "
+style = "bold yellow"
+symbol = " "

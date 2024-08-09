@@ -66,7 +66,7 @@
         user = "piwonka";
         system = "aarch64-darwin";
       in darwin.lib.darwinSystem {
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = pkgsForSystem system;
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";
