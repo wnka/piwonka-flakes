@@ -9,6 +9,15 @@ config.font = wezterm.font 'Cascadia Code NF'
 config.font_size = 16.0
 config.line_height = 1.2
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+
+config.window_padding = {
+  left = 2,
+  right = 2,
+  top = 0,
+  bottom = 0,
+}
+
 -- disable ligatures, I don't like that stuff
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
