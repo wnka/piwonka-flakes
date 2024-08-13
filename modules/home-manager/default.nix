@@ -60,6 +60,7 @@
   xdg.configFile."tmuxinator".source = ./files/tmuxinator;
 
   xdg.configFile."alacritty/alacritty.toml".source = ./files/alacritty.toml;
+  xdg.configFile."wezterm/wezterm.lua".source = ./files/wezterm/wezterm.lua;
 
   xdg.configFile."zellij/config.kdl".source = ./files/zellij/config.kdl;
   xdg.configFile."zellij/layouts/default.kdl".text = ''

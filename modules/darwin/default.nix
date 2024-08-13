@@ -71,6 +71,7 @@
       "syncthing"
       "transmit"
       "visual-studio-code"
+      "wezterm"
       "wireshark"
       "zed"
     ];
