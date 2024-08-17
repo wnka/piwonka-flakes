@@ -18,28 +18,17 @@
     # Controls system level software and settings including fonts
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    zjstatus.url = "github:dj95/zjstatus";
   };
 
-  outputs = { self, nixpkgs, zjstatus, home-manager, darwin, ... }@inputs: 
-    let
-    pkgsForSystem = system: import nixpkgs {
-      overlays = [
-          (final: prev: {
-            zjstatus = zjstatus.packages.${prev.system}.default;
-          })
-      ];
-      inherit system;
-    };
-    in {
+  outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
+    {
     darwinConfigurations.mac =
       let
         user = "piwonka";
         system = "aarch64-darwin";
 
       in darwin.lib.darwinSystem {
-        pkgs = pkgsForSystem system;
+        pkgs = import nixpkgs { inherit system; };
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";
@@ -66,7 +55,7 @@
         user = "piwonka";
         system = "aarch64-darwin";
       in darwin.lib.darwinSystem {
-        pkgs = pkgsForSystem system;
+        pkgs = import nixpkgs { inherit system; };
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";

@@ -1,6 +1,9 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+-- Import our new module (put this near the top of your wezterm.lua)
+local appearance = require 'appearance'
+
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
@@ -28,8 +31,12 @@ config.keys = {
 
 -- config.debug_key_events = true
 
--- For example, changing the color scheme:
-config.color_scheme = 'Tokyo Night Storm'
+-- Use it!
+if appearance.is_dark() then
+  config.color_scheme = 'Tokyo Night Storm'
+else
+  config.color_scheme = 'Tokyo Night Day'
+end
 
 -- and finally, return the configuration to wezterm
 return config

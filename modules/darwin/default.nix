@@ -99,6 +99,7 @@
       "1Password for Safari" = 1569813296;
       "Cog" = 1630499622;
       "Day One" = 1055511498;
+      "Fantastical" = 975937182;
       "Infuse" = 1136220934;
       "Ivory for Mastodon" = 6444602274;
       "Kindle" = 302584613;
