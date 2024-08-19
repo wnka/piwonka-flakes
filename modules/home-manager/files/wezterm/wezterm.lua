@@ -8,10 +8,10 @@ local appearance = require 'appearance'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font 'Cascadia Code NF'
+config.font = wezterm.font({ family = 'Berkeley Mono' })
 config.font_size = 16.0
-config.line_height = 1.2
-config.hide_tab_bar_if_only_one_tab = true
+config.line_height = 1.1
+config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 
 config.window_padding = {
@@ -20,9 +20,6 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
-
--- disable ligatures, I don't like that stuff
-config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 -- For emacs undo passthrough
 config.keys = {

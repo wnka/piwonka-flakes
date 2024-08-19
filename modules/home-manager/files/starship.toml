@@ -12,7 +12,7 @@ $line_break\
 $character"""
 
 [directory]
-style = "blue"
+style = "bold blue"
 
 [character]
 success_symbol = "[❯](purple)"
