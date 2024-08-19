@@ -125,12 +125,6 @@
   programs.bat = {
     enable = true;
     config = { theme = "ansi"; };
-    extraPackages = with pkgs.bat-extras; [
-      batgrep
-      batdiff
-      batman
-      batpipe
-    ];
   };
   programs.fzf = {
     enable = true;
