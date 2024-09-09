@@ -137,32 +137,6 @@
     nix-direnv.enable = true;
   };
 
-  programs.kitty = {
-    enable = true;
-    settings = {
-      disable_ligatures = "always";
-      cursor_shape = "block";
-      font_family = "JetBrainsMono Nerd Font Light";
-      font_size = "15.0";
-      modify_font = "cell_width 90%";
-      cursor_blink_interval = "0";
-      map = "kitty_mod+minus no_op";
-      macos_option_as_alt = "yes";
-      tab_bar_edge = "top";
-      tab_bar_style = "powerline";
-      tab_powerline_type = "slanted";
-      active_tab_foreground = "#fff";
-      active_tab_background = "#1a659e";
-      active_tab_font_style = "bold-italic";
-      inactive_tab_foreground = "#efefd0";
-      inactive_tab_background = "#011627";
-      inactive_tab_font_style = "normal";
-      window_margin_width = "2";
-      copy_on_select = "yes";
-    };
-    theme = "Catppuccin-Mocha";
-  };
-
   programs.tmux = {
     enable = true;
     baseIndex = 1;
