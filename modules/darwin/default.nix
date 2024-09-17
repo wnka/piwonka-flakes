@@ -37,6 +37,17 @@
       TrackpadThreeFingerDrag = true;
       Dragging = true;
     };
+    CustomUserPreferences = {
+      "com.apple.symbolichotkeys" = {
+        AppleSymbolicHotKeys = {
+          "64" = {
+            # Cmd-Space = Spotlight. I don't want it. Raycast instead!
+            # Will need to reboot for this to take effect.
+            enabled = false;
+          };
+        };
+      };
+    };
   };
   # backwards compat; don't change
   system.stateVersion = 4;
