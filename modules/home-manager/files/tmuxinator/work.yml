@@ -27,7 +27,9 @@ on_project_start: tic -x -o ~/.terminfo ~/code/nix/piwonka-flakes/modules/home-m
 # on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window:
+  - export AWS_PROFILE=personal
+  - export AWS_REGION=us-west-2
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -48,10 +50,5 @@ windows:
   - daywon: while true; clear; dw; sleep 1; end
   - org: cd ~/org
   - flakes: cd ~/code/nix/piwonka-flakes
-#  - metals:
-#      panes:
-#        - export AWS_PROFILE=work-me; cd ~/ws/metalcdk/src/PiwonkaMetalCDK; clear
-#        - export AWS_PROFILE=metals; cd ~/ws/metalcdk/src/PiwonkaMetalCDK/helpers; clear
-  - yazi: yazi
   - btop: btop -u 2345
   - getbusy:
