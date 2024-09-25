@@ -30,9 +30,9 @@ config.keys = {
 
 -- Use it!
 if appearance.is_dark() then
-  config.color_scheme = 'Tokyo Night Storm'
+  config.color_scheme = "melange_dark"
 else
-  config.color_scheme = 'Tokyo Night Day'
+  config.color_scheme = "melange_light"
 end
 
 -- and finally, return the configuration to wezterm
