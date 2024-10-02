@@ -119,6 +119,8 @@
       ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       tma = "tmux new-session -A -s main";
       utime = "command time"; # use the Linux time cmd, not the fish builtin
+      lg = "lazygit";
+      lz = "lazygit";
     };
   };
   programs.starship = {
