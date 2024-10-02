@@ -4,6 +4,9 @@
   home.packages = with pkgs; [
     emacs
     util-linux # for chsh
+    gcc
+    glibc
+    glib
   ];
 
   programs.fish = {
