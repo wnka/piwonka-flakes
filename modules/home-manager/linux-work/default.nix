@@ -28,7 +28,7 @@
       ec = "TERM=xterm-emacs-leg command emacsclient -c -t";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      nixs = "home-manager switch -b backup";
+      nixs = "nix --experimental-features \"nix-command flakes\" build \".#homeConfigurations.clouddesktop.activationPackage\" && ./result/activate";
     };
   };
 }
