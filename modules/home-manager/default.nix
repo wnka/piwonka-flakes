@@ -25,10 +25,12 @@
     git-crypt
     gnugrep
     gnupg
+    helix
     hyperfine
     imagemagick
     iperf
     jq
+    lazygit
     nixfmt-rfc-style
     mermaid-cli
     mosh
