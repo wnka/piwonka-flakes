@@ -1,0 +1,6 @@
+theme = "rose_pine_moon"
+
+[editor]
+# line-number = "relative"
+cursorline = true
+rulers = [80]

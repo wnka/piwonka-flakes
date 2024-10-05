@@ -63,7 +63,8 @@
 
   xdg.configFile."alacritty/alacritty.toml".source = ./files/alacritty.toml;
   xdg.configFile."wezterm".source = ./files/wezterm;
-
+  xdg.configFile."helix".source = ./files/helix;
+  
   home.activation.installTerminfo = lib.hm.dag.entryAfter ["writeBoundary"] ''
     tic -x -o ~/.terminfo ${./files/terminfo}
   '';
