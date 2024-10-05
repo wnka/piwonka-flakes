@@ -78,6 +78,7 @@
       "moonlight"
       "raycast"
       "rectangle"
+      "roon"
       "steam"
       "syncthing"
       "transmit"
