@@ -48,6 +48,7 @@
     xh
     yaml-language-server
     yazi
+    zellij
     zstd
   ];
   home.sessionVariables = {
