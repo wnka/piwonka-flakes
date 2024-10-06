@@ -1,6 +1,26 @@
 theme = "rose_pine_moon"
 
 [editor]
-# line-number = "relative"
 cursorline = true
 rulers = [80]
+color-modes = true
+true-color = true
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 234
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+# These are Emacs cheats, but I find using the arrow keys
+# when inserting is just a pain.
+[keys.insert]
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-x = "normal_mode"
