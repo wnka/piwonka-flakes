@@ -32,6 +32,7 @@
     jq
     lazygit
     nixfmt-rfc-style
+    marksman
     mermaid-cli
     mosh
     nodePackages.aws-cdk
