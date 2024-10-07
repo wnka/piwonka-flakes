@@ -1,0 +1,53 @@
+layout {
+    pane split_direction="vertical" {
+        pane
+    }
+
+    pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/zjstatus.wasm" {
+             // Nord theme                          
+            color_black "#3B4252"
+            color_red "#BF616A"
+            color_green "#A3BE8C"
+            color_yellow "#EBCB8B"
+            color_blue "#81A1C1"
+            color_magenta "#B48EAD"
+            color_cyan "#88C0D0"
+            color_white "#E5E9F0"
+            color_orange "#D08770"
+
+            hide_frame_for_single_pane "true"
+
+            format_left  "{mode}#[fg=#89B4FA,bg=#181825,bold] {session}#[bg=#181825] {tabs}"
+            format_right "{datetime}"
+            format_space "#[bg=#181825]"
+
+            mode_default_to_mode "tmux"
+
+            mode_normal        "#[bg=$green,fg=$bg,bold] NORMAL     #[bg=$bg,fg=$green]"
+            mode_locked        "#[bg=$red,fg=$bg,bold] LOCKED    #[bg=$bg,fg=$red]"
+            mode_resize        "#[bg=$blue,fg=$bg,bold] RESIZE     #[bg=$bg,fg=$blue]"
+            mode_pane          "#[bg=$blue,fg=$bg,bold] PANE       #[bg=$bg,fg=$blue]"
+            mode_tab           "#[bg=$yellow,fg=$bg,bold] TAB        #[bg=$bg,fg=$yellow]"
+            mode_scroll        "#[bg=$blue,fg=$bg,bold] SCROLL     #[bg=$bg,fg=$blue]"
+            mode_enter_search  "#[bg=$orange,fg=$bg,bold] ENT-SEARCH #[bg=$bg,fg=$orange]"
+            mode_search        "#[bg=$orange,fg=$bg,bold] SEARCHARCH #[bg=$bg,fg=$orange]"
+            mode_rename_tab    "#[bg=$yellow,fg=$bg,bold] RENAME-TAB #[bg=$bg,fg=$yellow]"
+            mode_rename_pane   "#[bg=$blue,fg=$bg,bold] RENAME-PANE#[bg=$bg,fg=$blue]"
+            mode_session       "#[bg=$blue,fg=$bg,bold] SESSION    #[bg=$bg,fg=$blue]"
+            mode_move          "#[bg=$blue,fg=$bg,bold] MOVE       #[bg=$bg,fg=$blue]"
+            mode_prompt        "#[bg=$blue,fg=$bg,bold] PROMPT     #[bg=$bg,fg=$blue]"
+            mode_tmux          "#[bg=$magenta,fg=$bg,bold] TMUX       #[bg=$bg,fg=$magenta]"
+
+            tab_normal               "#[fg=#6C7086,bg=#181825] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_active               "#[fg=#9399B2,bg=#181825,bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_fullscreen_indicator "□ "
+            tab_sync_indicator       "  "
+            tab_floating_indicator   "󰉈 "
+
+            datetime          "#[fg=#9399B2,bg=#181825] {format} "
+            datetime_format   "%a, %b %d %Y %H:%M"
+            datetime_timezone "America/Los_Angeles"
+        }
+    }
+}
