@@ -16,6 +16,9 @@ normal = "block"
 insert = "bar"
 select = "underline"
 
+[editor.soft-wrap]
+enable = true
+
 # These are Emacs cheats, but I find using the arrow keys
 # when inserting is just a pain.
 [keys.insert]
@@ -24,3 +27,5 @@ C-n = "move_line_down"
 C-a = "goto_line_start"
 C-e = "goto_line_end"
 C-x = "normal_mode"
+C-f = "move_char_right"
+C-b = "move_char_left"
