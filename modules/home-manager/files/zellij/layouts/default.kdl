@@ -5,16 +5,6 @@ layout {
 
     pane size=1 borderless=true {
         plugin location="file:~/.config/zellij/zjstatus.wasm" {
-            color_red "#f7768e"
-            color_orange "#ff9e64"
-            color_yellow "#e0af68"
-            color_green "#9ece6a"
-            color_purple "#9d7cd8"
-            color_cyan "#7dcfff"
-            color_pink "#bb9af7"
-            color_black "#181825"
-            color_blue "#7dcfff"
-
             // https://github.com/dracula/tmux/blob/master/scripts/dracula.sh#L40
             color_dracula_white "#f8f8f2"
             color_dracula_gray "#44475a"
@@ -27,6 +17,7 @@ layout {
             color_dracula_red "#ff5555"
             color_dracula_pink "#ff79c6"
             color_dracula_yellow "#f1fa8c"
+
             hide_frame_for_single_pane "true"
 
             format_left  "{mode}#[fg=$dracula_dark_gray,bg=$dracula_green,bold] {session}#[bg=$dracula_green] {tabs}"
@@ -36,19 +27,19 @@ layout {
             mode_default_to_mode "tmux"
 
             mode_normal        ""
-            mode_locked        "#[bg=$dracula_red,fg=$bg,bold] LOCKED  #[bg=$bg,fg=$dracula_red]"
-            mode_resize        "#[bg=$blue,fg=$bg,bold] RESIZE #[bg=$bg,fg=$blue]"
-            mode_pane          "#[bg=$blue,fg=$bg,bold] PANE #[bg=$bg,fg=$blue]"
-            mode_tab           "#[bg=$yellow,fg=$bg,bold] TAB #[bg=$bg,fg=$yellow]"
-            mode_scroll        "#[bg=$blue,fg=$bg,bold] SCROLL #[bg=$bg,fg=$blue]"
-            mode_enter_search  "#[bg=$orange,fg=$bg,bold] ENT-SEARCH #[bg=$bg,fg=$orange]"
-            mode_search        "#[bg=$orange,fg=$bg,bold] SEARCHARCH #[bg=$bg,fg=$orange]"
-            mode_rename_tab    "#[bg=$yellow,fg=$bg,bold] RENAME-TAB #[bg=$bg,fg=$yellow]"
-            mode_rename_pane   "#[bg=$blue,fg=$bg,bold] RENAME-PANE#[bg=$bg,fg=$blue]"
-            mode_session       "#[bg=$blue,fg=$bg,bold] SESSION #[bg=$bg,fg=$blue]"
-            mode_move          "#[bg=$blue,fg=$bg,bold] MOVE #[bg=$bg,fg=$blue]"
-            mode_prompt        "#[bg=$blue,fg=$bg,bold] PROMPT #[bg=$bg,fg=$blue]"
-            mode_tmux          "#[bg=$magenta,fg=$bg,bold] TMUX #[bg=$bg,fg=$magenta]"
+            mode_locked        "#[bg=$dracula_red,fg=$dracula_gray,bold] LOCKED  #[bg=$bg,fg=$dracula_red]"
+            mode_resize        "#[bg=$dracula_cyan,fg=$dracula_gray,bold] RESIZE #[bg=$bg,fg=$dracula_cyan]"
+            mode_pane          "#[bg=$dracula_orange,fg=$dracula_gray,bold] PANE #[bg=$bg,fg=$dracula_orange]"
+            mode_tab           "#[bg=$dracula_yellow,fg=$dracula_gray,bold] TAB #[bg=$bg,fg=$dracula_yellow]"
+            mode_scroll        "#[bg=$dracula_pink,fg=$dracula_gray,bold] SCROLL #[bg=$bg,fg=$dracula_pink]"
+            mode_enter_search  "#[bg=$dracula_orange,fg=$dracula_gray,bold] ENT-SEARCH #[bg=$bg,fg=$dracula_orange]"
+            mode_search        "#[bg=$dracula_orange,fg=$dracula_gray,bold] SEARCHARCH #[bg=$bg,fg=$dracula_orange]"
+            mode_rename_tab    "#[bg=$dracula_yellow,fg=$dracula_gray,bold] RENAME-TAB #[bg=$bg,fg=$dracula_yellow]"
+            mode_rename_pane   "#[bg=$dracula_cyan,fg=$dracula_gray,bold] RENAME-PANE#[bg=$bg,fg=$dracula_cyan]"
+            mode_session       "#[bg=$dracula_cyan,fg=$dracula_gray,bold] SESSION #[bg=$bg,fg=$dracula_cyan]"
+            mode_move          "#[bg=$dracula_cyan,fg=$dracula_gray,bold] MOVE #[bg=$bg,fg=$dracula_cyan]"
+            mode_prompt        "#[bg=$dracula_cyan,fg=$dracula_gray,bold] PROMPT #[bg=$bg,fg=$dracula_cyan]"
+            mode_tmux          "#[bg=$dracula_light_purple,fg=$dracula_gray,bold] TMUX #[bg=$bg,fg=$dracula_light_purple]"
 
             tab_normal               "#[fg=$dracula_white,bg=$dracula_gray] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
             tab_active               "#[fg=$dracula_white,bg=$dracula_dark_purple] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
@@ -57,7 +48,7 @@ layout {
             tab_floating_indicator   "󰉈 "
 
             datetime          "#[fg=$dracula_white,bg=$dracula_dark_purple] {format} "
-            datetime_format   "%a, %b %d %Y %H:%M"
+            datetime_format   "%a, %b %d %H:%M %Z"
             datetime_timezone "America/Los_Angeles"
         }
     }
