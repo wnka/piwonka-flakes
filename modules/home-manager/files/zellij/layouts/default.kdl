@@ -5,24 +5,59 @@ layout {
 
     pane size=1 borderless=true {
         plugin location="file:~/.config/zellij/zjstatus.wasm" {
+            color_red "#f7768e"
+            color_orange "#ff9e64"
+            color_yellow "#e0af68"
+            color_green "#9ece6a"
+            color_purple "#9d7cd8"
+            color_cyan "#7dcfff"
+            color_pink "#bb9af7"
+            color_black "#181825"
+            color_blue "#7dcfff"
+
+            // https://github.com/dracula/tmux/blob/master/scripts/dracula.sh#L40
+            color_dracula_white "#f8f8f2"
+            color_dracula_gray "#44475a"
+            color_dracula_dark_gray "#282a36"
+            color_dracula_light_purple "#bd93f9"
+            color_dracula_dark_purple "#6272a4"
+            color_dracula_cyan "#8be9fd"
+            color_dracula_green "#50fa7b"
+            color_dracula_orange "#ffb86c"
+            color_dracula_red "#ff5555"
+            color_dracula_pink "#ff79c6"
+            color_dracula_yellow "#f1fa8c"
             hide_frame_for_single_pane "true"
 
-            format_left  "{mode}#[fg=#89B4FA,bg=#181825,bold] {session}#[bg=#181825] {tabs}"
-            format_right "{command_kubectx}#[fg=#424554,bg=#181825]::{command_kubens}{datetime}"
-            format_space "#[bg=#181825]"
+            format_left  "{mode}#[fg=$dracula_dark_gray,bg=$dracula_green,bold] {session}#[bg=$dracula_green] {tabs}"
+            format_right "{datetime}"
+            format_space "#[bg=$dracula_gray]"
 
-            mode_normal          "#[bg=#89B4FA] "
-            mode_tmux            "#[bg=#ffc387] "
             mode_default_to_mode "tmux"
 
-            tab_normal               "#[fg=#6C7086,bg=#181825] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
-            tab_active               "#[fg=#9399B2,bg=#181825,bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            mode_normal        ""
+            mode_locked        "#[bg=$dracula_red,fg=$bg,bold] LOCKED  #[bg=$bg,fg=$dracula_red]"
+            mode_resize        "#[bg=$blue,fg=$bg,bold] RESIZE #[bg=$bg,fg=$blue]"
+            mode_pane          "#[bg=$blue,fg=$bg,bold] PANE #[bg=$bg,fg=$blue]"
+            mode_tab           "#[bg=$yellow,fg=$bg,bold] TAB #[bg=$bg,fg=$yellow]"
+            mode_scroll        "#[bg=$blue,fg=$bg,bold] SCROLL #[bg=$bg,fg=$blue]"
+            mode_enter_search  "#[bg=$orange,fg=$bg,bold] ENT-SEARCH #[bg=$bg,fg=$orange]"
+            mode_search        "#[bg=$orange,fg=$bg,bold] SEARCHARCH #[bg=$bg,fg=$orange]"
+            mode_rename_tab    "#[bg=$yellow,fg=$bg,bold] RENAME-TAB #[bg=$bg,fg=$yellow]"
+            mode_rename_pane   "#[bg=$blue,fg=$bg,bold] RENAME-PANE#[bg=$bg,fg=$blue]"
+            mode_session       "#[bg=$blue,fg=$bg,bold] SESSION #[bg=$bg,fg=$blue]"
+            mode_move          "#[bg=$blue,fg=$bg,bold] MOVE #[bg=$bg,fg=$blue]"
+            mode_prompt        "#[bg=$blue,fg=$bg,bold] PROMPT #[bg=$bg,fg=$blue]"
+            mode_tmux          "#[bg=$magenta,fg=$bg,bold] TMUX #[bg=$bg,fg=$magenta]"
+
+            tab_normal               "#[fg=$dracula_white,bg=$dracula_gray] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+            tab_active               "#[fg=$dracula_white,bg=$dracula_dark_purple] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
             tab_fullscreen_indicator "□ "
             tab_sync_indicator       "  "
             tab_floating_indicator   "󰉈 "
 
-            datetime          "#[fg=#9399B2,bg=#181825] {format} "
-            datetime_format   "%A, %d %b %Y %H:%M"
+            datetime          "#[fg=$dracula_white,bg=$dracula_dark_purple] {format} "
+            datetime_format   "%a, %b %d %Y %H:%M"
             datetime_timezone "America/Los_Angeles"
         }
     }
