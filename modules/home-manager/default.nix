@@ -125,6 +125,9 @@
       utime = "command time"; # use the Linux time cmd, not the fish builtin
       lg = "lazygit";
       lz = "lazygit";
+      zj = "zellij";
+      jz = "zellij";
+      h = "hx";
     };
   };
   programs.starship = {
