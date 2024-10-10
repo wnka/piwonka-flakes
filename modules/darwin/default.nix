@@ -76,6 +76,7 @@
       "keyboardcleantool"
       "lunar"
       "moonlight"
+      "obsidian"
       "raycast"
       "rectangle"
       "roon"
