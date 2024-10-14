@@ -20,7 +20,6 @@
       e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";
       ec = "TERM=xterm-emacs emacsclient -nw";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
-      blog = "tmuxinator start blog";
     };
   };
 }

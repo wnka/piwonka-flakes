@@ -43,7 +43,6 @@
     ripgrep
     rustup
     time
-    tmuxinator
     trippy
     vegeta
     xh
@@ -59,8 +58,6 @@
 
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
-
-  xdg.configFile."tmuxinator".source = ./files/tmuxinator;
 
   xdg.configFile."alacritty/alacritty.toml".source = ./files/alacritty.toml;
   xdg.configFile."wezterm".source = ./files/wezterm;
@@ -121,7 +118,6 @@
       gd = "git diff";
       glg = "git log";
       ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
-      tma = "tmux new-session -A -s main";
       utime = "command time"; # use the Linux time cmd, not the fish builtin
       lg = "lazygit";
       lz = "lazygit";
@@ -148,49 +144,5 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-  };
-
-  programs.tmux = {
-    enable = true;
-    baseIndex = 1;
-    sensibleOnTop = false;
-    prefix = "`";
-    keyMode = "emacs";
-    extraConfig = ''
-      # Split panes with \ and -
-      bind \\ split-window -h
-      bind - split-window -v
-      unbind '"'
-      unbind %
-
-      bind r source ~/.config/tmux/tmux.conf
-
-      set -g default-terminal "xterm-256color"
-      set -ga terminal-overrides ",*256col*:Tc"
-      set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
-      set-environment -g COLORTERM "truecolor"
-
-      set-option -g mouse on
-    '';
-
-    plugins = with pkgs; [
-      tmuxPlugins.tmux-fzf
-      tmuxPlugins.prefix-highlight
-      tmuxPlugins.fzf-tmux-url
-      tmuxPlugins.extrakto
-      tmuxPlugins.yank
-      # https://draculatheme.com/tmux
-      {
-        plugin = tmuxPlugins.dracula;
-        extraConfig = ''
-        set -g @dracula-show-battery true
-        set -g @dracula-show-powerline false
-        set -g @dracula-refresh-rate 10
-        set -g @dracula-show-weather false
-        set -g @dracula-plugins "battery time"
-        set -g @dracula-show-left-icon session
-      '';
-      }
-    ];
   };
 }
