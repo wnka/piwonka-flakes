@@ -23,3 +23,4 @@ enable = true
 # putting an Emacs-y keybinding for that.
 [keys.insert]
 C-x = "normal_mode"
+C-c = "normal_mode"
