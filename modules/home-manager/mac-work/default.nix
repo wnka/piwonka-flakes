@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     pam-reattach
-    eternal-terminal
   ];
   programs.fish = {
     shellInit = ''

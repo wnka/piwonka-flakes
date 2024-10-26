@@ -19,6 +19,7 @@
     difftastic
     du-dust
     entr
+    eternal-terminal
     eza
     fd
     fio
