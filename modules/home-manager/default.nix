@@ -59,7 +59,6 @@
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
 
-  xdg.configFile."alacritty/alacritty.toml".source = ./files/alacritty.toml;
   xdg.configFile."wezterm".source = ./files/wezterm;
   xdg.configFile."helix".source = ./files/helix;
   xdg.configFile."zellij".source = ./files/zellij;
