@@ -34,7 +34,7 @@
     nixfmt-rfc-style
     marksman
     mermaid-cli
-    mosh
+    # mosh
     nodePackages.aws-cdk
     oha
     pandoc
