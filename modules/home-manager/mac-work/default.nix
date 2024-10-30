@@ -23,8 +23,8 @@
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
-      towiki = "pandoc --wrap=none -f org -t xwiki (fzf) | pbcopy";
-      tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf) | pbcopy";
+      towiki = "pandoc --wrap=none -f org -t xwiki (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
+      tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
       dw = "~/bin/daywon -p -w -l -m -t -c";
