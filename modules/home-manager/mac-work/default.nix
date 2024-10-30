@@ -27,7 +27,7 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf) | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      dw = "~/bin/daywon -p -w -l -m -t";
+      dw = "~/bin/daywon -p -w -l -m -t -c";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
     };
   };
