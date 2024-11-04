@@ -36,7 +36,7 @@
     marksman
     mermaid-cli
     # mosh
-    nodePackages.aws-cdk
+    # nodePackages.aws-cdk
     oha
     pandoc
     pv
