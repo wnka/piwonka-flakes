@@ -3,7 +3,6 @@
   programs.fish.enable = true;
   environment = {
     shells = with pkgs; [ bash zsh fish ];
-    loginShell = pkgs.fish;
     systemPackages = [ pkgs.coreutils pkgs.direnv ];
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
