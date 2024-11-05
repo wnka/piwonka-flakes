@@ -44,6 +44,16 @@
             # Will need to reboot for this to take effect.
             enabled = false;
           };
+          "60" = {
+            # Input Sources > Select the previous input source : Ctrl + Space
+            # Disable it, messes with Emacs
+            enabled = false;
+          };
+          "61" = {
+            # Input Sources > Select next source in Input menu : Cmd + Space
+            # Disable it, messes with Emacs
+            enabled = false;
+          };
         };
       };
     };
