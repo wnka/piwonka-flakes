@@ -8,11 +8,8 @@
   home.packages = with pkgs; [
     atuin
     awscli2
-    # aws-sam-cli # busted
     bandwhich
     btop
-    cargo-lambda
-    cmake
     # curl # this was messing up internal websites on my work laptop
     delta
     devenv
@@ -35,8 +32,7 @@
     nixfmt-rfc-style
     marksman
     mermaid-cli
-    # mosh
-    # nodePackages.aws-cdk
+    mosh
     oha
     pandoc
     pv
@@ -108,6 +104,7 @@
     shellAliases = {
       ls = "eza --group-directories-first --color-scale all --icons";
       cat = "bat";
+      catp = "bat --style=plain";
       less = "bat";
       doomup = "~/.emacs.d/bin/doom -! upgrade";
       doomsync = "~/.emacs.d/bin/doom sync";
