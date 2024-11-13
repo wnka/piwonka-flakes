@@ -1,9 +1,0 @@
-// layout_file.kdl
-
-layout {
-    pane name="daywon" command="daywon"
-    pane split_direction="vertical" {
-        pane name="flakes" cwd="~/code/nix/piwonka-flakes"
-        pane name="org" cwd="~/org"
-    }
-}
