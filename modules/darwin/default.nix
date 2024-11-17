@@ -131,6 +131,7 @@
       "Stop The Madness Pro" = 6471380298;
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
+      "Webcam Settings" = 1610840452;
       "Xcode" = 497799835;
     };
   };
