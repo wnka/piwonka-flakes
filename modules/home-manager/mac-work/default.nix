@@ -13,6 +13,7 @@
       fish_add_path /run/current-system/sw/bin
       fish_add_path /Applications/Emacs.app/Contents/MacOS/
       fish_add_path /opt/homebrew/bin
+      fish_add_path /opt/homebrew/sbin
       fish_add_path /Users/piwonka/bin
       fish_add_path /Users/piwonka/.toolbox/bin
       fish_add_path /opt/homebrew/opt/llvm/bin
