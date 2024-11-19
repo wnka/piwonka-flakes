@@ -68,7 +68,6 @@
     onActivation.upgrade = true;
     casks = [
       "1password"
-      "arc"
       "authy"
       "bartender"
       "discord"
@@ -84,7 +83,6 @@
       "keyboardcleantool"
       "lunar"
       "moonlight"
-      "obsidian"
       "raycast"
       "rectangle"
       "roon"
@@ -93,8 +91,6 @@
       "transmit"
       "visual-studio-code"
       "wezterm"
-      "wireshark"
-      "zed"
     ];
     taps = [
       "d12frosted/emacs-plus"
@@ -132,7 +128,6 @@
       "Tailscale" = 1475387142;
       "Things 3" = 904280696;
       "Webcam Settings" = 1610840452;
-      "Xcode" = 497799835;
     };
   };
 }
