@@ -81,6 +81,7 @@
       "iina"
       "keybase"
       "keyboardcleantool"
+      "logi-options+"
       "lunar"
       "moonlight"
       "raycast"
