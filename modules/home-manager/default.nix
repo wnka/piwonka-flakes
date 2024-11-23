@@ -79,14 +79,9 @@
       # clear LS_COLORS
       set -e LS_COLORS
 
-      # 'done' plugin doesn't handle kitty on Mac well because it prioritizes kitty over terminal-notifier
-      # so let's set our own notification command
-      set -g __done_notification_command "echo \"\$message\" | terminal-notifier -title \"\$title\""
-
       atuin init fish | source
     '';
     plugins = [
-      { name = "done"; src = pkgs.fishPlugins.done.src; }
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
       # Need this when using Fish as a default macOS shell in order to pick
