@@ -79,6 +79,7 @@
       "font-cascadia-code-nf"
       "handbrake"
       "iina"
+      "jabra-direct"
       "keybase"
       "keyboardcleantool"
       "logi-options+"
@@ -111,6 +112,7 @@
       "hugo"
       "llvm"
       "mas"
+      "watch"
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
