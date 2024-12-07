@@ -1,6 +1,6 @@
 format = """
 🦄 \
-$os  \
+$os \
 $directory\
 $git_branch\
 $git_state\
@@ -63,13 +63,13 @@ Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
-Macos = ""
+Macos = "🍎"
 Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
 Fedora = "󰣛"
 Alpine = ""
-Amazon = ""
+Amazon = "🐧"
 Android = ""
 Arch = "󰣇"
 Artix = "󰣇"
