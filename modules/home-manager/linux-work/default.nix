@@ -7,6 +7,7 @@
     gcc
     glibc
     glib
+    pinentry-curses
   ];
 
   programs.fish = {
