@@ -1,5 +1,4 @@
 format = """
-🦄 \
 $os \
 $directory\
 $git_branch\
@@ -63,7 +62,7 @@ Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
-Macos = "🍎"
+Macos = "🦄"
 Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
