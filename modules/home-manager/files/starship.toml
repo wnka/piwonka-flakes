@@ -1,7 +1,6 @@
 format = """
 🦄 \
-$username\
-$hostname\
+$os  \
 $directory\
 $git_branch\
 $git_state\
@@ -10,6 +9,9 @@ $aws\
 $cmd_duration\
 $line_break\
 $character"""
+
+[username]
+format = "[$user]($style) "
 
 [directory]
 style = "bold blue"
@@ -50,3 +52,28 @@ style = "bright-black"
 format = "[$symbol$profile]($style) "
 style = "bold yellow"
 symbol = " "
+
+[os]
+disabled = false
+style = " fg:text"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
