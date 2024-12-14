@@ -1,0 +1,10 @@
+[manager]
+linemode = "size"
+sort_by = "size"
+sort_dir_first = true
+show_symlink = false
+
+[preview]
+max_width = 4096
+max_height = 4096
+tab_size = 2
