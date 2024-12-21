@@ -109,7 +109,6 @@
         start_service = true;
       }
       "gitwatch"
-      "hugo"
       "llvm"
       "mas"
       "watch"
