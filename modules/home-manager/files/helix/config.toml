@@ -5,6 +5,8 @@ cursorline = true
 rulers = [80]
 color-modes = true
 true-color = true
+auto-format = true
+auto-completion = true
 
 [editor.auto-save]
 focus-lost = true
@@ -18,6 +20,16 @@ select = "underline"
 
 [editor.soft-wrap]
 enable = true
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
 
 # I want to be able to go back to normal mode keeping fingers on home row, so
 # putting an Emacs-y keybinding for that.
