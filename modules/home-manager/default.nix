@@ -30,6 +30,7 @@
     jq
     lazygit
     nixfmt-rfc-style
+    markdown-oxide
     marksman
     mermaid-cli
     mosh
@@ -46,6 +47,7 @@
     yaml-language-server
     yazi
     zellij
+    zk
     zstd
   ];
   home.sessionVariables = {
