@@ -106,7 +106,7 @@
           "with-xwidgets"
         ];
         link = true;
-        start_service = true;
+        start_service = false;
       }
       "gitwatch"
       "llvm"
