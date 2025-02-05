@@ -22,6 +22,7 @@
       fish_add_path /nix/var/nix/profiles/default/bin
       fish_add_path /apollo/env/LambdaOperationalTools/bin
       fish_add_path /apollo/env/LambdaStatsOperationalTools/bin
+      fish_add_path /apollo/env/envImprovement/bin
     '';
     shellAliases = {
       emacs-daemon = "TERM=xterm-emacs-leg command emacs --daemon";
