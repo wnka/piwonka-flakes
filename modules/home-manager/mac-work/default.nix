@@ -30,6 +30,10 @@
       bbr = "brazil-build release";
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -m -t -c";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
+      # Intel DevDesktop
+      et-i = "et etdesktop";
+      # Arm DevDesktop
+      et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal armdesktop";
     };
   };
 }
