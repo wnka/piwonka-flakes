@@ -63,16 +63,13 @@
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
   home.file.".gitconfig.work".source = ./files/gitconfig-work;
-
+  home.file.".gnupg/gpg-agent.conf".source = ./files/gpg-agent.conf;
+  
   xdg.configFile."wezterm".source = ./files/wezterm;
   xdg.configFile."helix".source = ./files/helix;
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
   
-  home.activation.installTerminfo = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    tic -x -o ~/.terminfo ${./files/terminfo}
-  '';
-
   programs.git = {
     enable = true;
   };
