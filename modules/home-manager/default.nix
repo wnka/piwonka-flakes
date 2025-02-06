@@ -4,6 +4,11 @@
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
 
+  # Without this I get lang/local errors on ssh/login
+  # https://github.com/nix-community/home-manager/issues/432
+  programs.man.enable = false;
+  home.extraOutputsToInstall = [ "man" ];
+
   # specify my home-manager configs
   home.packages = with pkgs; [
     atuin
