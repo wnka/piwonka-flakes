@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, configName, ... }:
 
 {
   home.packages = with pkgs; [
@@ -31,7 +31,7 @@
       ec = "TERM=xterm-emacs-leg command emacsclient -c -t";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      nixs = "nix --experimental-features \"nix-command flakes\" build \".#homeConfigurations.clouddesktop.activationPackage\" && ./result/activate";
+      nixs = "nix --experimental-features \"nix-command flakes\" build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
     };
   };
 }

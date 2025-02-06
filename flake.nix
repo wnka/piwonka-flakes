@@ -130,7 +130,10 @@
         # modifies pkgs to allow unfree packages
         pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          configName = "clouddesktop";
+        };
         modules = [
           ./modules/home-manager
           ./modules/home-manager/linux-work
@@ -152,7 +155,10 @@
         # modifies pkgs to allow unfree packages
         pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          configName = "clouddesktop-arm";
+        };
         modules = [
           ./modules/home-manager
           ./modules/home-manager/linux-work
