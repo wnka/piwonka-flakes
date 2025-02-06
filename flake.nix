@@ -142,5 +142,27 @@
           })
         ];
       };
+
+    # standalone home-manager installation
+    homeConfigurations.clouddesktop-arm =
+      let
+        user = "piwonka";
+        system = "aarch64-linux";
+      in home-manager.lib.homeManagerConfiguration {
+        # modifies pkgs to allow unfree packages
+        pkgs = import nixpkgs { inherit system; };
+        # makes all inputs available in imported files
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./modules/home-manager
+          ./modules/home-manager/linux-work
+          ({ ... }: {
+            home = {
+              username = user;
+              homeDirectory = "/home/${user}";
+            };
+          })
+        ];
+      };
   };
 }
