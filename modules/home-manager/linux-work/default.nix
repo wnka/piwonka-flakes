@@ -10,6 +10,8 @@
     pinentry-curses
   ];
 
+  home.file.".gnupg/gpg-agent.conf".source = ./files/gpg-agent.conf;
+  
   programs.fish = {
     shellInit = ''
       # Nix

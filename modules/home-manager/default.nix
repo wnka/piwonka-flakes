@@ -63,7 +63,6 @@
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
   home.file.".gitconfig.work".source = ./files/gitconfig-work;
-  home.file.".gnupg/gpg-agent.conf".source = ./files/gpg-agent.conf;
   
   xdg.configFile."wezterm".source = ./files/wezterm;
   xdg.configFile."helix".source = ./files/helix;
