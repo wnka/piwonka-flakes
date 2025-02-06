@@ -62,6 +62,7 @@
 
   home.file.".inputrc".source = ./files/inputrc;
   home.file.".gitconfig".source = ./files/gitconfig;
+  home.file.".gitconfig.work".source = ./files/gitconfig-work;
 
   xdg.configFile."wezterm".source = ./files/wezterm;
   xdg.configFile."helix".source = ./files/helix;
