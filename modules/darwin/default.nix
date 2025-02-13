@@ -11,6 +11,10 @@
     experimental-features = nix-command flakes
   '';
   nix.settings.trusted-users = [ "root" "piwonka" ];
+  # It start complaining at me.
+  # Seems related to this:
+  # https://github.com/LnL7/nix-darwin/blob/a6746213b138fe7add88b19bafacd446de574ca7/CHANGELOG#L22
+  ids.gids.nixbld = 350;
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
 
@@ -21,7 +25,6 @@
     auth       sufficient     pam_tid.so
   '';
 
-  services.nix-daemon.enable = true;
   system.defaults = {
     finder.AppleShowAllExtensions = true;
     finder._FXShowPosixPathInTitle = true;
