@@ -85,7 +85,7 @@
       set -e LS_COLORS
 
       function wezcopy
-        read -l clip_stuff
+        read -z clip_stuff
         printf "\033]1337;SetUserVar=%s=%s\007" wez_copy (echo -n "$clip_stuff" | base64 -w 0)
       end
 
