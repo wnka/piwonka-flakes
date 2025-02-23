@@ -40,3 +40,4 @@ skip-levels = 1
 [keys.insert]
 C-x = "normal_mode"
 C-c = "normal_mode"
+C-m = "normal_mode"
