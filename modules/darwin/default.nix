@@ -11,6 +11,12 @@
     experimental-features = nix-command flakes
   '';
   nix.settings.trusted-users = [ "root" "piwonka" ];
+
+  # networking stuff for work devdesktop tunnels
+  networking.hosts = {
+    "127.0.0.1" = ["etdesktop" "armdesktop"];
+  };
+  
   # It start complaining at me.
   # Seems related to this:
   # https://github.com/LnL7/nix-darwin/blob/a6746213b138fe7add88b19bafacd446de574ca7/CHANGELOG#L22
