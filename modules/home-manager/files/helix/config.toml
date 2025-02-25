@@ -38,5 +38,4 @@ skip-levels = 1
 # I want to be able to go back to normal mode keeping fingers on home row, so
 # putting an Emacs-y keybinding for that.
 [keys.insert]
-C-x = "normal_mode"
-C-c = "normal_mode"
+C-n = "normal_mode"
