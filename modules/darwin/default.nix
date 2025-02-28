@@ -13,9 +13,10 @@
   nix.settings.trusted-users = [ "root" "piwonka" ];
 
   # networking stuff for work devdesktop tunnels
-  networking.hosts = {
-    "127.0.0.1" = ["etdesktop" "armdesktop"];
-  };
+  # This got reverted in nix-darwin
+  # networking.hosts = {
+  #   "127.0.0.1" = ["etdesktop" "armdesktop"];
+  # };
   
   # It start complaining at me.
   # Seems related to this:
