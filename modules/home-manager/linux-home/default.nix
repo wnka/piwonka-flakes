@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    emacs
     gcc13
     util-linux # for chsh
   ];

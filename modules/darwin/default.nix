@@ -104,20 +104,7 @@
       "visual-studio-code"
       "wezterm"
     ];
-    taps = [
-      "d12frosted/emacs-plus"
-    ];
     brews = [
-      {
-        name = "emacs-plus@29";
-        args = [
-          "with-native-comp"
-          "with-nobu417-big-sur-icon"
-          "with-xwidgets"
-        ];
-        link = true;
-        start_service = false;
-      }
       "gitwatch"
       "llvm"
       "mas"

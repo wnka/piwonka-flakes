@@ -18,8 +18,6 @@
       fish_add_path /opt/homebrew/opt/llvm/bin
     '';
     shellAliases = {
-      e = "emacsclient -nc $argv; osascript -e 'tell application \"Emacs\" to activate'";
-      ec = "TERM=xterm-emacs emacsclient -nw";
       nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
     };
   };

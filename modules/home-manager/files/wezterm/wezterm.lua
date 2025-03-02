@@ -26,13 +26,6 @@ config.window_padding = {
   bottom = 0,
 }
 
--- For emacs undo passthrough
-config.keys = {
-  { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment },
-}
-
--- config.debug_key_events = true
-
 config.color_scheme = "Tokyo Night Storm"
 -- and finally, return the configuration to wezterm
 return config

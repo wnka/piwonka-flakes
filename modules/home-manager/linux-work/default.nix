@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    emacs
     util-linux # for chsh
     gcc
     glibc
@@ -35,10 +34,6 @@
       fish_add_path /apollo/env/envImprovement/bin
     '';
     shellAliases = {
-      emacs-daemon = "TERM=xterm-emacs-leg command emacs --daemon";
-      emacs-kill = "emacsclient -e '(kill-emacs)'";
-      e = "TERM=xterm-emacs-leg command emacsclient -c -t";
-      ec = "TERM=xterm-emacs-leg command emacsclient -c -t";
       bb = "brazil-build";
       bbr = "brazil-build release";
       nixs = "nix --experimental-features \"nix-command flakes\" build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
