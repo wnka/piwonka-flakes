@@ -116,6 +116,7 @@
       gco = "git checkout";
       gb = "git branch";
       gd = "git diff";
+      gdt = "git difft";
       glg = "git log";
       ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       utime = "command time"; # use the Linux time cmd, not the fish builtin
@@ -123,7 +124,8 @@
       lz = "lazygit";
       zj = "zellij";
       jz = "zellij";
-      h = "hx";
+      yy = "yazi";
+      hh = "hx";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
     };
   };
