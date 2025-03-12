@@ -36,7 +36,7 @@
     shellAliases = {
       bb = "brazil-build";
       bbr = "brazil-build release";
-      nixs = "nix --experimental-features \"nix-command flakes\" build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
+      nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
     };
   };
 }

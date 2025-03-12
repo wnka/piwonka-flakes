@@ -7,9 +7,6 @@
     systemPath = [ "/opt/homebrew/bin" ];
     pathsToLink = [ "/Applications" ];
   };
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
   nix.settings.trusted-users = [ "root" "piwonka" ];
 
   # networking stuff for work devdesktop tunnels

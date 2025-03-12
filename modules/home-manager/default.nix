@@ -68,6 +68,8 @@
   xdg.configFile."helix".source = ./files/helix;
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
+  xdg.configFile."nix".source = ./files/nix;
+
   
   programs.git = {
     enable = true;
