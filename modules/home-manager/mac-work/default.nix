@@ -17,6 +17,7 @@
       fish_add_path /Users/piwonka/bin
       fish_add_path /Users/piwonka/.toolbox/bin
       fish_add_path /opt/homebrew/opt/llvm/bin
+      set -x AWS_PROFILE work-personal
     '';
     shellAliases = {
       funtime = "bash ~/bin/funtime.sh";
@@ -26,7 +27,7 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -m -t -c";
+      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -t -c";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
       # Intel DevDesktop
       et-i = "et etdesktop";
