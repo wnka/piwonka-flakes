@@ -12,11 +12,6 @@ end-of-line-diagnostics = "hint"
 [editor.inline-diagnostics]
 cursor-line="warning"
 
-[editor.auto-save]
-focus-lost = true
-after-delay.enable = true
-after-delay.timeout = 234
-
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
@@ -38,4 +33,9 @@ skip-levels = 1
 # I want to be able to go back to normal mode keeping fingers on home row, so
 # putting an Emacs-y keybinding for that.
 [keys.insert]
-C-a = "normal_mode"
+C-a = [":write-all", "normal_mode"]
+[keys.normal]
+# Under the influence of:
+# https://felix-knorr.net/posts/2025-03-16-helix-review.html
+"ret" = "goto_word"
+C-a = ":write-all"
