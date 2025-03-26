@@ -92,6 +92,7 @@
       "logi-options+"
       "lunar"
       "moonlight"
+      "obsidian"
       "raycast"
       "rectangle"
       "roon"
