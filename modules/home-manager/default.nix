@@ -45,6 +45,7 @@
     rage
     ripgrep
     rustup
+    stu
     time
     trippy
     vegeta
