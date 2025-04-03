@@ -49,6 +49,7 @@
     time
     trippy
     vegeta
+    xan
     xh
     yaml-language-server
     yazi
