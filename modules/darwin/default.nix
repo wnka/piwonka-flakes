@@ -75,10 +75,10 @@
     onActivation.upgrade = true;
     casks = [
       "1password"
-      "authy"
       "bartender"
       "discord"
       "domzilla-caffeine"
+      "firefox"
       "font-blex-mono-nerd-font"
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
@@ -96,6 +96,7 @@
       "raycast"
       "rectangle"
       "roon"
+      "soundsource"
       "steam"
       "syncthing"
       "transmit"
