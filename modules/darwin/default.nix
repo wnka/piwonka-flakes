@@ -77,6 +77,7 @@
       "1password"
       "bartender"
       "discord"
+      "docker"
       "domzilla-caffeine"
       "firefox"
       "font-blex-mono-nerd-font"
