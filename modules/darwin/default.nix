@@ -76,6 +76,7 @@
     casks = [
       "1password"
       "bartender"
+      "claude"
       "discord"
       "docker"
       "domzilla-caffeine"
