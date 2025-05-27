@@ -21,6 +21,7 @@
   ids.gids.nixbld = 350;
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
+  system.primaryUser = "piwonka";
 
   # Hack to make pam-reattach work
   environment.etc."pam.d/sudo_local".text = ''

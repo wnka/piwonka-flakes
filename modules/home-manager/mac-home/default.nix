@@ -18,7 +18,7 @@
       fish_add_path /opt/homebrew/opt/llvm/bin
     '';
     shellAliases = {
-      nixs = "darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
+      nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
     };
   };
 }
