@@ -33,6 +33,7 @@
       fish_add_path /apollo/env/LambdaOperationalTools/bin
       fish_add_path /apollo/env/LambdaStatsOperationalTools/bin
       fish_add_path /apollo/env/envImprovement/bin
+      fish_add_path /home/piwonka/.local/bin
     '';
     shellAliases = {
       bb = "brazil-build";
