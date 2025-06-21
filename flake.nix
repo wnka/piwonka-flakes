@@ -86,7 +86,10 @@
         # modifies pkgs to allow unfree packages
         pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          configName = "raspberrypi";
+        };
         modules = [
           ./modules/home-manager
           ./modules/home-manager/linux-home

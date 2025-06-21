@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, configName, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,6 +16,7 @@
       fish_add_path /run/current-system/sw/bin
     '';
     shellAliases = {
+      nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
     };
   };
 }
