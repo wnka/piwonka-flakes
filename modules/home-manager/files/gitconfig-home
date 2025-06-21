@@ -1,0 +1,61 @@
+# Some influence from https://blog.gitbutler.com/how-git-core-devs-configure-git/
+[user]
+	email = wnka@users.noreply.github.com
+	name = Phil Piwonka
+[branch]
+	sort = -committerdate
+[color]
+	ui = auto
+[column]
+	ui = auto
+[core]
+	pager = delta --syntax-theme ansi --pager 'bat --style=plain'
+	editor = hx
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+	
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+	amend = commit -a --amend -C HEAD
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+	difft = difftool
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[init]
+	defaultBranch = main
+[diff "gpg"]
+	textconv = gpg --no-tty --decrypt
+[pager]
+	difftool = true
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
