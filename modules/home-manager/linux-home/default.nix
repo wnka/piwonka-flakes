@@ -6,6 +6,8 @@
     util-linux # for chsh
   ];
 
+  home.file.".gitconfig".source = ../files/gitconfig-home;
+
   programs.fish = {
     shellInit = ''
       # Nix

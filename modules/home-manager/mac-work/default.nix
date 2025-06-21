@@ -4,6 +4,10 @@
   home.packages = with pkgs; [
     pam-reattach
   ];
+  
+  home.file.".gitconfig".source = ../files/gitconfig;
+  home.file.".gitconfig.work".source = ../files/gitconfig-work;
+
   programs.fish = {
     shellInit = ''
       # Nix
