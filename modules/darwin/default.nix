@@ -36,6 +36,7 @@
     dock.autohide = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
+    NSGlobalDomain.ApplePressAndHoldEnabled = false;
     NSGlobalDomain.KeyRepeat = 1;
     NSGlobalDomain."com.apple.sound.beep.feedback" = 1;
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
