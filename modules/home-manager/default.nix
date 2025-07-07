@@ -25,6 +25,7 @@
     eza
     fd
     fio
+    fx
     git-crypt
     gnugrep
     gnupg
