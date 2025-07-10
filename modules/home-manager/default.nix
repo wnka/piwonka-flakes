@@ -47,6 +47,7 @@
     ripgrep
     rustup
     stu
+    television
     time
     trippy
     vegeta
