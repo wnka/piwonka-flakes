@@ -7,6 +7,7 @@
     gcc
     glibc
     glib
+    go
     pinentry-curses
   ];
 
