@@ -88,6 +88,7 @@
       "font-fira-code-nerd-font"
       "font-zed-mono-nerd-font"
       "font-cascadia-code-nf"
+      "ghostty"
       "handbrake"
       "iina"
       "jabra-direct"
