@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
     atuin
     awscli2
-    bandwhich
     btop
     # curl # this was messing up internal websites on my work laptop
     delta
@@ -24,18 +23,14 @@
     eternal-terminal
     eza
     fd
-    fio
     fx
     git-crypt
     gnugrep
     gnupg
     helix
-    hyperfine
-    imagemagick
     iperf
     jq
     lazygit
-    nixfmt-rfc-style
     markdown-oxide
     marksman
     mermaid-cli
@@ -43,20 +38,14 @@
     oha
     pandoc
     pv
-    rage
     ripgrep
-    rustup
-    stu
     television
     time
-    trippy
-    vegeta
     xan
     xh
     yaml-language-server
     yazi
     zellij
-    zk
     zstd
   ];
   home.sessionVariables = {
