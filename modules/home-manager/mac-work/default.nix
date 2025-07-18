@@ -36,7 +36,7 @@
       # Intel DevDesktop
       et-i = "et etdesktop";
       # Arm DevDesktop
-      et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal armdesktop";
+      et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal etg4desktop";
     };
   };
 }
