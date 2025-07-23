@@ -112,6 +112,9 @@
       "gitwatch"
       "llvm"
       "mas"
+      "task"
+      "taskopen"
+      "taskwarrior-tui"
       "watch"
     ];
     masApps = {

@@ -22,6 +22,7 @@
     '';
     shellAliases = {
       nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
+      taskl = "task +LATEST";
     };
   };
 }
