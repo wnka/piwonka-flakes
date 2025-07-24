@@ -39,6 +39,8 @@
     pandoc
     pv
     ripgrep
+    taskwarrior3
+    taskwarrior-tui
     television
     time
     xan
@@ -121,6 +123,14 @@
       yy = "yazi";
       hh = "hx";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
+      # Taskwarrior helpers
+      ttla = "task +LATEST";
+      ttls = "task ls";
+      tt = "task";
+      ttwt = "taskwarrior-tui";
+      ttcxn = "task context none";
+      ttcx = "task context";
+      ttday = "task +TODAY or +OVERDUE";
     };
   };
   programs.starship = {

@@ -37,7 +37,6 @@
       et-i = "et etdesktop";
       # Arm DevDesktop
       et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal etg4desktop";
-      taskl = "task +LATEST";
     };
   };
 }

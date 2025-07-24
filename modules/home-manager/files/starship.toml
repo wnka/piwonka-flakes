@@ -1,5 +1,6 @@
 format = """
 $os \
+${custom.timew}\
 $directory\
 $git_branch\
 $git_state\
@@ -51,6 +52,11 @@ style = "bright-black"
 format = "[$symbol$profile]($style) "
 style = "bold yellow"
 symbol = " "
+
+[custom.timew]
+when = "test (math (task count +TODAY or +OVERDUE)) -gt 0"
+symbol = "⏰"
+format = "[$symbol]($style) "
 
 [os]
 disabled = false
