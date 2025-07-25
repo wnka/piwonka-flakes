@@ -106,12 +106,11 @@
       "syncthing"
       "transmit"
       "visual-studio-code"
-      "wezterm"
     ];
     brews = [
-      "gitwatch"
       "llvm"
       "mas"
+      "rustup"
       "watch"
     ];
     masApps = {

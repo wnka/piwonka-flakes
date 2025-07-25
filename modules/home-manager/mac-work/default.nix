@@ -21,6 +21,7 @@
       fish_add_path /Users/piwonka/bin
       fish_add_path /Users/piwonka/.toolbox/bin
       fish_add_path /opt/homebrew/opt/llvm/bin
+      fish_add_path /Users/piwonka/.cargo/bin
       set -x AWS_PROFILE work-personal
     '';
     shellAliases = {

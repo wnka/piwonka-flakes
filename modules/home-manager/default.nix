@@ -57,7 +57,6 @@
 
   home.file.".inputrc".source = ./files/inputrc;
   
-  xdg.configFile."wezterm".source = ./files/wezterm;
   xdg.configFile."ghostty".source = ./files/ghostty;
   xdg.configFile."helix".source = ./files/helix;
   xdg.configFile."zellij".source = ./files/zellij;
