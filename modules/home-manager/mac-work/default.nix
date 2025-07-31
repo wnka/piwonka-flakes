@@ -32,7 +32,7 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -t -c -r devdsk-no-vpn";
+      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -r devdsk-no-vpn -r g4desktop";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
       # Intel DevDesktop
       et-i = "et etdesktop";
