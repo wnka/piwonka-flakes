@@ -131,6 +131,7 @@
       ttcxn = "task context none";
       ttcx = "task context";
       ttday = "task +TODAY or +OVERDUE";
+      tff = "commandline -rt (task rc.verbose:nothing ls | fzf --preview 'task {1}' | awk '{printf \"tt %s \", $1}')";
     };
   };
   programs.starship = {
