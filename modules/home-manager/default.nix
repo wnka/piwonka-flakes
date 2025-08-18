@@ -125,13 +125,10 @@
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
       # Taskwarrior helpers
       ttla = "task +LATEST";
-      ttls = "task list";
       tt = "task";
-      ttwt = "taskwarrior-tui";
-      ttcxn = "task context none";
-      ttcx = "task context";
-      ttday = "task +TODAY or +OVERDUE";
-      tff = "commandline -rt (task rc.verbose:nothing ls | fzf --preview 'task {1}' | awk '{printf \"tt %s \", $1}')";
+      ttxn = "task context none";
+      ttx = "task context";
+      ttt = "commandline -rt (task rc.verbose:nothing ls | fzf --preview 'task {1}' | awk '{printf \"tt %s \", $1}')";
     };
   };
   programs.starship = {
