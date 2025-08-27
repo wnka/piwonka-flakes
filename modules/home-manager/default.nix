@@ -87,6 +87,17 @@
 
       atuin init fish | source
     '';
+    functions = {
+      hhf = ''
+          function hhf
+            # Using fd + a pipe since that will honor .gitignore
+            set -l selected_file (fd --type f --strip-cwd-prefix | fzf --height=50% --border=bold)
+            if test -n "$selected_file"
+              hx "$selected_file"
+            end
+          end
+    '';
+    };
     plugins = [
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
@@ -122,8 +133,6 @@
       jz = "zellij";
       yy = "yazi";
       hh = "hx";
-      # Using a pipe into fzf since fd will honor .gitignore
-      hhf = "hx (fd --type f --strip-cwd-prefix | fzf)";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
       # Taskwarrior helpers
       ttla = "task +LATEST";
