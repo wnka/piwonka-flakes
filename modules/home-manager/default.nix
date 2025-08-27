@@ -89,12 +89,10 @@
     '';
     functions = {
       hhf = ''
-          function hhf
-            # Using fd + a pipe since that will honor .gitignore
-            set -l selected_file (fd --type f --strip-cwd-prefix | fzf --height=50% --border=bold)
-            if test -n "$selected_file"
-              hx "$selected_file"
-            end
+          # Using fd + a pipe since that will honor .gitignore
+          set -l selected_file (fd --type f --strip-cwd-prefix | fzf --height=50% --border=bold)
+          if test -n "$selected_file"
+            hx "$selected_file"
           end
     '';
     };
