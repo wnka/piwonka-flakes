@@ -32,12 +32,14 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -r devdsk-no-vpn -r g4desktop";
+      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -r devdsk-no-vpn -r g4desktop -r g3desktop";
       dwdsk = "~/bin/daywon -r devdsk-no-vpn";
       # Intel DevDesktop
       et-i = "et etdesktop";
-      # Arm DevDesktop
+      # Arm DevDesktop AL2023
       et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal etg4desktop";
+      # Arm DevDesktop AL2
+      et-a2 = "et -p 2024 --terminal-path /home/piwonka/.nix-profile/bin/etterminal etg3desktop";
     };
   };
 }
