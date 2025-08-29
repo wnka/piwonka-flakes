@@ -211,6 +211,17 @@ keybinds clear-defaults=true {
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
     }
+
+    shared_except "locked" {
+        bind "y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+                floating true;
+                ignore_case true;
+                quick_jump true;
+            }
+            SwitchToMode "locked";
+        }
+    }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
@@ -229,6 +240,12 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
+}
+
+web_client {
+  // font "Iosevka Term" // default is "monospace" - deferring this decision to the browser/os
+  cursor_blink true // default is false
+  cursor_style "block" // possibilities: "block", "bar", "underline"
 }
 
 // Plugins to load in the background when a new session starts
