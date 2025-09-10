@@ -6,6 +6,16 @@ keybinds clear-defaults=true {
     locked {
         bind "`" { SwitchToMode "normal"; }
     }
+    normal {
+        bind "left" { MoveFocus "left"; }
+        bind "right" { MoveFocus "right"; }
+        bind "up" { MoveFocus "up"; }
+        bind "down" { MoveFocus "down"; }
+        bind "h" { MoveFocus "left"; }
+        bind "l" { MoveFocus "right"; }
+        bind "k" { MoveFocus "up"; }
+        bind "j" { MoveFocus "down"; }
+    }
     pane {
         bind "left" { MoveFocus "left"; }
         bind "down" { MoveFocus "down"; }
