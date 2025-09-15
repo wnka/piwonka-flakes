@@ -102,13 +102,13 @@
       "rectangle"
       "roon"
       "soundsource"
-      "syncthing"
       "transmit"
       "visual-studio-code"
     ];
     brews = [
       "llvm"
       "mas"
+      "syncthing"
       "rustup"
       "watch"
     ];
