@@ -35,6 +35,8 @@
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -r g4desktop -t";
       # Arm DevDesktop AL2023
       et-a = "et -p 2023 --terminal-path /home/piwonka/.nix-profile/bin/etterminal etg4desktop";
+      # x86 DevDesktop AL2023
+      et-i = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etm7i";
     };
   };
 }
