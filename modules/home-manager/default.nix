@@ -80,6 +80,9 @@
       # clear LS_COLORS
       set -e LS_COLORS
 
+      # Opt out of Eternal Terminal telemetry b.s.
+      set -x ET_NO_TELEMETRY true
+      
       function wezcopy
         read -z clip_stuff
         printf "\033]1337;SetUserVar=%s=%s\007" wez_copy (echo -n "$clip_stuff" | base64 -w 0)
