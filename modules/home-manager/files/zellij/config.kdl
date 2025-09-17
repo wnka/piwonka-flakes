@@ -15,6 +15,14 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "right"; }
         bind "k" { MoveFocus "up"; }
         bind "j" { MoveFocus "down"; }
+        bind "y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+                floating true;
+                ignore_case true;
+                quick_jump true;
+            }
+            SwitchToMode "locked";
+        }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -220,17 +228,6 @@ keybinds clear-defaults=true {
     }
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
-    }
-
-    shared_except "locked" {
-        bind "y" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
-                floating true;
-                ignore_case true;
-                quick_jump true;
-            }
-            SwitchToMode "locked";
-        }
     }
 }
 
