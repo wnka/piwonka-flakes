@@ -59,6 +59,7 @@
   home.file.".inputrc".source = ./files/inputrc;
   
   xdg.configFile."ghostty".source = ./files/ghostty;
+  xdg.configFile."lazygit".source = ./files/lazygit;
   xdg.configFile."helix".source = ./files/helix;
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
@@ -128,8 +129,8 @@
       glg = "git log";
       ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       utime = "command time"; # use the Linux time cmd, not the fish builtin
-      lg = "lazygit";
-      lz = "lazygit";
+      lg = "lazygit -ucd ~/.config/lazygit";
+      lz = "lazygit -ucd ~/.config/lazygit";
       zj = "zellij";
       jz = "zellij";
       yy = "yazi";
