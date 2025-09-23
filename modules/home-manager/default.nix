@@ -142,6 +142,8 @@
       ttxn = "task context none";
       ttx = "task context";
       ttt = "commandline -rt (task rc.verbose:nothing ls | fzf --preview 'task {1}' | awk '{printf \"tt %s \", $1}')";
+      # Q Chat helpers
+      qc = "q chat --trust-tools execute_bash,fs_read,fs_write,@builder-mcp/InternalSearch,@builder-mcp/InternalCodeSearch,@builder-mcp/ReadInternalWebsites,@builder-mcp/WorkspaceSearch,@builder-mcp/SearchAcronymCentral,@builder-mcp/BrazilBuildAnalyzerTool,@builder-mcp/BrazilPackageBuilderAnalyzerTool,@builder-mcp/WorkspaceGitDetails,@builder-mcp/GkAnalyzeVersionSet,@mcp-cargo/cargo";
     };
   };
   programs.starship = {
