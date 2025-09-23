@@ -1,3 +1,7 @@
+disableStartupPopups: true
+gui:
+  showRandomTip: true
+  nerdFontsVersion: "3"
 git:
   paging:
     externalDiffCommand: difft --color=always
