@@ -89,6 +89,7 @@
       "font-zed-mono-nerd-font"
       "font-cascadia-code-nf"
       "ghostty"
+      "hammerspoon"
       "handbrake-app"
       "iina"
       "jabra-direct"
