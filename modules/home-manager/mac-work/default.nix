@@ -7,6 +7,7 @@
   
   home.file.".gitconfig".source = ../files/gitconfig;
   home.file.".gitconfig.work".source = ../files/gitconfig-work;
+  home.file.".hammerspoon/init.lua".source = ../files/hammerspoon/init.lua;
 
   programs.fish = {
     shellInit = ''
