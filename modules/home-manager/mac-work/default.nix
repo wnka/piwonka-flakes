@@ -33,7 +33,7 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       bb = "brazil-build";
       bbr = "brazil-build release";
-      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -r m7i -t";
+      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -t";
       # x86 DevDesktop AL2023
       et-i = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etm7i";
     };
