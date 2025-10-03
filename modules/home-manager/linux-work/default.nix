@@ -37,7 +37,8 @@
       fish_add_path /apollo/env/LambdaOperationalTools/bin
       fish_add_path /apollo/env/LambdaStatsOperationalTools/bin
       fish_add_path /apollo/env/envImprovement/bin
-
+      set -x AWS_PROFILE work-personal
+      
       # Move .toolbox/bin to the front, since this is needed for rust-analyzer to work
       # right in brazil workspaces.
       fish_add_path --prepend --move /home/piwonka/.toolbox/bin
