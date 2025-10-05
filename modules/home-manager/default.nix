@@ -39,6 +39,7 @@
     pandoc
     pv
     ripgrep
+    sccache
     ssm-session-manager-plugin
     taskwarrior3
     taskwarrior-tui
