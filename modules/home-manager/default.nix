@@ -45,7 +45,7 @@
     taskwarrior3
     taskwarrior-tui
     television
-    time
+    # time
     xan
     xh
     yaml-language-server
