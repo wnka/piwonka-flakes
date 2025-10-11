@@ -1,8 +1,7 @@
-theme = "rose_pine_moon"
+theme = "catppuccin_frappe"
 
 [editor]
 cursorline = true
-# rulers = [80]
 color-modes = true
 true-color = true
 auto-format = true
@@ -11,6 +10,9 @@ end-of-line-diagnostics = "hint"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
+
+[editor.file-picker]
+hidden = false
 
 [editor.cursor-shape]
 normal = "block"
@@ -39,3 +41,30 @@ C-a = [":write-all", "normal_mode"]
 # https://felix-knorr.net/posts/2025-03-16-helix-review.html
 "ret" = "goto_word"
 C-a = ":write-all"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "file-name",
+  "separator",
+  "spacer",
+  "version-control",
+  "read-only-indicator",
+  "file-modification-indicator",
+
+]
+center = []
+right = [
+  "diagnostics",
+  "workspace-diagnostics",
+  "position",
+  "total-line-numbers",
+  "position-percentage",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+  "register",
+  "selections",
+]
+separator = "│"
