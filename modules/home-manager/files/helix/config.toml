@@ -16,7 +16,7 @@ hidden = false
 
 [editor.cursor-shape]
 normal = "block"
-insert = "bar"
+insert = "block"
 select = "underline"
 
 [editor.soft-wrap]
