@@ -77,7 +77,6 @@
     onActivation.upgrade = true;
     casks = [
       "1password"
-      "bartender"
       "claude"
       "discord"
       "docker-desktop"
@@ -89,7 +88,6 @@
       "font-zed-mono-nerd-font"
       "font-cascadia-code-nf"
       "ghostty"
-      "hammerspoon"
       "handbrake-app"
       "iina"
       "jabra-direct"

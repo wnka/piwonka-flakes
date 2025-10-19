@@ -34,16 +34,12 @@
     markdown-oxide
     marksman
     mermaid-cli
-    mosh
     multitail
     oha
     pandoc
     pv
     ripgrep
-    sccache
     ssm-session-manager-plugin
-    taskwarrior3
-    taskwarrior-tui
     television
     # time
     xan
@@ -141,12 +137,6 @@
       yy = "yazi";
       hh = "hx";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
-      # Taskwarrior helpers
-      ttla = "task +LATEST";
-      tt = "task";
-      ttxn = "task context none";
-      ttx = "task context";
-      ttt = "commandline -rt (task rc.verbose:nothing ls | fzf --preview 'task {1}' | awk '{printf \"tt %s \", $1}')";
       # Q Chat helpers
       qc = "q chat --trust-tools execute_bash,fs_read,fs_write,@builder-mcp/InternalSearch,@builder-mcp/InternalCodeSearch,@builder-mcp/ReadInternalWebsites,@builder-mcp/WorkspaceSearch,@builder-mcp/SearchAcronymCentral,@builder-mcp/BrazilBuildAnalyzerTool,@builder-mcp/BrazilPackageBuilderAnalyzerTool,@builder-mcp/WorkspaceGitDetails,@builder-mcp/GkAnalyzeVersionSet,@mcp-cargo/cargo";
     };
