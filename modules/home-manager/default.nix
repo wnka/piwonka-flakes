@@ -82,11 +82,6 @@
       # Opt out of Eternal Terminal telemetry b.s.
       set -x ET_NO_TELEMETRY true
       
-      function wezcopy
-        read -z clip_stuff
-        printf "\033]1337;SetUserVar=%s=%s\007" wez_copy (echo -n "$clip_stuff" | base64 -w 0)
-      end
-
       # I want Option-Backspace to just kill a word
       bind \e\x7F backward-kill-word
 
