@@ -85,7 +85,10 @@
       # I want Option-Backspace to just kill a word
       bind \e\x7F backward-kill-word
 
-      atuin init fish | source
+      # sed due to fish not allowing certain bind args anymore
+      # https://github.com/atuinsh/atuin/issues/2940
+      # Can remove laters
+      atuin init fish | sed "s/-k up/up/g" | source 
     '';
     functions = {
       hhf = ''
