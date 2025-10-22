@@ -44,6 +44,7 @@ C-a = [":write-all", "normal_mode"]
 C-a = ":write-all"
 # Prints the current line's git blame information to the statusline.
 "B" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+C-r = ":reload-all"
 
 [editor.statusline]
 left = [
