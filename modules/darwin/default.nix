@@ -35,9 +35,9 @@
     finder._FXShowPosixPathInTitle = true;
     dock.autohide = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
-    NSGlobalDomain.InitialKeyRepeat = 14;
+    NSGlobalDomain.InitialKeyRepeat = 15;
     NSGlobalDomain.ApplePressAndHoldEnabled = false;
-    NSGlobalDomain.KeyRepeat = 1;
+    NSGlobalDomain.KeyRepeat = 2;
     NSGlobalDomain."com.apple.sound.beep.feedback" = 1;
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     trackpad = {
