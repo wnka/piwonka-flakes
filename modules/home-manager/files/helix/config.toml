@@ -35,19 +35,20 @@ skip-levels = 1
 # I want to be able to go back to normal mode keeping fingers on home row, so
 # putting an Emacs-y keybinding for that.
 [keys.insert]
-C-x = { C-s = [":write-all", "normal_mode"] }
 C-e = "insert_at_line_end"
 C-a = "insert_at_line_start"
+C-n = "move_visual_line_down"
+C-p = "move_visual_line_up"
+C-m = [":write-all", "normal_mode"]
 
 [keys.normal]
 # Under the influence of:
 # https://felix-knorr.net/posts/2025-03-16-helix-review.html
 "ret" = "goto_word"
-C-a = ":write-all"
 # Prints the current line's git blame information to the statusline.
 "B" = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
 C-r = ":reload-all"
-C-x = { C-s = [":write-all", "normal_mode"] }
+C-m = ":write-all"
 
 [editor.statusline]
 left = [
