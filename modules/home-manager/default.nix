@@ -85,6 +85,9 @@
       # I want Option-Backspace to just kill a word
       bind \e\x7F backward-kill-word
 
+      # I want Ctrl-Space to undo
+      bind ctrl-space undo
+
       # sed due to fish not allowing certain bind args anymore
       # https://github.com/atuinsh/atuin/issues/2940
       # Can remove laters
