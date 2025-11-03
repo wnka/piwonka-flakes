@@ -18,7 +18,7 @@
     delta
     devenv
     difftastic
-    du-dust
+    dust
     entr
     eternal-terminal
     eza
