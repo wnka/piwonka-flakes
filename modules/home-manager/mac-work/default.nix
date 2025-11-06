@@ -34,8 +34,7 @@
       bb = "brazil-build";
       bbr = "brazil-build release";
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -t";
-      # x86 DevDesktop AL2023
-      et-i = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etm7i";
+      et-8 = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etc8i -p 2025";
     };
   };
 }
