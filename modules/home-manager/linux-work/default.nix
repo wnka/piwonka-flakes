@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     dysk
     util-linux # for chsh
-    gcc
+    # gcc
     glibc
     glib
     go
@@ -42,6 +42,7 @@
       bb = "brazil-build";
       bbr = "brazil-build release";
       nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
+      dw = "mwinit -s -o";
     };
   };
 }
