@@ -119,8 +119,9 @@
     ];
     shellAliases = {
       ls = "eza --group-directories-first --color-scale all --icons";
-      cat = "bat";
-      catp = "bat --style=plain";
+      catp = "bat";
+      cat = "bat --style=plain";
+      catn = "bat --style=plain --wrap=never";
       less = "bat";
       du = "dust";
       gst = "git status";
