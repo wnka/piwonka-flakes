@@ -111,21 +111,21 @@
       "rustup"
       "watch"
     ];
-    masApps = {
-      "1Password for Safari" = 1569813296;
-      "Cog" = 1630499622;
-      "Day One" = 1055511498;
-      "Infuse" = 1136220934;
-      "Ivory for Mastodon" = 6444602274;
-      "Kindle" = 302584613;
-      "PCalc" = 403504866;
-      "Pixelmator Pro" = 1289583905;
-      "Reeder" = 1529448980;
-      "Spark Mail" = 6445813049;
-      "Stop The Madness Pro" = 6471380298;
-      "Tailscale" = 1475387142;
-      "Things 3" = 904280696;
-      "Webcam Settings" = 1610840452;
-    };
+    # masApps = {
+    #   "1Password for Safari" = 1569813296;
+    #   "Cog" = 1630499622;
+    #   "Day One" = 1055511498;
+    #   "Infuse" = 1136220934;
+    #   "Ivory for Mastodon" = 6444602274;
+    #   "Kindle" = 302584613;
+    #   "PCalc" = 403504866;
+    #   "Pixelmator Pro" = 1289583905;
+    #   "Reeder" = 1529448980;
+    #   "Spark Mail" = 6445813049;
+    #   "Stop The Madness Pro" = 6471380298;
+    #   "Tailscale" = 1475387142;
+    #   "Things 3" = 904280696;
+    #   "Webcam Settings" = 1610840452;
+    # };
   };
 }
