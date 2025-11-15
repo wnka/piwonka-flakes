@@ -33,6 +33,7 @@
     lazygit
     markdown-oxide
     marksman
+    mergiraf
     mermaid-cli
     multitail
     oha
@@ -55,6 +56,7 @@
   };
 
   home.file.".inputrc".source = ./files/inputrc;
+  home.file.".gitattributes".source = ./files/gitattributes;
   
   xdg.configFile."ghostty".source = ./files/ghostty;
   xdg.configFile."lazygit".source = ./files/lazygit;
