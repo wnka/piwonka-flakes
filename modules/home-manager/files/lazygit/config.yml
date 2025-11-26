@@ -2,7 +2,9 @@ disableStartupPopups: true
 gui:
   showRandomTip: true
   nerdFontsVersion: "3"
+  mouseEvents: false
 git:
+  autoFetch: false
   pagers:
     - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
     - externalDiffCommand: difft --color=always
