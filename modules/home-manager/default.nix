@@ -38,6 +38,7 @@
     multitail
     oha
     pandoc
+    posting
     pv
     ripgrep
     ssm-session-manager-plugin
