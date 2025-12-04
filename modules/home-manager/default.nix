@@ -14,6 +14,7 @@
     atuin
     awscli2
     btop
+    codex
     # curl # this was messing up internal websites on my work laptop
     delta
     devenv
