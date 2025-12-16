@@ -6,7 +6,7 @@
     util-linux # for chsh
   ];
 
-  home.file.".gitconfig".source = ../files/gitconfig-home;
+  xdg.configFile."git/config".source = ../files/git/gitconfig-home;
 
   programs.fish = {
     shellInit = ''

@@ -58,7 +58,8 @@
   };
 
   home.file.".inputrc".source = ./files/inputrc;
-  home.file.".gitattributes".source = ./files/gitattributes;
+  
+  xdg.configFile."git/attributes".source = ./files/git/gitattributes;
   
   xdg.configFile."ghostty".source = ./files/ghostty;
   xdg.configFile."lazygit".source = ./files/lazygit;

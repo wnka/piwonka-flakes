@@ -5,8 +5,8 @@
     pam-reattach
   ];
   
-  home.file.".gitconfig".source = ../files/gitconfig;
-  home.file.".gitconfig.work".source = ../files/gitconfig-work;
+  xdg.configFile."git/config".source = ../files/git/gitconfig;
+  xdg.configFile."git/config.work".source = ../files/git/gitconfig-work;
   home.file.".hammerspoon/init.lua".source = ../files/hammerspoon/init.lua;
 
   programs.fish = {
