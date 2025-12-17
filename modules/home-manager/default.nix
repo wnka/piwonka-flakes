@@ -145,7 +145,7 @@
       hh = "hx";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
       # Q Chat helpers
-      qc = "q chat --trust-tools execute_bash,fs_read,fs_write,@builder-mcp/InternalSearch,@builder-mcp/InternalCodeSearch,@builder-mcp/ReadInternalWebsites,@builder-mcp/WorkspaceSearch,@builder-mcp/SearchAcronymCentral,@builder-mcp/BrazilBuildAnalyzerTool,@builder-mcp/BrazilPackageBuilderAnalyzerTool,@builder-mcp/WorkspaceGitDetails,@builder-mcp/GkAnalyzeVersionSet,@mcp-cargo/cargo";
+      qc = "kiro-cli chat --trust-tools execute_bash,fs_read,fs_write,@builder-mcp/InternalSearch,@builder-mcp/InternalCodeSearch,@builder-mcp/ReadInternalWebsites,@builder-mcp/WorkspaceSearch,@builder-mcp/SearchAcronymCentral,@builder-mcp/BrazilBuildAnalyzerTool,@builder-mcp/BrazilPackageBuilderAnalyzerTool,@builder-mcp/WorkspaceGitDetails,@builder-mcp/GkAnalyzeVersionSet,@mcp-cargo/cargo";
     };
   };
   programs.starship = {
