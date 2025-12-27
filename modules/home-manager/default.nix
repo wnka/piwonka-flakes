@@ -20,6 +20,7 @@
     devenv
     difftastic
     dust
+    dysk
     entr
     eternal-terminal
     eza

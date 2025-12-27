@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    dysk
     util-linux # for chsh
     # gcc
     glibc
