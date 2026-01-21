@@ -41,7 +41,7 @@
       fish_add_path --prepend --move /home/piwonka/.toolbox/bin
     '';
     functions = {
-      slack-notify = {
+      sn = {
         body = "slack-mcp -m \"$argv\"";
       };
     };

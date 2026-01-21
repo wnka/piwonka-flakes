@@ -26,7 +26,7 @@
       set -x AWS_PROFILE work-personal
     '';
     functions = {
-      slack-notify = {
+      sn = {
         body = "slack-mcp -m \"$argv\"";
       };
     };
