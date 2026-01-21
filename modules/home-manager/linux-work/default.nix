@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     util-linux # for chsh
+    cmake
     # gcc
     glibc
     glib
@@ -32,6 +33,7 @@
       fish_add_path /apollo/env/envImprovement/bin
       fish_add_path /home/piwonka/go/bin
       fish_add_path /home/piwonka/.local/bin
+      fish_add_path /home/piwonka/bin
       set -x AWS_PROFILE work-personal
       
       # Move .toolbox/bin to the front, since this is needed for rust-analyzer to work
