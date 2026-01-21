@@ -25,6 +25,11 @@
       fish_add_path /Users/piwonka/.cargo/bin
       set -x AWS_PROFILE work-personal
     '';
+    functions = {
+      slack-notify = {
+        body = "slack-mcp -m \"$argv\"";
+      };
+    };
     shellAliases = {
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
