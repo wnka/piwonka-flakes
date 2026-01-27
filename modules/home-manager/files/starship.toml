@@ -1,6 +1,7 @@
 format = """
 $os \
 $directory\
+${custom.brazil_ws}\
 $git_branch\
 $git_state\
 $git_status\
@@ -76,3 +77,9 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[custom.brazil_ws]
+command = "echo $PWD | sed -n 's|.*/ws/\\([^/]*\\)/.*|\\1|p'"
+when = "echo $PWD | grep -q \"$HOME/ws/\""
+format = "[$output]($style) "
+style = "bold green"
