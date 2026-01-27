@@ -44,6 +44,18 @@
       sn = {
         body = "slack-mcp -m \"$argv\"";
       };
+      rsn = {
+        body = ''
+          set -l last_status $status
+          set -l label "$argv"
+          test -z "$label"; and set label (pwd)
+          if test $last_status -eq 0
+              sn "✅ $label"
+          else
+              sn "❌ $label"
+          end
+        '';
+      };
     };
     shellAliases = {
       bb = "brazil-build";
