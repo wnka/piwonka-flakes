@@ -54,7 +54,7 @@
     zstd
   ];
   home.sessionVariables = {
-    PAGER = "bat";
+    PAGER = "bat --style=plain";
     EDITOR = "hx";
   };
 
