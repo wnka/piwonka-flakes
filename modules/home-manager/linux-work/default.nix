@@ -1,6 +1,8 @@
 { config, lib, pkgs, configName, ... }:
 
 {
+  imports = [ ../work-common.nix ];
+
   home.packages = with pkgs; [
     util-linux # for chsh
     cmake
@@ -13,8 +15,6 @@
   ];
 
   home.file.".gnupg/gpg-agent.conf".source = ./files/gpg-agent.conf;
-  xdg.configFile."git/config".source = ../files/git/gitconfig;
-  xdg.configFile."git/config.work".source = ../files/git/gitconfig-work;
   
   programs.fish = {
     shellInit = ''
@@ -34,31 +34,12 @@
       fish_add_path /home/piwonka/go/bin
       fish_add_path /home/piwonka/.local/bin
       fish_add_path /home/piwonka/bin
-      set -x AWS_PROFILE work-personal
       
       # Move .toolbox/bin to the front, since this is needed for rust-analyzer to work
       # right in brazil workspaces.
       fish_add_path --prepend --move /home/piwonka/.toolbox/bin
     '';
-    functions = {
-      sn = {
-        body = ''slack-mcp -m "$argv"'';
-      };
-      rsn = {
-        body = ''
-          set -l last_status $status
-          set -l label (test -n "$argv"; and echo "$argv - (pwd)"; or echo (pwd))
-          if test $last_status -eq 0
-              slack-mcp -m "✅ $label"
-          else
-              slack-mcp -m "❌ $label"
-          end
-        '';
-      };
-    };
     shellAliases = {
-      bb = "brazil-build";
-      bbr = "brazil-build release";
       nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
       dw = "mwinit -s -o";
     };
