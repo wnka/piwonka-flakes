@@ -42,29 +42,16 @@
     '';
     functions = {
       sn = {
-        body = ''
-          set -l tab (zellij action dump-layout 2>/dev/null | sed -n 's/.*tab name="\([^"]*\)".*focus=true.*/\1/p')
-          set -l msg "$argv"
-          test -n "$tab" -a -n "$msg"; and set msg "[$tab] $msg"
-          slack-mcp -m "$msg"
-        '';
+        body = ''slack-mcp -m "$argv"'';
       };
       rsn = {
         body = ''
           set -l last_status $status
-          set -l tab (zellij action dump-layout 2>/dev/null | sed -n 's/.*tab name="\([^"]*\)".*focus=true.*/\1/p')
-          set -l label "$argv"
-          if test -n "$tab" -a -n "$label"
-              set label "[$tab] $label"
-          else if test -n "$tab"
-              set label "$tab"
-          else if test -z "$label"
-              set label (pwd)
-          end
+          set -l label (test -n "$argv"; and echo "$argv - (pwd)"; or echo (pwd))
           if test $last_status -eq 0
-              sn "✅ $label"
+              slack-mcp -m "✅ $label"
           else
-              sn "❌ $label"
+              slack-mcp -m "❌ $label"
           end
         '';
       };
