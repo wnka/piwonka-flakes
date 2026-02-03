@@ -6,6 +6,7 @@ $git_branch\
 $git_state\
 $git_status\
 $aws\
+${custom.mwv}\
 $cmd_duration\
 $line_break\
 $jobs$character"""
@@ -83,3 +84,9 @@ command = "echo $PWD | sed -n 's|.*/ws/\\([^/]*\\)/.*|\\1|p'"
 when = "echo $PWD | grep -q \"$HOME/ws/\""
 format = "[$output]($style) "
 style = "bold green"
+
+[custom.mwv]
+command = "mwv_cached"
+when = "test -n \"$PDP_AT_WORK\" -a (mwv_cached) != valid"
+format = "[⚠ mw]($style) "
+style = "bold red"

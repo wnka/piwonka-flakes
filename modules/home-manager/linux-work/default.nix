@@ -41,7 +41,7 @@
     '';
     shellAliases = {
       nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
-      dw = "mwinit -s -o";
+      dw = "mwinit -s -o && echo valid > ~/.cache/mwv_status";
     };
   };
 }
