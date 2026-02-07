@@ -145,8 +145,6 @@
       yy = "yazi";
       hh = "hx";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
-      # Q Chat helpers
-      qc = "kiro-cli chat --trust-tools execute_bash,fs_read,fs_write,web_search,web_fetch,@slack/notify";
     };
   };
   programs.starship = {
