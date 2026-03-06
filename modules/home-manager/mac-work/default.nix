@@ -23,6 +23,7 @@
       fish_add_path /Users/piwonka/.toolbox/bin
       fish_add_path /opt/homebrew/opt/llvm/bin
       fish_add_path /Users/piwonka/.cargo/bin
+      fish_add_path /Applications/Obsidian.app/Contents/MacOS
     '';
     shellAliases = {
       funtime = "bash ~/bin/funtime.sh";
@@ -30,8 +31,9 @@
       nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
       towiki = "pandoc --wrap=none -f org -t xwiki (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
-      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -a -c -t";
+      dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -r c8i -r c8id -c -t";
       et-8 = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etc8i -p 2025";
+      et-8d = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etc8id -p 2026";
     };
   };
 }
