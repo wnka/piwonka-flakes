@@ -29,6 +29,7 @@
     git-crypt
     gnugrep
     gnupg
+    pass
     helix
     iperf
     jq
