@@ -83,4 +83,5 @@ command = "echo $PWD | sed -n 's|.*/ws/\\([^/]*\\)/.*|\\1|p'"
 when = "echo $PWD | grep -q \"$HOME/ws/\""
 format = "[$output]($style) "
 style = "bold green"
+ignore_timeout = true
 
