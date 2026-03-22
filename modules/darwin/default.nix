@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  # This is needed for Determinate Systems Nix.
+  nix.enable = false;
   # here go the darwin preferences and config items
   programs.fish.enable = true;
   environment = {
@@ -71,7 +73,7 @@
   system.stateVersion = 4;
   homebrew = {
     enable = true;
-    caskArgs.no_quarantine = true;
+    # caskArgs.no_quarantine = true;
     global.brewfile = true;
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
@@ -79,7 +81,6 @@
       "1password"
       "claude"
       "discord"
-      "docker-desktop"
       "domzilla-caffeine"
       "firefox"
       "font-blex-mono-nerd-font"
@@ -88,19 +89,12 @@
       "font-zed-mono-nerd-font"
       "font-cascadia-code-nf"
       "ghostty"
-      "handbrake-app"
-      "iina"
-      "jabra-direct"
-      "keybase"
       "keyboardcleantool"
-      "logi-options+"
-      "lunar"
       "moonlight"
       "obsidian"
       "raycast"
       "rectangle"
       "roon"
-      "soundsource"
       "transmit"
       "visual-studio-code"
     ];

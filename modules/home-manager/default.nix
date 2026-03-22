@@ -1,5 +1,7 @@
 { pkgs, lib, ... }: {
 
+  nix.enable = false;
+
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
   programs.home-manager.enable = true;
@@ -35,7 +37,7 @@
     jq
     lazygit
     markdown-oxide
-    marksman
+    # marksman
     mergiraf
     mermaid-cli
     multitail
