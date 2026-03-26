@@ -34,6 +34,7 @@
             users.users.${user}.home = "/Users/${user}";
           })
           ./modules/darwin
+          ./modules/darwin/homebrew-home.nix
           home-manager.darwinModules.home-manager
           {
             home-manager = {
@@ -61,6 +62,7 @@
             users.users.${user}.home = "/Users/${user}";
           })
           ./modules/darwin
+          ./modules/darwin/homebrew-work.nix
           home-manager.darwinModules.home-manager
           {
             home-manager = {
