@@ -3,7 +3,7 @@
   nix.enable = false;
 
   # Don't change this when you change package input. Leave it alone.
-  home.stateVersion = "22.11";
+  home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 
   # Without this I get lang/local errors on ssh/login
