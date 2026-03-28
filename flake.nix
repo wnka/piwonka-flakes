@@ -21,23 +21,14 @@
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
-    let
-      # Workaround for NixOS/nixpkgs#502464 — remove when direnv builds again on unstable
-      direnvOverlay = final: prev: {
-        direnv = prev.direnv.overrideAttrs (old: {
-          postPatch = (old.postPatch or "") + ''
-            substituteInPlace GNUmakefile --replace-fail '-linkmode=external' ""
-          '';
-        });
-      };
-    in {
+    {
     darwinConfigurations.mac =
       let
         user = "piwonka";
         system = "aarch64-darwin";
 
       in darwin.lib.darwinSystem {
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";
@@ -65,7 +56,7 @@
         user = "piwonka";
         system = "aarch64-darwin";
       in darwin.lib.darwinSystem {
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         modules = [
           ({ pkgs, ... }: {
             users.users.${user}.home = "/Users/${user}";
@@ -95,7 +86,7 @@
         system = "aarch64-linux";
       in home-manager.lib.homeManagerConfiguration {
         # modifies pkgs to allow unfree packages
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
         extraSpecialArgs = {
           inherit inputs;
@@ -120,7 +111,7 @@
         system = "x86_64-linux";
       in home-manager.lib.homeManagerConfiguration {
         # modifies pkgs to allow unfree packages
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
         extraSpecialArgs = { inherit inputs; };
         modules = [
@@ -142,7 +133,7 @@
         system = "x86_64-linux";
       in home-manager.lib.homeManagerConfiguration {
         # modifies pkgs to allow unfree packages
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
         extraSpecialArgs = {
           inherit inputs;
@@ -167,7 +158,7 @@
         system = "aarch64-linux";
       in home-manager.lib.homeManagerConfiguration {
         # modifies pkgs to allow unfree packages
-        pkgs = import nixpkgs { inherit system; overlays = [ direnvOverlay ]; };
+        pkgs = import nixpkgs { inherit system; };
         # makes all inputs available in imported files
         extraSpecialArgs = {
           inherit inputs;
