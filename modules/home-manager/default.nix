@@ -42,6 +42,7 @@
     mermaid-cli
     multitail
     oha
+    prettier
     pandoc
     posting
     pv
