@@ -111,6 +111,16 @@
             hx "$selected_file"
           end
     '';
+      awsp = ''
+          set -l profile (begin; echo "(none)"; grep '^\[profile ' ~/.aws/config | sed 's/\[profile //' | sed 's/\]//'; end | fzf --prompt="AWS Profile> ")
+          if test "$profile" = "(none)"
+            set -e AWS_PROFILE
+            echo "AWS_PROFILE unset"
+          else if test -n "$profile"
+            set -gx AWS_PROFILE $profile
+            echo "AWS_PROFILE=$profile"
+          end
+    '';
     };
     plugins = [
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
