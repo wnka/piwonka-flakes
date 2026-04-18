@@ -164,7 +164,7 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    settings = builtins.fromTOML (builtins.unsafeDiscardStringContext(builtins.readFile ./files/starship.toml));
+    settings = builtins.fromTOML (builtins.readFile ./files/starship.toml);
   };
   programs.bat = {
     enable = true;
