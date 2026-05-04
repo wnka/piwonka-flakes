@@ -69,6 +69,14 @@
       };
     };
   };
+  system.activationScripts.postActivation.text = ''
+    echo "Upgrading all Homebrew packages (including undeclared)..." >&2
+    if [ -f "/opt/homebrew/bin/brew" ]; then
+      sudo --preserve-env=PATH --user=piwonka --set-home \
+        /opt/homebrew/bin/brew upgrade
+    fi
+  '';
+
   # backwards compat; don't change
   system.stateVersion = 4;
   homebrew = {
