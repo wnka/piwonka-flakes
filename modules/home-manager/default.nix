@@ -83,7 +83,7 @@
       # End Nix
       # Clear the greeting
       set -g fish_greeting
-      fzf_configure_bindings
+      fzf_configure_bindings --directory=ctrl-f
 
       # clear LS_COLORS
       set -e LS_COLORS
