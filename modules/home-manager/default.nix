@@ -100,7 +100,8 @@
       # sed due to fish not allowing certain bind args anymore
       # https://github.com/atuinsh/atuin/issues/2940
       # Can remove laters
-      atuin init fish | sed "s/-k up/up/g" | source 
+      # Also remove & disown from postexec — causes prompt not to repaint on fish 4.x
+      atuin init fish | sed "s/-k up/up/g; s/&>\/dev\/null &/\&>\/dev\/null/; /disown/d" | source
     '';
     functions = {
       hhf = ''
