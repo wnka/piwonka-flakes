@@ -35,6 +35,7 @@
       towiki = "pandoc --wrap=none -f org -t xwiki (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -c -t";
+      dwl = "~/bin/daywon -l";
       et-8d = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etc8id -p 2026";
     };
   };
