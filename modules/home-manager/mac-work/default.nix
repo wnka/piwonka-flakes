@@ -7,8 +7,6 @@
     pam-reattach
   ];
   
-  home.file.".hammerspoon/init.lua".source = ../files/hammerspoon/init.lua;
-
   programs.fish = {
     shellInit = ''
       # Nix
