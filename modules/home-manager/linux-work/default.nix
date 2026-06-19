@@ -38,10 +38,13 @@
       # Move .toolbox/bin to the front, since this is needed for rust-analyzer to work
       # right in brazil workspaces.
       fish_add_path --prepend --move /home/piwonka/.toolbox/bin
+
+      set -x CARGO_TARGET_DIR /scratch/cargocache/
     '';
     shellAliases = {
       nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
       dw = "mwinit -s -o";
+      ramm = "set -x CARGO_TARGET_DIR /home/piwonka/ramdisk/cargocache/";
     };
   };
 }
