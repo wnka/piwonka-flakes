@@ -25,8 +25,6 @@
       fish_add_path /Users/piwonka/.cargo/bin
       fish_add_path /Applications/Obsidian.app/Contents/MacOS
       fish_add_path /Users/piwonka/.local/bin
-
-      set -x BAZEL_REAL /opt/homebrew/bin/bazel
     '';
     shellAliases = {
       funtime = "bash ~/bin/funtime.sh";
