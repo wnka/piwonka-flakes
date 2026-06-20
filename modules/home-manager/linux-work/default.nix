@@ -41,6 +41,20 @@
 
       set -x CARGO_TARGET_DIR /scratch/cargocache/
     '';
+    functions = {
+      # Copy stdin to the local (Mac) clipboard via the OSC 52 escape sequence.
+      # Works over SSH through zellij + Ghostty without any local daemon.
+      # NB: stdin is piped straight through base64 — wrapping it in a fish
+      # command substitution (printf ... (base64)) sends an empty payload,
+      # because a substitution does not inherit the function's stdin.
+      pbcopy = {
+        body = ''
+          printf '\033]52;c;'
+          base64 | tr -d '\n'
+          printf '\007'
+        '';
+      };
+    };
     shellAliases = {
       nixs = "nix build \".#homeConfigurations.${configName}.activationPackage\" && ./result/activate";
       dw = "mwinit -s -o";
