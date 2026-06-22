@@ -73,7 +73,7 @@
     echo "Upgrading all Homebrew packages (including undeclared)..." >&2
     if [ -f "/opt/homebrew/bin/brew" ]; then
       sudo --preserve-env=PATH --user=piwonka --set-home \
-        /opt/homebrew/bin/brew upgrade
+        /opt/homebrew/bin/brew upgrade --yes
     fi
   '';
 
