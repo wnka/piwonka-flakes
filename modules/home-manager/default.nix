@@ -165,6 +165,7 @@
       jz = "zellij";
       yy = "yazi";
       hh = "hx";
+      ee = "emacs -nw"; # terminal emacs, fresh isolated session each launch
       zz = "zi";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
       paws = "awsp";
