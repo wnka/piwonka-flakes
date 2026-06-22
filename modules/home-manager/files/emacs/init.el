@@ -259,8 +259,11 @@
   (org-agenda-skip-deadline-if-done t)
   (org-agenda-skip-scheduled-if-done t)
   (org-agenda-start-on-weekday nil)       ; start the agenda on today
+  ;; C-c c skips the selection menu and drops straight into the inbox Todo
+  ;; (only one template, so the menu would just be friction).  Keeps the nice
+  ;; capture-from-anywhere behavior; C-c C-c files it and returns you to work.
   :bind (("C-c a" . org-agenda)
-         ("C-c c" . org-capture))
+         ("C-c c" . (lambda () (interactive) (org-capture nil "t"))))
   :hook (org-mode . turn-off-auto-fill)   ; carried over from DOOM config
   :config
   ;; Simple capture: a Todo straight into the inbox.
