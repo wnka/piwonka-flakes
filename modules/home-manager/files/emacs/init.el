@@ -187,10 +187,11 @@
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :hook (markdown-mode . turn-off-auto-fill)   ; carried over from DOOM config
-  ;; Tables auto-align as you edit them (markdown-table-align-p defaults to t).
-  ;; For a manual re-align, bind the real command -- NOTE the default `C-c C-c |'
-  ;; is markdown-table-convert-region (text region -> table), which errors with
-  ;; "Invalid search bound" if run without a proper region.
+  ;; Re-align the table at point with `C-c C-c TAB'.  Tables do NOT re-align on
+  ;; ordinary typing -- markdown-table-align-p only fires when you navigate cells
+  ;; with TAB/RET, so for free-form edits use this binding manually.
+  ;; NOTE the default `C-c C-c |' is markdown-table-convert-region (text region
+  ;; -> table), which errors "Invalid search bound" if run without a region.
   :bind (:map markdown-mode-map
               ("C-c C-c TAB" . markdown-table-align)))
 
