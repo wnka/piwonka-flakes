@@ -101,10 +101,39 @@
                      (recents  . 8)
                      (agenda   . 5)))
   (dashboard-projects-backend 'project-el)   ; use built-in project.el
+
+  ;; Icons: force-on in the terminal too (defaults to GUI-only).  Requires the
+  ;; nerd-icons font to be installed in the terminal (M-x nerd-icons-install-fonts).
   (dashboard-display-icons-p t)
   (dashboard-icon-type 'nerd-icons)
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons t)
+
+  ;; Banner: the Emacs logo in 24-bit ANSI color, which works in -nw (falls
+  ;; back to unicode braille).  Image banners don't render in the terminal.
+  (dashboard-startup-banner 'logo-ansi-truecolor)
+  (dashboard-banner-logo-title "Welcome back, Phil")
+
+  ;; Centered, modern layout.
+  (dashboard-center-content t)
+  (dashboard-vertically-center-content t)
+
+  ;; A clickable navigator row of shortcuts under the banner.
+  (dashboard-set-navigator t)
+  (dashboard-navigator-buttons
+   `((( ,(nerd-icons-octicon "nf-oct-repo" :height 1.0 :v-adjust 0.0)
+        "Projects" "Open a project" (lambda (&rest _) (project-switch-project (project-prompt-project-dir))))
+      ( ,(nerd-icons-octicon "nf-oct-file" :height 1.0 :v-adjust 0.0)
+        "Recent" "Recent files" (lambda (&rest _) (consult-recent-file)))
+      ( ,(nerd-icons-octicon "nf-oct-gear" :height 1.0 :v-adjust 0.0)
+        "Config" "Edit init.el" (lambda (&rest _) (find-file user-init-file))))))
+
+  ;; Footer with an Emacs glyph.
+  (dashboard-set-footer t)
+
+  ;; Single-key jumps to each section while the dashboard is focused.
+  (dashboard-item-shortcuts '((projects . "p") (recents . "r") (agenda . "a")))
+
   ;; NOTE: the agenda section stays empty until `org-agenda-files' is set
   ;; (deferred to the org setup session).
   (dashboard-week-agenda t))
