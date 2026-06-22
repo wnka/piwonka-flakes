@@ -111,7 +111,25 @@
   :bind (("C-s" . consult-line)           ; old muscle memory: C-s = consult-line
          ("C-x b" . consult-buffer)
          ("M-y" . consult-yank-pop)
-         ("M-g g" . consult-goto-line)))
+         ("M-g g" . consult-goto-line)
+         ;; Project-aware commands (the projectile-style pickers from DOOM).
+         ;; These live under the native `C-x p' project.el prefix.
+         ("C-x p f" . consult-fd)         ; find file in project (uses fd)
+         ("C-x p g" . consult-ripgrep)    ; grep across the project (uses rg)
+         ("C-x p b" . consult-project-buffer)))
+
+;;; ---------------------------------------------------------------------------
+;;; Projects: built-in project.el (modern, lightweight projectile replacement)
+;;; ---------------------------------------------------------------------------
+
+;; project.el ships with Emacs and binds its commands under `C-x p':
+;;   C-x p f  find file in project      C-x p p  switch project
+;;   C-x p g  ripgrep in project        C-x p b  switch project buffer
+;;   C-x p d  dired at project root     C-x p c  compile
+;; Projects are detected by VCS, so every git repo just works with no config.
+;; The consult bindings above override f/g/b with nicer live-narrowing UIs.
+(use-package project
+  :ensure nil)                            ; built-in
 
 ;;; ---------------------------------------------------------------------------
 ;;; In-buffer completion: corfu + cape (pairs with Eglot)
