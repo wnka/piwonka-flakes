@@ -384,14 +384,7 @@
   ;; collapses to the single byte Emacs reads as C-_.  Instead Emacs sees
   ;; C-S-- (control-shift-minus), so the classic `C-_' undo binding misses.
   ;; Bind the decoded variant explicitly so undo works in the terminal.
-  (keymap-global-set "C-S--" #'undo)
-
-  ;; Likewise, kkp delivers Escape as the distinct `<escape>' key symbol
-  ;; rather than the raw ESC byte, so the old `ESC ESC ESC' escape-quit no
-  ;; longer fires (and a stray Escape reports "ESC <escape> is undefined").
-  ;; Bind <escape> straight to keyboard-escape-quit so a SINGLE Escape bails
-  ;; out of pickers / sub-buffers / the minibuffer.
-  (keymap-global-set "<escape>" #'keyboard-escape-quit))
+  (keymap-global-set "C-S--" #'undo))
 
 ;;; ---------------------------------------------------------------------------
 ;;; Navigation: avy
