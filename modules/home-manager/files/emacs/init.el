@@ -102,27 +102,8 @@
   (doom-modeline-height 30)
   (doom-modeline-persp-name t))
 
-;; Startup splash screen (the successor to DOOM's doom-dashboard).  Shows
-;; recent projects, recent files, and the org agenda.  Uses nerd-icons (above).
-(use-package dashboard
-  :init (dashboard-setup-startup-hook)
-  :custom
-  (dashboard-items '((projects . 8)
-                     (recents  . 8)
-                     (agenda   . 5)))
-  (dashboard-projects-backend 'project-el)   ; use built-in project.el
-  (dashboard-display-icons-p t)
-  (dashboard-icon-type 'nerd-icons)
-  (dashboard-set-heading-icons t)
-  (dashboard-set-file-icons t)
-
-  ;; Centered layout.
-  (dashboard-center-content t)
-  (dashboard-vertically-center-content t)
-
-  ;; NOTE: the agenda section stays empty until `org-agenda-files' is set
-  ;; (deferred to the org setup session).
-  (dashboard-week-agenda t))
+;; No startup splash: `inhibit-startup-screen' + `initial-scratch-message nil'
+;; (set above) land us on a blank *scratch* buffer.
 
 ;;; ---------------------------------------------------------------------------
 ;;; Minibuffer / completion stack: vertico + orderless + marginalia + consult

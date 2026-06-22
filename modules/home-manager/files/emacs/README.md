@@ -67,14 +67,14 @@ for the full picture):
 - **Look:** `rose-pine` theme (konrad1977's autothemer port, vendored as
   `rose-pine-theme.el` and symlinked into `~/.config/emacs/`, which is on
   `custom-theme-load-path` — so `load-theme` finds it with no package machinery),
-  `doom-modeline`, centered `dashboard` splash (recent projects/files + agenda).
+  `doom-modeline`. No startup splash — lands on a blank `*scratch*` buffer.
   `doom-themes` stays installed, so the whole doom family is a `M-x load-theme`
   away. Updating the theme = re-copy `rose-pine-theme.el` from upstream.
 - **QoL:** which-key, avy (`C-\`), savehist, save-place.
 - **Muscle-memory binds:** `C-x C-m`/`C-x m` = M-x, `M-n`/`M-p` = forward/
   backward-list, aliases `gits`/`qrr`/`edb`/`afm`.
 
-**Icons caveat:** doom-modeline and dashboard use `nerd-icons`. Glyphs only
+**Icons caveat:** doom-modeline uses `nerd-icons`. Glyphs only
 render if a Nerd Font is active in the terminal (Ghostty) AND
 `M-x nerd-icons-install-fonts` has been run. Otherwise expect tofu/boxes.
 
