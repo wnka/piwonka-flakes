@@ -119,6 +119,17 @@
             hx "$selected_file"
           end
     '';
+      # Render a markdown file with full table borders (lines between rows),
+      # which glow can't do. Uses pandoc grid tables, paged through bat.
+      # Usage: mdt FILE [WIDTH]   (width defaults to terminal columns)
+      mdt = ''
+          set -l file $argv[1]
+          set -l width $argv[2]
+          test -z "$width"; and set width (math (tput cols) - 4)
+          pandoc "$file" -f markdown \
+            -t "markdown-simple_tables-multiline_tables-pipe_tables+grid_tables" \
+            --columns=$width | bat --style=plain --language=markdown
+    '';
       awsp = ''
           set -l profile (begin; echo "(none)"; grep '^\[profile ' ~/.aws/config | sed 's/\[profile //' | sed 's/\]//'; end | fzf --prompt="AWS Profile> ")
           if test "$profile" = "(none)"
