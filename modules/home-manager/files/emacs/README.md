@@ -39,6 +39,41 @@ Emacs in use is a **from-source build of Emacs 31** (see "Building Emacs" below)
 A fresh host needs its own Emacs 31 built with tree-sitter + native-comp; the
 flake won't provide it.
 
+A `ee = "emacs -nw"` shell alias (in `default.nix`'s `shellAliases`) launches a
+fresh, isolated terminal Emacs each time. No daemon — that was a deliberate
+choice to keep per-session isolation (one daemon would share buffers/projects/
+state across every frame). Startup is ~0.36s, so a cold launch each time is fine.
+
+---
+
+# What the config provides
+
+A vanilla, fast replacement for the old DOOM setup. Highlights (see `init.el`
+for the full picture):
+
+- **Completion stack:** vertico + orderless + marginalia + consult (minibuffer);
+  corfu + cape (in-buffer). `C-s` is `consult-line`.
+- **Projects:** built-in `project.el` under `C-x p`. `C-x p f` = find file
+  (instant full list, type to narrow), `C-x p g` = `consult-ripgrep`,
+  `C-x p b` = `consult-project-buffer`. VCS-detected, no config per repo.
+- **Rust:** `rust-ts-mode` + Eglot + rust-analyzer (clippy on save).
+- **Other languages:** nix, yaml, toml, fish, and tree-sitter modes for
+  json/python/js (Eglot auto-starts if a server is on PATH).
+- **Markdown:** `markdown-mode` for `.md`; built-in `markdown-ts-mode` via `M-x`.
+- **Git:** Magit (`C-x g`), `diff-hl` fringe markers.
+- **Org:** basic inbox + agenda from `~/workthing/org/inbox.org`. `C-c a` agenda,
+  `C-c c` capture (skips the menu, straight to an inbox Todo). No clocking, roam,
+  or super-agenda — deliberately dropped from the DOOM config.
+- **Look:** `doom-feather-dark` theme, `doom-modeline`, centered `dashboard`
+  splash (recent projects/files + agenda).
+- **QoL:** which-key, avy (`C-\`), savehist, save-place.
+- **Muscle-memory binds:** `C-x C-m`/`C-x m` = M-x, `M-n`/`M-p` = forward/
+  backward-list, aliases `gits`/`qrr`/`edb`/`afm`.
+
+**Icons caveat:** doom-modeline and dashboard use `nerd-icons`. Glyphs only
+render if a Nerd Font is active in the terminal (Ghostty) AND
+`M-x nerd-icons-install-fonts` has been run. Otherwise expect tofu/boxes.
+
 ---
 
 # Building Emacs 31 with tree-sitter on Amazon Linux 2023
@@ -196,8 +231,10 @@ Warning (treesit): ... ABI version is 15, but supported versions are 13-14
 ```
 
 **Fix: pin grammar versions** when installing. `init.el` sets
-`treesit-language-source-alist` with pins (e.g. Rust -> `v0.21.2`). The
-javascript/tsx grammars that came installed already were compatible.
+`treesit-language-source-alist` with pins: rust `v0.21.2`, json/python/bash
+`v0.21.0`. The javascript/tsx grammars that came installed already were
+compatible. (markdown/markdown-inline pin via the mode's own source entries —
+see gotcha #3.)
 
 To upgrade and allow newer-ABI grammars, rebuild tree-sitter from a newer
 release (and re-verify Emacs still links it).
@@ -219,7 +256,7 @@ It needs **two** grammars: `markdown` and `markdown-inline` (both from
 `.md` defaults to the full-featured MELPA `markdown-mode`; `markdown-ts-mode` is
 available via `M-x` to compare.
 
-## 4. Terminal keyboard protocol -> ";5u" inserted into buffers
+## 4. Terminal keyboard protocol -> ";5u" inserted, and broken C-_ / Escape
 
 Running terminal Emacs in **Ghostty** (`TERM=xterm-ghostty`), holding `C-n` (or
 other Ctrl keys) randomly inserts `;5u` into the buffer. Cause: Ghostty enables
@@ -229,6 +266,33 @@ parser sync and leaks the `;5u` tail as literal text.
 
 **Fix:** the `kkp` package (`global-kkp-mode`) in `init.el`. It makes Emacs speak
 the protocol properly. No-op in the GUI.
+
+**But kkp has knock-on effects** — it gives Emacs unambiguous key events, so a
+couple of traditional bindings that relied on the old collapsed encodings break
+and need the modern key symbol bound explicitly (both done in the `kkp` block):
+
+- **`C-_` (undo)** stopped working. `_` is Shift-`-`, so `C-_` is really
+  `C-S--`; without kkp it collapsed to the single byte Emacs read as `C-_`, but
+  with kkp Emacs sees `C-S--`, which was unbound. Fix:
+  `(keymap-global-set "C-S--" #'undo)`. (`C-/` and `C-x u` were unaffected.)
+- **`ESC ESC ESC` (keyboard-escape-quit)** stopped working; a stray Escape
+  reported `ESC <escape> is undefined`. kkp delivers Escape as the distinct
+  `<escape>` key symbol. Fix: `(keymap-global-set "<escape>" #'keyboard-escape-quit)`
+  — bonus, a SINGLE Escape now bails out of pickers/minibuffer.
+
+General pattern: if a key "stops working in the terminal after kkp," bind the
+more-specific decoded form (e.g. `C-S--` instead of `C-_`).
+
+## 4b. Eglot semanticTokens infinite loop on Rust
+
+Opening a Rust file, the `*EGLOT events*` buffer spams
+`textDocument/semanticTokens/full` forever (hundreds of requests/sec), pegging a
+CPU. rust-analyzer returns a `null` semanticTokens result, which makes eglot
+re-request on every redisplay -> infinite loop.
+
+**Fix:** `(eglot-ignored-server-capabilities '(:semanticTokensProvider))` in the
+eglot `:custom` block. `rust-ts-mode` already highlights via tree-sitter, so LSP
+semantic tokens are redundant anyway — disabling them loses nothing visible.
 
 ## 5. auto-save / backup dirs must exist
 
@@ -252,6 +316,27 @@ Emacs ignore this XDG config entirely. Fixed by moving grammars into
 `~/.config/emacs/tree-sitter/` and removing `~/.emacs.d/`.
 
 Keep `~/.emacs.d/` from coming back, or this config silently stops loading.
+
+## 7. Eglot dies in big Brazil Rust projects (rust-analyzer toolchain proxy)
+
+In a Brazil Rust workspace (e.g. AWSMantle), eglot fails to start while small
+projects work fine. Cause: `~/.cargo/bin/rust-analyzer` is a **rustup proxy**
+symlink, and the Brazil project has a `rust-toolchain.toml` pinning a custom
+`build/private/cargo-brazil-toolchain`. The proxy honors that pin and tries to
+run rust-analyzer *from the brazil toolchain*, which doesn't ship the component:
+
+```
+error: 'rust-analyzer' is not installed for the custom toolchain
+'.../build/private/cargo-brazil-toolchain'
+```
+
+so the server process dies on spawn. Small projects have no toolchain pin, so
+the proxy falls back to a toolchain that does have rust-analyzer.
+
+**Fix (done outside this repo):** point at a real rust-analyzer binary that
+isn't the proxy (a standalone/toolbox build on PATH ahead of `~/.cargo/bin`, or
+an absolute path in `eglot-server-programs`). Not memory or timeout — this host
+has plenty of RAM and `cargo metadata` is fast.
 
 ---
 
