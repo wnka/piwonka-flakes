@@ -64,12 +64,8 @@ for the full picture):
 - **Org:** basic inbox + agenda from `~/workthing/org/inbox.org`. `C-c a` agenda,
   `C-c c` capture (skips the menu, straight to an inbox Todo). No clocking, roam,
   or super-agenda — deliberately dropped from the DOOM config.
-- **Look:** `rose-pine` theme (konrad1977's autothemer port, vendored as
-  `rose-pine-theme.el` and symlinked into `~/.config/emacs/`, which is on
-  `custom-theme-load-path` — so `load-theme` finds it with no package machinery),
-  `doom-modeline`. No startup splash — lands on a blank `*scratch*` buffer.
-  `doom-themes` stays installed, so the whole doom family is a `M-x load-theme`
-  away. Updating the theme = re-copy `rose-pine-theme.el` from upstream.
+- **Look:** `doom-feather-dark` theme, `doom-modeline`. No startup splash —
+  lands on a blank `*scratch*` buffer.
 - **QoL:** which-key, avy (`C-\`), savehist, save-place.
 - **Muscle-memory binds:** `C-x C-m`/`C-x m` = M-x, `M-n`/`M-p` = forward/
   backward-list, aliases `gits`/`qrr`/`edb`/`afm`.

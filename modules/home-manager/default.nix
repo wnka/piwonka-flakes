@@ -79,10 +79,6 @@
   # and custom.el into it.  Linking the directory read-only would break all that.
   xdg.configFile."emacs/init.el".source = ./files/emacs/init.el;
   xdg.configFile."emacs/early-init.el".source = ./files/emacs/early-init.el;
-  # rose-pine theme, vendored from konrad1977/pinerose-emacs.  Lives directly in
-  # ~/.config/emacs/, which is on `custom-theme-load-path' by default, so
-  # `(load-theme 'rose-pine t)' in init.el finds it with no package machinery.
-  xdg.configFile."emacs/rose-pine-theme.el".source = ./files/emacs/rose-pine-theme.el;
 
   
   programs.git = {
