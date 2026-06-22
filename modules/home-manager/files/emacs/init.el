@@ -252,7 +252,6 @@
   (org-directory "~/workthing/org/")
   ;; Pull the agenda from the single inbox file.
   (org-agenda-files (list "~/workthing/org/inbox.org"))
-  (org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")))
   (org-log-done 'time)                    ; timestamp when an item is marked DONE
   (org-use-fast-todo-selection t)
   (org-agenda-window-setup 'current-window)
