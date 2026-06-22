@@ -250,7 +250,12 @@
 ;; protocol properly (no-op in the GUI, where it isn't needed).
 (use-package kkp
   :config
-  (global-kkp-mode 1))
+  (global-kkp-mode 1)
+  ;; With the Kitty protocol active, `_' (which is Shift-`-') no longer
+  ;; collapses to the single byte Emacs reads as C-_.  Instead Emacs sees
+  ;; C-S-- (control-shift-minus), so the classic `C-_' undo binding misses.
+  ;; Bind the decoded variant explicitly so undo works in the terminal.
+  (keymap-global-set "C-S--" #'undo))
 
 ;;; ---------------------------------------------------------------------------
 ;;; Navigation: avy
