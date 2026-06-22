@@ -243,6 +243,32 @@
 (defalias 'gits 'magit-status)            ; old alias
 
 ;;; ---------------------------------------------------------------------------
+;;; Org-mode (basic: inbox + agenda; no clocking/roam/super-agenda)
+;;; ---------------------------------------------------------------------------
+
+(use-package org
+  :ensure nil                             ; built-in
+  :custom
+  (org-directory "~/workthing/org/")
+  ;; Pull the agenda from the single inbox file.
+  (org-agenda-files (list "~/workthing/org/inbox.org"))
+  (org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")))
+  (org-log-done 'time)                    ; timestamp when an item is marked DONE
+  (org-use-fast-todo-selection t)
+  (org-agenda-window-setup 'current-window)
+  (org-agenda-skip-deadline-if-done t)
+  (org-agenda-skip-scheduled-if-done t)
+  (org-agenda-start-on-weekday nil)       ; start the agenda on today
+  :bind (("C-c a" . org-agenda)
+         ("C-c c" . org-capture))
+  :hook (org-mode . turn-off-auto-fill)   ; carried over from DOOM config
+  :config
+  ;; Simple capture: a Todo straight into the inbox.
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file (lambda () (expand-file-name "inbox.org" org-directory)))
+           "* TODO %?\n%u\n"))))
+
+;;; ---------------------------------------------------------------------------
 ;;; Other languages & data formats (carried over from DOOM :lang modules)
 ;;; ---------------------------------------------------------------------------
 
