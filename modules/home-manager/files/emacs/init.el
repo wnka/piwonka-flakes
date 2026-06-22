@@ -102,34 +102,37 @@
                      (agenda   . 5)))
   (dashboard-projects-backend 'project-el)   ; use built-in project.el
 
-  ;; Icons: force-on in the terminal too (defaults to GUI-only).  Requires the
-  ;; nerd-icons font to be installed in the terminal (M-x nerd-icons-install-fonts).
-  (dashboard-display-icons-p t)
-  (dashboard-icon-type 'nerd-icons)
-  (dashboard-set-heading-icons t)
-  (dashboard-set-file-icons t)
+  ;; Icons OFF: the nerd-icons font isn't reliably present in the terminal, so
+  ;; glyphs render as tofu/garbage.  Leaving icons at their GUI-only default
+  ;; keeps the terminal dashboard clean.  (To enable later: install a Nerd Font
+  ;; in Ghostty + `M-x nerd-icons-install-fonts', then set these three to t.)
+  (dashboard-set-heading-icons nil)
+  (dashboard-set-file-icons nil)
 
-  ;; Banner: the Emacs logo in 24-bit ANSI color, which works in -nw (falls
-  ;; back to unicode braille).  Image banners don't render in the terminal.
-  (dashboard-startup-banner 'logo-ansi-truecolor)
+  ;; Banner: plain ASCII "EMACS" -- no braille/ANSI escapes, renders in any
+  ;; terminal regardless of font.  (logo-ansi-truecolor / image banners need a
+  ;; braille-capable font and produced garbage here.)
+  (dashboard-startup-banner 'ascii)
   (dashboard-banner-logo-title "Welcome back, Phil")
 
   ;; Centered, modern layout.
   (dashboard-center-content t)
   (dashboard-vertically-center-content t)
 
-  ;; A clickable navigator row of shortcuts under the banner.
+  ;; A clickable navigator row of shortcuts under the banner (text labels, no
+  ;; icon glyphs -- those need the Nerd Font).
   (dashboard-set-navigator t)
   (dashboard-navigator-buttons
-   `((( ,(nerd-icons-octicon "nf-oct-repo" :height 1.0 :v-adjust 0.0)
-        "Projects" "Open a project" (lambda (&rest _) (project-switch-project (project-prompt-project-dir))))
-      ( ,(nerd-icons-octicon "nf-oct-file" :height 1.0 :v-adjust 0.0)
-        "Recent" "Recent files" (lambda (&rest _) (consult-recent-file)))
-      ( ,(nerd-icons-octicon "nf-oct-gear" :height 1.0 :v-adjust 0.0)
-        "Config" "Edit init.el" (lambda (&rest _) (find-file user-init-file))))))
+   '((("" "Projects" "Open a project"
+       (lambda (&rest _) (project-switch-project (project-prompt-project-dir))))
+      ("" "Recent" "Recent files"
+       (lambda (&rest _) (consult-recent-file)))
+      ("" "Config" "Edit init.el"
+       (lambda (&rest _) (find-file user-init-file))))))
 
-  ;; Footer with an Emacs glyph.
+  ;; Footer text (no icon glyph).
   (dashboard-set-footer t)
+  (dashboard-footer-icon "")
 
   ;; Single-key jumps to each section while the dashboard is focused.
   (dashboard-item-shortcuts '((projects . "p") (recents . "r") (agenda . "a")))
