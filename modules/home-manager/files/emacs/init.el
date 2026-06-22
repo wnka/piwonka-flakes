@@ -161,7 +161,9 @@
 (setq treesit-language-source-alist
       '((rust       "https://github.com/tree-sitter/tree-sitter-rust" "v0.21.2")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-        (json       "https://github.com/tree-sitter/tree-sitter-json")))
+        (json       "https://github.com/tree-sitter/tree-sitter-json" "v0.21.0")
+        (python     "https://github.com/tree-sitter/tree-sitter-python" "v0.21.0")
+        (bash       "https://github.com/tree-sitter/tree-sitter-bash" "v0.21.0")))
 
 ;; Use the tree-sitter Rust mode for .rs files.
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
@@ -188,6 +190,54 @@
   :bind (("C-x g" . magit-status)))
 
 (defalias 'gits 'magit-status)            ; old alias
+
+;;; ---------------------------------------------------------------------------
+;;; Other languages & data formats (carried over from DOOM :lang modules)
+;;; ---------------------------------------------------------------------------
+
+;; Nix.  I write Nix regularly (this flake), so this is high value.
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
+;; Data formats.
+(use-package yaml-mode
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+
+(use-package toml-mode
+  :mode ("\\.toml\\'" . toml-mode))
+
+;; JSON via the built-in tree-sitter mode (grammar pinned above).
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-ts-mode))
+
+;; Fish shell scripts (I use fish as my shell).
+(use-package fish-mode
+  :mode ("\\.fish\\'" . fish-mode))
+
+;; Python & JavaScript via built-in tree-sitter modes.  The JS grammar is
+;; already installed; the python grammar is pinned in the source list above.
+;; Eglot will start if the relevant language server is on PATH (pyright/
+;; pylsp for Python, typescript-language-server for JS) -- harmless if absent.
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-ts-mode))
+(add-hook 'python-ts-mode-hook #'eglot-ensure)
+(add-hook 'js-ts-mode-hook #'eglot-ensure)
+
+;;; ---------------------------------------------------------------------------
+;;; Quality-of-life (things DOOM gave me for free)
+;;; ---------------------------------------------------------------------------
+
+;; which-key: popup of available keybindings after a prefix.  Built in since
+;; Emacs 30, so no package download needed.
+(use-package which-key
+  :ensure nil
+  :init (which-key-mode 1)
+  :custom (which-key-idle-delay 0.5))
+
+;; diff-hl: VCS change indicators in the fringe (the old `vc-gutter' module).
+(use-package diff-hl
+  :init (global-diff-hl-mode 1)
+  :hook ((magit-pre-refresh  . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh)))
 
 ;;; ---------------------------------------------------------------------------
 ;;; Terminal: Kitty Keyboard Protocol support
