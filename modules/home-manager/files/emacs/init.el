@@ -410,6 +410,11 @@
 (global-set-key (kbd "M-n") #'forward-list)
 (global-set-key (kbd "M-p") #'backward-list)
 
+;; Toggle line truncation: for wide content (e.g. prose-heavy markdown tables
+;; that can't be wrapped), stop the ugly soft-wrap and let lines scroll
+;; horizontally instead.  markdown-table-align can't narrow such tables.
+(global-set-key (kbd "C-c t") #'toggle-truncate-lines)
+
 ;; Handy aliases from the old config.
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'edb 'ediff-buffers)
