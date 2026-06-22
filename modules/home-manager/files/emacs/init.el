@@ -186,7 +186,13 @@
 (use-package markdown-mode
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :hook (markdown-mode . turn-off-auto-fill))  ; carried over from DOOM config
+  :hook (markdown-mode . turn-off-auto-fill)   ; carried over from DOOM config
+  ;; Tables auto-align as you edit them (markdown-table-align-p defaults to t).
+  ;; For a manual re-align, bind the real command -- NOTE the default `C-c C-c |'
+  ;; is markdown-table-convert-region (text region -> table), which errors with
+  ;; "Invalid search bound" if run without a proper region.
+  :bind (:map markdown-mode-map
+              ("C-c C-c TAB" . markdown-table-align)))
 
 ;; The built-in markdown-ts-mode.el ships WITHOUT autoload cookies, so `M-x'
 ;; can't find the command until the file is loaded.  `:commands' makes
