@@ -28,6 +28,8 @@
       funtime = "bash ~/bin/funtime.sh";
       worktime = "bash ~/bin/worktime.sh";
       nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac-work";
+      # Activate only the home-manager arm (no sudo, no system rebuild). Run `nixs` when you've also changed darwin-level config.
+      nixh = "nix build ~/code/nix/piwonka-flakes#darwinConfigurations.mac-work.config.home-manager.users.piwonka.home.activationPackage --out-link /tmp/hm-result && /tmp/hm-result/activate";
       towiki = "pandoc --wrap=none -f org -t xwiki (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -c -t";

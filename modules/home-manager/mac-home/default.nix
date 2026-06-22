@@ -23,6 +23,8 @@
     '';
     shellAliases = {
       nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
+      # Activate only the home-manager arm (no sudo, no system rebuild). Run `nixs` when you've also changed darwin-level config.
+      nixh = "nix build ~/code/nix/piwonka-flakes#darwinConfigurations.mac.config.home-manager.users.piwonka.home.activationPackage --out-link /tmp/hm-result && /tmp/hm-result/activate";
     };
   };
 }
