@@ -125,7 +125,11 @@
       mdt = ''
           set -l file $argv[1]
           set -l width $argv[2]
-          test -z "$width"; and set width (math (tput cols) - 4)
+          if test -z "$width"
+            # Auto width = terminal columns - 4, capped at 120.
+            set width (math (tput cols) - 4)
+            test "$width" -gt 120; and set width 120
+          end
           pandoc "$file" -f markdown \
             -t "markdown-simple_tables-multiline_tables-pipe_tables+grid_tables" \
             --columns=$width | bat --style=plain --language=markdown
@@ -178,7 +182,7 @@
       yy = "yazi";
       hh = "hx";
       ee = "emacs -nw"; # terminal emacs, fresh isolated session each launch
-      md = "glow -p";   # render markdown in the terminal (paged), wraps tables
+      md = "glow -p -w 120"; # render markdown in the terminal (paged), wrap at 120
       zz = "zi";
       curll = "curl -o /dev/null -w \"lookup:        %{time_namelookup}\nconnect:       %{time_connect}\nappconnect:    %{time_appconnect}\npretransfer:   %{time_pretransfer}\nredirect:      %{time_redirect}\nstarttransfer: %{time_starttransfer}\ntotal:         %{time_total}\n\"";
       paws = "awsp";
