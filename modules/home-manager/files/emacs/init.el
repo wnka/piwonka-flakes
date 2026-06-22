@@ -277,6 +277,11 @@
 ;; Modern, markdown-native, database-free note system.  Notes are plain files
 ;; named with a timestamp ID + title + keywords, linked by that stable ID.
 (use-package denote
+  ;; Load eagerly: denote must be loaded for the consult-notes block's
+  ;; `:after (consult denote)' to fire (which turns on consult-notes-denote-mode
+  ;; and registers the note source).  Deferred, denote never loaded on its own,
+  ;; so consult-notes saw zero notes.
+  :demand t
   :custom
   (denote-directory (expand-file-name "~/workthing/denote/"))
   (denote-file-type 'markdown-yaml)       ; .md files with YAML front matter
