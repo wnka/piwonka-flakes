@@ -13,6 +13,15 @@
 ;; Don't let package.el initialize before init.el runs; we drive it ourselves.
 (setq package-enable-at-startup nil)
 
+;; Point `custom-file' at custom.el NOW, before any package installs.  package.el
+;; saves `package-selected-packages' via Customize whenever it installs something
+;; (notably a `use-package :vc' clone), and if `custom-file' is still nil at that
+;; point it falls back to writing into `user-init-file' -- which here is a
+;; read-only Nix-store symlink, so the write fails with "chmod: Operation not
+;; permitted".  Setting it here (before init.el's package blocks run) sends that
+;; write to custom.el instead.  init.el still loads custom.el at its tail.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 ;; Avoid a flash of unstyled UI: disable chrome before the frame is created.
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))

@@ -70,16 +70,26 @@
 (when (member "Berkeley Mono" (font-family-list))
   (set-face-attribute 'default nil :family "Berkeley Mono" :height 150))
 
-;; DOOM's themes as a standalone package (no DOOM required).  This is the same
-;; theme I used in my old DOOM config: doom-feather-dark.  Browse others with
-;; `M-x load-theme' (e.g. doom-one, doom-tokyo-night, doom-gruvbox, ...).
+;; DOOM's themes as a standalone package (no DOOM required).  No longer the
+;; startup theme (rose-pine is, below), but kept installed so the whole doom
+;; family stays a `M-x load-theme' away (doom-feather-dark, doom-one,
+;; doom-tokyo-night, doom-gruvbox, ...).
 (use-package doom-themes
   :custom
   (doom-themes-enable-bold t)
   (doom-themes-enable-italic t)
   :config
-  (load-theme 'doom-feather-dark t)
   (doom-themes-org-config))   ; nicer org fontification, harmless elsewhere
+
+;; rose-pine: konrad1977's autothemer-based port of the Rose Pine palette.
+;; Not on MELPA, so the single `rose-pine-theme.el' is vendored into
+;; ~/.config/emacs/ by home-manager (see default.nix).  That dir is on
+;; `custom-theme-load-path' by default, so `load-theme' finds it directly -- no
+;; package-vc/elpa machinery.  The theme expands `autothemer' macros at load
+;; time, so autothemer (on MELPA) must be installed first.
+(use-package autothemer)
+
+(load-theme 'rose-pine t)   ; the theme symbol is `rose-pine'
 
 ;; Icon fonts used by doom-modeline (and usable elsewhere).  Run
 ;; `M-x nerd-icons-install-fonts' ONCE so the glyphs render instead of tofu.
@@ -421,8 +431,9 @@
 ;;; Keep customizations out of init.el
 ;;; ---------------------------------------------------------------------------
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
+;; `custom-file' is set in early-init.el (so package.el's install-time saves land
+;; in custom.el, not the read-only init.el).  Here we just load it.
+(when (and custom-file (file-exists-p custom-file))
   (load custom-file))
 
 ;;; init.el ends here
