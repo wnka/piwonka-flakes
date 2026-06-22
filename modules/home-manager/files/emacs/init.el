@@ -216,6 +216,12 @@
 (use-package eglot
   :ensure nil                             ; built-in since Emacs 29
   :hook ((rust-ts-mode . eglot-ensure))
+  :custom
+  ;; Ignore LSP semantic tokens: rust-ts-mode already highlights via
+  ;; tree-sitter, so they're redundant -- and rust-analyzer returning a null
+  ;; semanticTokens result triggers an eglot request loop (the events buffer
+  ;; spams textDocument/semanticTokens/full forever, pegging a CPU).
+  (eglot-ignored-server-capabilities '(:semanticTokensProvider))
   :config
   ;; Use clippy for on-save checking, matching the old lsp-mode preference.
   (add-to-list 'eglot-server-programs
