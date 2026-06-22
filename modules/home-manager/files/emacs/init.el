@@ -271,6 +271,38 @@
            "* TODO %?\n%u\n"))))
 
 ;;; ---------------------------------------------------------------------------
+;;; Notes: Denote (markdown-based, the org-roam replacement)
+;;; ---------------------------------------------------------------------------
+
+;; Modern, markdown-native, database-free note system.  Notes are plain files
+;; named with a timestamp ID + title + keywords, linked by that stable ID.
+(use-package denote
+  :custom
+  (denote-directory (expand-file-name "~/workthing/denote/"))
+  (denote-file-type 'markdown-yaml)       ; .md files with YAML front matter
+  (denote-known-keywords '("emacs" "rust" "work" "idea" "person"))
+  :hook
+  ;; Live-render links in dired and auto-rename buffers from front matter.
+  (dired-mode . denote-dired-mode)
+  :bind
+  (("C-c n n" . denote)                   ; new note
+   ("C-c n l" . denote-link)              ; insert a link to another note
+   ("C-c n b" . denote-backlinks)         ; show what links here
+   ("C-c n r" . denote-rename-file)       ; rename via title/keywords
+   ("C-c n d" . denote-date)))
+
+;; Use consult for finding/searching notes (fits the vertico/consult stack).
+(use-package consult-notes
+  :after (consult denote)
+  :custom
+  (consult-notes-file-dir-sources nil)
+  :config
+  (consult-notes-denote-mode 1)
+  :bind
+  (("C-c n f" . consult-notes)            ; find a note (live narrowing)
+   ("C-c n s" . consult-notes-search-in-all-notes)))  ; ripgrep across notes
+
+;;; ---------------------------------------------------------------------------
 ;;; Other languages & data formats (carried over from DOOM :lang modules)
 ;;; ---------------------------------------------------------------------------
 
