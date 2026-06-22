@@ -289,7 +289,12 @@
    ("C-c n l" . denote-link)              ; insert a link to another note
    ("C-c n b" . denote-backlinks)         ; show what links here
    ("C-c n r" . denote-rename-file)       ; rename via title/keywords
-   ("C-c n d" . denote-date)))
+   ("C-c n d" . denote-date)
+   ;; consult-notes commands bound here (not in the consult-notes block) so the
+   ;; autoloads are created at startup -- a `:bind' inside a `:after' package is
+   ;; deferred until that package loads, which left these keys unbound.
+   ("C-c n f" . consult-notes)            ; find a note (live narrowing)
+   ("C-c n s" . consult-notes-search-in-all-notes)))  ; ripgrep across notes
 
 ;; Use consult for finding/searching notes (fits the vertico/consult stack).
 (use-package consult-notes
@@ -297,10 +302,7 @@
   :custom
   (consult-notes-file-dir-sources nil)
   :config
-  (consult-notes-denote-mode 1)
-  :bind
-  (("C-c n f" . consult-notes)            ; find a note (live narrowing)
-   ("C-c n s" . consult-notes-search-in-all-notes)))  ; ripgrep across notes
+  (consult-notes-denote-mode 1))
 
 ;;; ---------------------------------------------------------------------------
 ;;; Other languages & data formats (carried over from DOOM :lang modules)
