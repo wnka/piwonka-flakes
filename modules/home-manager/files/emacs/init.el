@@ -186,7 +186,11 @@
 (use-package markdown-mode
   :mode (("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :hook (markdown-mode . turn-off-auto-fill)   ; carried over from DOOM config
+  :hook ((markdown-mode . turn-off-auto-fill)  ; carried over from DOOM config
+         ;; Truncate long lines by default: prose-heavy tables can't be wrapped
+         ;; (see C-c C-c TAB note below), so let them scroll horizontally instead
+         ;; of soft-wrapping into a mess.  `C-c t' toggles it back off.
+         (markdown-mode . (lambda () (setq-local truncate-lines t))))
   ;; Re-align the table at point with `C-c C-c TAB'.  Tables do NOT re-align on
   ;; ordinary typing -- markdown-table-align-p only fires when you navigate cells
   ;; with TAB/RET, so for free-form edits use this binding manually.
