@@ -72,6 +72,13 @@
   xdg.configFile."yazi".source = ./files/yazi;
   xdg.configFile."nix".source = ./files/nix;
 
+  # Emacs: symlink ONLY the static config files, not the whole directory.
+  # ~/.config/emacs must stay a writable real directory because Emacs writes
+  # elpa/ (packages), eln-cache/, tree-sitter/ (grammars), auto-save/, backups/,
+  # and custom.el into it.  Linking the directory read-only would break all that.
+  xdg.configFile."emacs/init.el".source = ./files/emacs/init.el;
+  xdg.configFile."emacs/early-init.el".source = ./files/emacs/early-init.el;
+
   
   programs.git = {
     enable = true;
