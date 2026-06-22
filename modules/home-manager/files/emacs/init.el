@@ -112,9 +112,13 @@
          ("C-x b" . consult-buffer)
          ("M-y" . consult-yank-pop)
          ("M-g g" . consult-goto-line)
-         ;; Project-aware commands (the projectile-style pickers from DOOM).
-         ;; These live under the native `C-x p' project.el prefix.
-         ("C-x p f" . consult-fd)         ; find file in project (uses fd)
+         ;; Project-aware commands (the projectile-style pickers from DOOM),
+         ;; living under the native `C-x p' project.el prefix.
+         ;; NOTE: `C-x p f' is intentionally left as project.el's own
+         ;; `project-find-file' (set below), which preloads the full project
+         ;; file list so files show immediately and you narrow by typing.
+         ;; consult-fd/consult-find are async and stay empty until you type,
+         ;; which is NOT the projectile-style behavior we want for file finding.
          ("C-x p g" . consult-ripgrep)    ; grep across the project (uses rg)
          ("C-x p b" . consult-project-buffer)))
 
@@ -127,7 +131,8 @@
 ;;   C-x p g  ripgrep in project        C-x p b  switch project buffer
 ;;   C-x p d  dired at project root     C-x p c  compile
 ;; Projects are detected by VCS, so every git repo just works with no config.
-;; The consult bindings above override f/g/b with nicer live-narrowing UIs.
+;; `C-x p f' stays project-find-file (instant full file list + type-to-narrow);
+;; the consult bindings above enhance g (ripgrep) and b (buffers).
 (use-package project
   :ensure nil)                            ; built-in
 
