@@ -98,6 +98,9 @@
 
       # Opt out of Eternal Terminal telemetry b.s.
       set -x ET_NO_TELEMETRY true
+
+      # No direnv timeout warning, I've never found it useful
+      set -x DIRENV_WARN_TIMEOUT 0
       
       # I want Option-Backspace to just kill a word
       bind \e\x7F backward-kill-word
