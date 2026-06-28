@@ -72,7 +72,8 @@
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
   xdg.configFile."nix".source = ./files/nix;
-
+  xdg.configFile."herdr".source = ./files/herdr;
+  
   # Emacs: symlink ONLY the static config files, not the whole directory.
   # ~/.config/emacs must stay a writable real directory because Emacs writes
   # elpa/ (packages), eln-cache/, tree-sitter/ (grammars), auto-save/, backups/,
