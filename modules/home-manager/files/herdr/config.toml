@@ -101,6 +101,7 @@ prefix = "backtick"
 # split_horizontal = "prefix+minus"
 # close_pane = "prefix+x"
 # zoom = "prefix+z"       # legacy alias: fullscreen
+new_pane = "alt+n"
 # resize_mode = "prefix+r"
 # toggle_sidebar = "prefix+b"
 
