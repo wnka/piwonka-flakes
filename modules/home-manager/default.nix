@@ -72,7 +72,8 @@
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
   xdg.configFile."nix".source = ./files/nix;
-  xdg.configFile."herdr".source = ./files/herdr;
+  # Only link config.toml — herdr needs a real directory to create its socket.
+  xdg.configFile."herdr/config.toml".source = ./files/herdr/config.toml;
   
   # Emacs: symlink ONLY the static config files, not the whole directory.
   # ~/.config/emacs must stay a writable real directory because Emacs writes
