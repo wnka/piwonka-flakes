@@ -194,6 +194,8 @@ pane_gaps = false
 # system = ask the OS notification service directly
 # delivery = "off"
 # delay_seconds = 1
+  enabled = true
+  delivery = "terminal"
 
 [ui.toast.herdr]
 # position = "bottom-right"
