@@ -72,8 +72,16 @@
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
   xdg.configFile."nix".source = ./files/nix;
-  # Only link config.toml — herdr needs a real directory to create its socket.
-  xdg.configFile."herdr/config.toml".source = ./files/herdr/config.toml;
+  # herdr needs a real directory to create its socket, and its UI must be able
+  # to rewrite config.toml in place — a /nix/store symlink is read-only. So seed
+  # a *writable* copy on every switch instead of linking. The repo is the source
+  # of truth; tweak in the UI to experiment, then run ./save-herdr-config.sh to
+  # pull changes back into the repo and commit.
+  home.activation.herdrConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run mkdir -p "$HOME/.config/herdr"
+    run cp -f ${./files/herdr/config.toml} "$HOME/.config/herdr/config.toml"
+    run chmod u+w "$HOME/.config/herdr/config.toml"
+  '';
   
   # Emacs: symlink ONLY the static config files, not the whole directory.
   # ~/.config/emacs must stay a writable real directory because Emacs writes
