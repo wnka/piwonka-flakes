@@ -1,4 +1,16 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: let
+  herdr-picker-plus = pkgs.rustPlatform.buildRustPackage {
+    name = "herdr-picker-plus";
+    src = pkgs.fetchFromGitHub {
+      owner = "thanhdat77";
+      repo = "herdr-picker-plus";
+      rev = "v0.2.0";
+      sha256 = "sha256-mrwC0wNSpLW1l/11MOJT015QsVIev5jHMcQBl8Q+5bc=";
+    };
+    cargoHash = "sha256-BqTUrph0ayn8JAtq93Sot2iK9N2I3rvPxzX6D+KQNaI=";
+    doCheck = false;
+  };
+in {
 
   nix.enable = false;
 
@@ -81,6 +93,24 @@
     run mkdir -p "$HOME/.config/herdr"
     run cp -f ${./files/herdr/config.toml} "$HOME/.config/herdr/config.toml"
     run chmod u+w "$HOME/.config/herdr/config.toml"
+  '';
+
+  # Install herdr-picker-plus from Nix
+  home.activation.herdrPickerPlus = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run mkdir -p "$HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release"
+    run cp -f ${./files/herdr-plugins/picker-plus/herdr-plugin.toml} "$HOME/.config/herdr/plugins/github/herdr-picker-plus/herdr-plugin.toml"
+    run cp -f ${herdr-picker-plus}/bin/herdr-picker-plus "$HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus"
+    run chmod u+x "$HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus"
+    if command -v herdr &>/dev/null; then
+      run herdr plugin unlink herdr-picker-plus || true
+      run herdr plugin link "$HOME/.config/herdr/plugins/github/herdr-picker-plus"
+    fi
+  '';
+
+  # Seed picker-plus config so first-run UI is sane
+  home.activation.herdrPickerPlusConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run mkdir -p "$HOME/.config/herdr/plugins/config/herdr-picker-plus"
+    run cp -f ${./files/herdr-plugins/picker-plus/config.toml} "$HOME/.config/herdr/plugins/config/herdr-picker-plus/config.toml"
   '';
   
   # Emacs: symlink ONLY the static config files, not the whole directory.
