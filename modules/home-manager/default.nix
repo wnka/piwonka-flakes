@@ -101,9 +101,10 @@ in {
     run cp -f ${./files/herdr-plugins/picker-plus/herdr-plugin.toml} "$HOME/.config/herdr/plugins/github/herdr-picker-plus/herdr-plugin.toml"
     run cp -f ${herdr-picker-plus}/bin/herdr-picker-plus "$HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus"
     run chmod u+x "$HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus"
-    # Always try to link — fails silently if herdr isn't installed yet
-    (herdr plugin unlink herdr-picker-plus 2>/dev/null || true)
-    (herdr plugin link "$HOME/.config/herdr/plugins/github/herdr-picker-plus" 2>/dev/null || true)
+    if command -v herdr &>/dev/null; then
+      run herdr plugin unlink herdr-picker-plus || true
+      run herdr plugin link "$HOME/.config/herdr/plugins/github/herdr-picker-plus"
+    fi
   '';
 
   # Seed picker-plus config so first-run UI is sane
