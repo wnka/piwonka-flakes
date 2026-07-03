@@ -75,8 +75,8 @@ prefix = "backtick"
 # Picker Plus — workspace/tab/agent/project/server/zoxide picker
 [[keys.command]]
 key = "prefix+o"
-type = "shell"
-command = "bash $HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus ui"
+type = "plugin_action"
+command = "herdr-picker-plus.open"
 description = "Open picker-plus picker"
 # new_worktree = "prefix+shift+g"
 # open_worktree = ""    # optional, unset by default
