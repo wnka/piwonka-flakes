@@ -69,8 +69,15 @@ prefix = "backtick"
 # reload_config = "prefix+shift+r"
 # open_notification_target = "prefix+o"
 # workspace_picker = "prefix+w"
-goto = "prefix+o"
+# goto = "prefix+o"  # replaced by herdr-picker-plus
 # new_workspace = "prefix+shift+n"
+
+# Picker Plus — workspace/tab/agent/project/server/zoxide picker
+[[keys.command]]
+key = "prefix+o"
+type = "shell"
+command = "bash $HOME/.config/herdr/plugins/github/herdr-picker-plus/target/release/herdr-picker-plus ui"
+description = "Open picker-plus picker"
 # new_worktree = "prefix+shift+g"
 # open_worktree = ""    # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
