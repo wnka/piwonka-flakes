@@ -19,7 +19,7 @@ engine = "nucleo"
 
 # Source priority controls initial ordering and tie/near-tie ranking.
 # Accepted names: agent, workspace/open, project, server, zoxide, root, quick, plugin.
-source_order = ["agent", "workspace", "project", "server", "zoxide", "root", "quick", "plugin"]
+source_order = ["workspace" , "agent", "project", "server", "zoxide", "root", "quick", "plugin"]
 
 # How strongly source_order influences search ranking.
 # Set 0 for pure matcher score.
@@ -53,7 +53,7 @@ agents = true
 
 # SSH/manual server entries. Selecting opens `autossh` if installed, otherwise `ssh`,
 # with keepalive options in a server workspace.
-servers = true
+servers = false
 
 # Herdr Plus Quick Actions. Selecting opens the Quick Actions picker.
 herdr_plus_quick_actions = true
