@@ -43,7 +43,7 @@ open_workspaces = true
 herdr_plus_projects = true
 
 # zoxide history from `zoxide query -l`.
-zoxide = false
+zoxide = true
 
 # Direct filesystem scan of [[roots]] below.
 roots = true
