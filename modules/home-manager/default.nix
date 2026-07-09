@@ -27,6 +27,7 @@
     eza
     fd
     fx
+    gh
     git-crypt
     gnugrep
     gnupg
