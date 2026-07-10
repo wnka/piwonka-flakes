@@ -176,6 +176,7 @@
     ];
     shellAliases = {
       ls = "eza --group-directories-first --color-scale all --icons";
+      ll = "eza -l --git --hyperlink --header --icons --smart-group --time-style=relative --group-directories-first";
       catp = "bat";
       cat = "bat --style=plain";
       catn = "bat --style=plain --wrap=never";
@@ -187,7 +188,6 @@
       gd = "git diff";
       gdt = "git difft";
       glg = "git log";
-      ll = "eza --group-directories-first --color-scale all --icons -lbG --git";
       utime = "command time"; # use the Linux time cmd, not the fish builtin
       lg = "lazygit -ucd ~/.config/lazygit";
       lz = "lazygit -ucd ~/.config/lazygit";
