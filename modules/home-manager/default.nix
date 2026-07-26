@@ -196,8 +196,8 @@
       }
     ];
     shellAliases = {
-      ls = "eza --group-directories-first --color-scale all --icons";
-      ll = "eza -l --git --hyperlink --header --icons --smart-group --time-style=relative --group-directories-first";
+      ls = "eza --group-directories-first --color-scale all --icons=auto";
+      ll = "eza -l --git --hyperlink --header --icons=auto --smart-group --time-style=relative --group-directories-first";
       catp = "bat";
       cat = "bat --style=plain";
       catn = "bat --style=plain --wrap=never";
