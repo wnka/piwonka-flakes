@@ -106,6 +106,7 @@
       "visual-studio-code"
     ];
     brews = [
+      "blueutil"
       "llvm"
       "mas"
       "syncthing"
