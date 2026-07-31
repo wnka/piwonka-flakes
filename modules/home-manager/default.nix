@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, inputs, ... }: {
 
   nix.enable = false;
 
@@ -51,6 +51,7 @@
     ripgrep
     ssm-session-manager-plugin
     television
+    inputs.tuicr.packages.${pkgs.stdenv.hostPlatform.system}.default
     # time
     xan
     xh
@@ -85,27 +86,12 @@
     run chmod u+w "$HOME/.config/herdr/config.toml"
   '';
 
-  # hunk (hunkdiff) ships a prebuilt platform binary, so it isn't in nixpkgs and
-  # buildNpmPackage doesn't fit. Install it imperatively via the Nix npm into the
-  # writable $HOME prefix on every switch. Always pulls @latest, so this needs the
-  # network at activation time and can differ across machines.
-  home.activation.hunkInstall = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    export NPM_CONFIG_PREFIX="$HOME/.npm-global"
-    # A dependency's postinstall shells out to bare `node`, so put it on PATH.
-    export PATH="${pkgs.nodejs}/bin:$PATH"
-    run ${pkgs.nodejs}/bin/npm install -g hunkdiff@latest
-  '';
-  
   # Emacs: symlink ONLY the static config files, not the whole directory.
   # ~/.config/emacs must stay a writable real directory because Emacs writes
   # elpa/ (packages), eln-cache/, tree-sitter/ (grammars), auto-save/, backups/,
   # and custom.el into it.  Linking the directory read-only would break all that.
   xdg.configFile."emacs/init.el".source = ./files/emacs/init.el;
   xdg.configFile."emacs/early-init.el".source = ./files/emacs/early-init.el;
-
-  # Link only config.toml, not the whole hunk/ dir: hunk writes state.json
-  # alongside it, so the directory itself must stay writable.
-  xdg.configFile."hunk/config.toml".source = ./files/hunk/config.toml;
 
   programs.git = {
     enable = true;

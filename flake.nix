@@ -18,6 +18,9 @@
     # Controls system level software and settings including fonts
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    tuicr.url = "github:agavra/tuicr";
+    tuicr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs:
@@ -41,6 +44,7 @@
               useGlobalPkgs = true;
               # Setting this to false fixed problems with ~/.nix-profile
               useUserPackages = false;
+              extraSpecialArgs = { inherit inputs; };
               users.${user}.imports =
                 [
                   ./modules/home-manager
@@ -69,6 +73,7 @@
               useGlobalPkgs = true;
               # Setting this to false fixed problems with ~/.nix-profile
               useUserPackages = false;
+              extraSpecialArgs = { inherit inputs; };
               users.${user}.imports =
                 [
                   ./modules/home-manager
