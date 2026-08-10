@@ -34,6 +34,7 @@
 
   system.defaults = {
     finder.AppleShowAllExtensions = true;
+    finder.FXPreferredViewStyle = "Nlsv";
     finder._FXShowPosixPathInTitle = true;
     dock.autohide = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
