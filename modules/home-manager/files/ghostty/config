@@ -4,3 +4,4 @@ adjust-cell-height = 6%
 theme = dark:TokyoNight Moon,light:Catppuccin Latte
 selection-background = #cc3333
 selection-foreground = #ffffff
+custom-shader = shaders/cursor_sweep.glsl
