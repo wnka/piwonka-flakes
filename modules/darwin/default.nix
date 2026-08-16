@@ -108,6 +108,7 @@
     ];
     brews = [
       "blueutil"
+      "herdr"
       "llvm"
       "mas"
       "syncthing"
