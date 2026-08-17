@@ -119,12 +119,10 @@
       "1Password for Safari" = 1569813296;
       "Cog" = 1630499622;
       "Infuse" = 1136220934;
-      "Kindle" = 302584613;
       "PCalc" = 403504866;
       "Spark Mail" = 6445813049;
       "Stop The Madness Pro" = 6471380298;
-      "Things 3" = 904280696;
-      "Webcam Settings" = 1610840452;
+      "Todoist" = 585829637;
     };
   };
 }
