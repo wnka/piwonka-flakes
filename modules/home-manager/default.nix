@@ -38,6 +38,7 @@
     jq
     lazygit
     markdown-oxide
+    marp-cli
     # marksman
     mergiraf
     mermaid-cli
