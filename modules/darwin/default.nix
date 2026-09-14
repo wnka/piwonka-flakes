@@ -104,6 +104,7 @@
       "rectangle"
       "roon"
       "transmit"
+      "syncthing-app"
       "visual-studio-code"
     ];
     brews = [
@@ -111,7 +112,6 @@
       "herdr"
       "llvm"
       "mas"
-      "syncthing"
       "rustup"
       "watch"
     ];
