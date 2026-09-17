@@ -45,8 +45,9 @@
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     trackpad = {
       Clicking = true;
-      TrackpadThreeFingerDrag = true;
       Dragging = true;
+      DragLock = true;
+      TrackpadThreeFingerDrag = false;
     };
     CustomUserPreferences = {
       "com.apple.symbolichotkeys" = {
