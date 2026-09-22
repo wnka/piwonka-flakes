@@ -1,5 +1,37 @@
-{ pkgs, lib, inputs, ... }: {
+{ pkgs, lib, inputs, ... }:
 
+let
+  # ET 7.0.0 can get permanently stuck replaying a large recovery buffer after
+  # a long disconnect. Upstream has fixes for reconnect starvation, partial
+  # catch-up writes, and socket cleanup, but has not cut a release containing
+  # them yet.
+  eternalTerminalFixed = pkgs.eternal-terminal.overrideAttrs (old: {
+    version = "7.0.0-unstable-2026-09-22";
+    src = pkgs.fetchFromGitHub {
+      owner = "MisterTea";
+      repo = "EternalTerminal";
+      rev = "9718366cc5059912791c2590972ec451a05eeb9a";
+      fetchSubmodules = true;
+      hash = "sha256-J9ho+t7y1bsZbV8YZsRdppE1bSAj90b7R2k0bBPv92Q=";
+    };
+    # Current master has a duplicate-symbol linker failure in its test-only
+    # target. The client, server, and terminal targets are unaffected.
+    cmakeFlags =
+      old.cmakeFlags
+      ++ [ "-DBUILD_TESTING=OFF" ]
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+        "-DCMAKE_OSX_SYSROOT=${pkgs.apple-sdk_15}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
+      ];
+    buildInputs =
+      old.buildInputs
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ pkgs.apple-sdk_15 ];
+    doCheck = false;
+    # The binary still reports the protocol release version ("7.0.0"), so the
+    # Nixpkgs version hook cannot match this snapshot's derivation version.
+    dontVersionCheck = true;
+  });
+in
+{
   nix.enable = false;
 
   # Don't change this when you change package input. Leave it alone.
@@ -23,7 +55,7 @@
     dust
     dysk
     entr
-    eternal-terminal
+    eternalTerminalFixed
     eza
     fd
     fx
