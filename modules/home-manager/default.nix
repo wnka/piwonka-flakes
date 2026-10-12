@@ -189,7 +189,7 @@ in
             --columns=$width | bat --style=plain --language=markdown
     '';
       awsp = ''
-          set -l profile (begin; echo "(none)"; grep '^\[profile ' ~/.aws/config | sed 's/\[profile //' | sed 's/\]//'; end | fzf --prompt="AWS Profile> ")
+          set -l profile (begin; echo "(none)"; aws configure list-profiles; end | fzf --prompt="AWS Profile> ")
           if test "$profile" = "(none)"
             set -e AWS_PROFILE
             echo "AWS_PROFILE unset"
