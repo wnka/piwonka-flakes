@@ -20,6 +20,7 @@
       fish_add_path /Users/piwonka/bin
       fish_add_path /opt/homebrew/opt/llvm/bin
       fish_add_path /Users/piwonka/.cargo/bin
+      fish_add_path /Users/piwonka/.local/bin
     '';
     shellAliases = {
       nixs = "sudo darwin-rebuild switch --flake ~/code/nix/piwonka-flakes#mac";
