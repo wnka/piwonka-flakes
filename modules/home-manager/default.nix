@@ -6,13 +6,13 @@ let
   # catch-up writes, and socket cleanup, but has not cut a release containing
   # them yet.
   eternalTerminalFixed = pkgs.eternal-terminal.overrideAttrs (old: {
-    version = "7.0.0-unstable-2026-09-22";
+    version = "7.0.0-unstable-2026-10-19";
     src = pkgs.fetchFromGitHub {
       owner = "MisterTea";
       repo = "EternalTerminal";
-      rev = "9718366cc5059912791c2590972ec451a05eeb9a";
+      rev = "7ee361a75fbb3e0900445b110188996fbe950823";
       fetchSubmodules = true;
-      hash = "sha256-J9ho+t7y1bsZbV8YZsRdppE1bSAj90b7R2k0bBPv92Q=";
+      hash = "sha256-SiK8Ne3daWeVOXbTOzHZZ1D1eerpMGWAiSYvDh3B3po=";
     };
     # Current master has a duplicate-symbol linker failure in its test-only
     # target. The client, server, and terminal targets are unaffected.
@@ -22,6 +22,9 @@ let
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
         "-DCMAKE_OSX_SYSROOT=${pkgs.apple-sdk_15}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
       ];
+    # The current source includes its own C++20 ThreadPool fix; nixpkgs'
+    # inherited patches target an older source layout/version.
+    patches = [ ];
     buildInputs =
       old.buildInputs
       ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ pkgs.apple-sdk_15 ];
