@@ -34,7 +34,7 @@
       tomarkdown = "pandoc --wrap=none -f org -t markdown-smart (fzf --preview 'bat --color=always --style=plain {}') | pbcopy";
       dw = "~/bin/daywon -o ~/Documents/pdp-vault -l -c -t";
       dwl = "~/bin/daywon -l";
-      pdd = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal etr8id -p 2026";
+      pdd = "et --terminal-path /home/piwonka/.nix-profile/bin/etterminal --port 2026 etr8id";
     };
   };
 }
