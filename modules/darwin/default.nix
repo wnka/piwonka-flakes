@@ -98,6 +98,7 @@
       "font-zed-mono-nerd-font"
       "font-cascadia-code-nf"
       "ghostty"
+      "gram"
       "keyboardcleantool"
       "moonlight"
       "obsidian"
