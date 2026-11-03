@@ -34,6 +34,13 @@
       ];
     in
     {
+    packages = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in {
+        fix-nix-stack-limit = pkgs.callPackage ./packages/fix-nix-stack-limit.nix { };
+      });
+
     darwinConfigurations.mac =
       let
         user = "piwonka";

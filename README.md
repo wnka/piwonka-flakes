@@ -98,6 +98,52 @@ nix build .#homeConfigurations.clouddesktop-arm.activationPackage
 ./result/activate
 ```
 
+### Linux cloud desktop stack limit
+
+If `nixs` reports `Stack size hard limit is 10485760`, the cloud desktop's
+systemd configuration caps the stack at 10 MiB. Nix requests 60 MiB, and an
+unprivileged shell cannot raise that inherited hard limit.
+
+Run this once from the flake directory on each affected Linux host:
+
+```bash
+nix run .#fix-nix-stack-limit
+```
+
+The command uses `sudo` to install
+`/etc/systemd/system.conf.d/90-nix-stack-limit.conf` and reload systemd. It keeps
+the 10 MiB soft limit and raises the hard limit to 64 MiB, overriding the host's
+`50-limits.conf`. This host setup is separate from Home Manager activation
+because standalone Home Manager manages user configuration.
+
+Existing services and sessions keep their inherited limits. Reboot when
+convenient so SSH, Eternal Terminal, the user service manager, and the Nix daemon
+all inherit the new limit. After reconnecting, `ulimit -Hs` should report
+`65536`, and `nixs` should no longer produce the warning. The first setup command
+may still print the warning because Nix starts before the fix is installed.
+
+To use the higher limit immediately in the current Fish session:
+
+```fish
+sudo prlimit --pid $fish_pid --stack=:67108864
+```
+
+This raises only that shell's hard limit; it does not update other existing
+sessions or services.
+
+### Cloud desktop Rust navigation
+
+The x86 cloud desktop's Helix Rust LSP uses `~/bin/rust-analyzer-fast`, built
+from the `fast-workspace-navigation` branch in `~/code/rust-analyzer`. Its
+`cargo.workspaceOnly` setting keeps navigation between workspace crates and
+standard-library navigation while skipping external dependencies. Diagnostics,
+completion, build scripts, and proc macros are disabled for code review;
+generated code and usages that require omitted types may not resolve.
+Reference searches show a spinner and a "Finding references" status message
+while rust-analyzer analyzes callers. The Rust LSP request timeout is two
+minutes so Helix keeps waiting for cold searches that exceed its default
+20-second limit.
+
 ## Module Structure
 
 - `modules/darwin/` - macOS system-level configurations (fonts, system settings, etc.)
