@@ -1,0 +1,8 @@
+diff_view = "side-by-side"
+
+comment_types = [
+  { id = "note", label = "question", definition = "ask for clarification", color = "yellow" },
+  { id = "suggestion", definition = "possible improvements" },
+  { id = "issue", definition = "problems to fix" },
+  { id = "praise", definition = "positive feedback" },
+]

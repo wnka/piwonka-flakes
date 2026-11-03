@@ -111,6 +111,7 @@ in
   xdg.configFile."zellij".source = ./files/zellij;
   xdg.configFile."yazi".source = ./files/yazi;
   xdg.configFile."nix".source = ./files/nix;
+  xdg.configFile."tuicr/config.toml".source = ./files/tuicr/config.toml;
   # herdr needs a real directory to create its socket, and its UI must be able
   # to rewrite config.toml in place — a /nix/store symlink is read-only. So seed
   # a *writable* copy on every switch instead of linking. The repo is the source
