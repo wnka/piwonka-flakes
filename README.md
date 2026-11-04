@@ -131,19 +131,6 @@ sudo prlimit --pid $fish_pid --stack=:67108864
 This raises only that shell's hard limit; it does not update other existing
 sessions or services.
 
-### Cloud desktop Rust navigation
-
-The x86 cloud desktop's Helix Rust LSP uses `~/bin/rust-analyzer-fast`, built
-from the `fast-workspace-navigation` branch in `~/code/rust-analyzer`. Its
-`cargo.workspaceOnly` setting keeps navigation between workspace crates and
-standard-library navigation while skipping external dependencies. Diagnostics,
-completion, build scripts, and proc macros are disabled for code review;
-generated code and usages that require omitted types may not resolve.
-Reference searches show a spinner and a "Finding references" status message
-while rust-analyzer analyzes callers. The Rust LSP request timeout is two
-minutes so Helix keeps waiting for cold searches that exceed its default
-20-second limit.
-
 ## Module Structure
 
 - `modules/darwin/` - macOS system-level configurations (fonts, system settings, etc.)
