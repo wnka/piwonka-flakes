@@ -1,39 +1,5 @@
 { pkgs, lib, inputs, ... }:
 
-let
-  # ET 7.0.0 can get permanently stuck replaying a large recovery buffer after
-  # a long disconnect. Upstream has fixes for reconnect starvation, partial
-  # catch-up writes, and socket cleanup, but has not cut a release containing
-  # them yet.
-  eternalTerminalFixed = pkgs.eternal-terminal.overrideAttrs (old: {
-    version = "7.0.0-unstable-2026-10-19";
-    src = pkgs.fetchFromGitHub {
-      owner = "MisterTea";
-      repo = "EternalTerminal";
-      rev = "7ee361a75fbb3e0900445b110188996fbe950823";
-      fetchSubmodules = true;
-      hash = "sha256-SiK8Ne3daWeVOXbTOzHZZ1D1eerpMGWAiSYvDh3B3po=";
-    };
-    # Current master has a duplicate-symbol linker failure in its test-only
-    # target. The client, server, and terminal targets are unaffected.
-    cmakeFlags =
-      old.cmakeFlags
-      ++ [ "-DBUILD_TESTING=OFF" ]
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
-        "-DCMAKE_OSX_SYSROOT=${pkgs.apple-sdk_15}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"
-      ];
-    # The current source includes its own C++20 ThreadPool fix; nixpkgs'
-    # inherited patches target an older source layout/version.
-    patches = [ ];
-    buildInputs =
-      old.buildInputs
-      ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ pkgs.apple-sdk_15 ];
-    doCheck = false;
-    # The binary still reports the protocol release version ("7.0.0"), so the
-    # Nixpkgs version hook cannot match this snapshot's derivation version.
-    dontVersionCheck = true;
-  });
-in
 {
   nix.enable = false;
 
@@ -58,7 +24,7 @@ in
     dust
     dysk
     entr
-    eternalTerminalFixed
+    eternal-terminal
     eza
     fd
     fx
