@@ -122,6 +122,7 @@
       "Cog" = 1630499622;
       "Infuse" = 1136220934;
       "PCalc" = 403504866;
+      "Punktfunk" = 6779991756;
       "Spark Mail" = 6445813049;
       "Stop The Madness Pro" = 6471380298;
       "Todoist" = 585829637;
